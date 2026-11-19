@@ -1,199 +1,77 @@
-<div align="center">
-
 # Open Whisper
 
 **Press a shortcut. Speak. The text appears where your cursor is.**
 
-Voice transcription that runs entirely on your Mac — your voice never leaves the device.
+Voice transcription that runs on your computer, for Windows and Mac. Free, no account, and your voice never leaves the device.
 
-![Platform](https://img.shields.io/badge/platform-macOS%2014%2B-lightgrey)
-![Apple Silicon](https://img.shields.io/badge/chip-Apple%20Silicon-lightgrey)
-![On-device](https://img.shields.io/badge/transcription-100%25%20on--device-brightgreen)
-![Network](https://img.shields.io/badge/network%20calls-zero-brightgreen)
-![Status](https://img.shields.io/badge/status-pre--release-orange)
+[**Help**](https://openwhisper.entringer.dev/docs/) · [**Report a problem**](https://github.com/fabricio-entringer/open-whisper-public/issues/new/choose) · [**See what's already reported**](https://github.com/fabricio-entringer/open-whisper-public/issues) · [**Releases**](https://github.com/fabricio-entringer/open-whisper-public/releases) · [**Português**](#português)
 
-[**Report a problem**](https://github.com/fabricio-entringer/open-whisper-public/issues/new/choose) ·
-[**See what's already reported**](https://github.com/fabricio-entringer/open-whisper-public/issues) ·
-[**Português**](#português)
+This repository doesn't hold the app's code. It is where people who use Open Whisper report problems, ask questions and suggest ideas, and where each version is published.
 
-</div>
+## What it does
 
----
+- **One shortcut, from any app.** ⇧⌘Space on the Mac, Ctrl+Shift+Space on Windows, and you can change it.
+- **Hold to Talk or Toggle.** Hold the keys while you speak, or press once to start and again to stop.
+- **Text at your cursor.** It is pasted where you're typing. When that isn't possible, it goes to the clipboard and you're told: a dictation is never lost.
+- **Transcribed on your computer**, in the language you speak, detected each time, or one you pin.
+- **One icon**: in the menu bar on the Mac, in the notification area on Windows. A small Settings window, and nothing else to set up.
+- **Also**: transcribe one YouTube video or one audio or video file, in its own window or from the command line (`open-whisper transcribe`).
 
-## Welcome
+## What it doesn't do
 
-This repository is **not** where the code lives. It exists for one reason: so that people who use
-Open Whisper have somewhere to report a problem, ask a question, or suggest an improvement — and get
-an answer.
+No cloud transcription, no AI rewriting or chat, no meeting recording or speaker identification, no translation, no history, no account or sync, no batch transcription of folders or playlists. No Mac App Store or Microsoft Store: their sandboxes don't allow pasting into other apps. Each of these is a deliberate choice, explained in [What Open Whisper doesn't do](https://openwhisper.entringer.dev/docs/limits/). An idea close to one of these lines is still welcome: it is weighed, not refused on sight.
 
-Every issue opened here is read.
+## Install
 
-> **Open Whisper has not been released yet.** There is no download link on this page because there is
-> nothing to download yet. This space is open early, on purpose, so the channel exists before the
-> first version does.
+- **Windows** 10 (22H2) or 11, 64-bit, with a processor that has AVX2 (Intel from 2013, AMD from 2015): download `Open.Whisper_X.Y.Z_x64-setup.exe` from [Releases](https://github.com/fabricio-entringer/open-whisper-public/releases). It installs for your user, with no administrator password. The installer isn't signed yet, so Windows shows "Windows protected your PC": click **More info**, then **Run anyway**. Check the file against its `.sha256` first.
+- **Mac**: coming soon. It ships once Apple has signed and notarized it, and will install with Homebrew or a `.dmg`. It will need macOS 14 or later.
 
----
+Step by step: [Install](https://openwhisper.entringer.dev/docs/install/).
 
-## What it is
+## Help
 
-```
-[any app]  →  press shortcut  →  speak  →  local transcription  →  text at your cursor
-                                                   ↓
-                                   (clipboard fallback — a word is never lost)
-```
+The full help lives at **[openwhisper.entringer.dev/docs](https://openwhisper.entringer.dev/docs/)**:
 
-Open Whisper lives in the menu bar. No Dock icon. No main window. You don't switch to it — you press
-a shortcut wherever you already are, say what you want written, and keep working.
-
-The whole thing happens on your machine. The transcription model ships inside the app, so it works on
-an airplane, and there is no account, no API key and no sign-up.
-
----
-
-## What the app does
-
-| | |
-|---|---|
-| **One global shortcut** | Works from any app, without focusing Open Whisper first |
-| **Hold to Talk or Toggle** | Hold the keys and speak, or press once to start and again to stop |
-| **Automatic language** | Speak Portuguese, English or another major language — no setting to change |
-| **Text at your cursor** | Inserted where you're already typing |
-| **Clipboard as a floor** | If insertion isn't possible, the text goes to your clipboard and you're told |
-| **Menu-bar states** | Idle, recording, processing, error — visible at a glance |
-| **Five settings, no more** | Shortcut, mode, maximum recording length, language, model |
-| **Fully keyboard-operable** | You never need the mouse |
-
----
-
-## What the app does *not* do
-
-This list is deliberate. Each of these was considered and declined, and the reason matters more than
-the item:
-
-- **No cloud transcription engines.** No OpenAI, no Deepgram, no ElevenLabs. Sending your voice
-  somewhere would break the one promise the product is built on.
-- **No AI cleanup, rewriting, chat or read-aloud.** Open Whisper writes down what you said. Deciding
-  what you *meant* is a different product.
-- **No meeting recording and no speaker identification.** Recording other people is a different
-  problem with different consent questions.
-- **No batch transcription of audio files.** The product is about the moment you're typing, not about
-  processing a folder.
-- **No accounts, no cloud sync, no history across devices.** There is nothing to sync, because
-  nothing leaves your machine.
-- **No Mac App Store version.** To paste text into other apps, the app needs macOS Accessibility
-  permissions, which the App Store's sandbox forbids. A store build could not do the one thing this
-  app exists to do.
-- **No complex interface.** A menu-bar icon and a small settings window. That's the whole surface.
-
-**A border case is not a refusal.** If your idea is close to one of these lines, open the issue
-anyway. Ideas that need a decision get marked for review, not closed.
-
----
-
-## Privacy
-
-Two claims, both of which you can check yourself:
-
-1. **Zero network traffic during transcription.** Point any network monitor at the app while you
-   dictate. You will see nothing, because there is nothing to see.
-2. **Your audio is never written to disk.** The recording exists in memory long enough to be
-   transcribed, and then it's gone.
-
-There is no analytics, no crash reporting and no third-party SDK of any kind.
-
----
+- [First run](https://openwhisper.entringer.dev/docs/first-run/) · [Dictate](https://openwhisper.entringer.dev/docs/dictate/) · [Paste](https://openwhisper.entringer.dev/docs/paste/) · [Settings](https://openwhisper.entringer.dev/docs/settings/)
+- [Video](https://openwhisper.entringer.dev/docs/video/) · [Command line](https://openwhisper.entringer.dev/docs/command-line/) · [Command reference](https://openwhisper.entringer.dev/docs/command-reference/)
+- [Troubleshooting](https://openwhisper.entringer.dev/docs/troubleshooting/) · [FAQ](https://openwhisper.entringer.dev/docs/faq/) · [Shortcuts and keys](https://openwhisper.entringer.dev/docs/shortcuts/)
+- [Privacy](https://openwhisper.entringer.dev/docs/privacy/) · [Data and uninstalling](https://openwhisper.entringer.dev/docs/data-and-uninstall/)
 
 ## Reporting a problem
 
-Use the [issue forms](https://github.com/fabricio-entringer/open-whisper-public/issues/new/choose).
-They ask for the things that actually make a report solvable.
+1. Check [Troubleshooting](https://openwhisper.entringer.dev/docs/troubleshooting/) and the [issues already reported](https://github.com/fabricio-entringer/open-whisper-public/issues).
+2. [Open an issue](https://github.com/fabricio-entringer/open-whisper-public/issues/new/choose) with what you expected and what happened, the app you were dictating into, your system and its version, and the app's version from **About Open Whisper**.
 
-**What makes a good report:**
+**Issues are public.** Don't paste what you dictated if it's private, and check your screenshots. The content of a transcription is never needed to fix a problem with it.
 
-- **What you expected, and what happened instead.** "The text went to the clipboard instead of into
-  the document" is solvable. "It doesn't work" is not.
-- **Which app you were dictating into.** Paste behaviour differs between a browser, a code editor and
-  a chat app, and this is usually the decisive detail.
-- **Your macOS version and the app version.** The app version is in *About Open Whisper*.
-- **Whether it happens every time**, or only sometimes.
+What to expect: every issue is read and answered. A refusal always comes with a concrete reason. No date is ever promised. When something you reported ships, you're told on your issue. The labels and the rest are explained in [Reporting a problem](https://openwhisper.entringer.dev/docs/report/).
 
-**Please don't paste what you dictated** if it's private. We never need the content of your
-transcription to fix a problem with the transcription — and this is a public page that anyone can
-read.
+## Privacy
+
+Dictation and transcription happen on your computer, with no network at all: point any network monitor at the app while you dictate and you will see nothing. Your audio is never written to disk. There is no account, no analytics, no telemetry and no update check. The internet is used only when you ask for it: to download an optional larger model, or to fetch a YouTube video. Details and how to check: [Privacy](https://openwhisper.entringer.dev/docs/privacy/).
 
 ---
-
-## Labels, translated
-
-| Label | Means |
-|---|---|
-| `triage: pending` | Received, not looked at yet |
-| `triage: accepted` | Real, and it's in the queue |
-| `triage: needs-info` | Waiting on something from you |
-| `triage: under-review` | Needs a product decision before an answer is possible |
-| `triage: duplicate` | Already reported — the link points to the original |
-| `triage: out-of-scope` | Declined, with a concrete reason in the comments |
-| `status: queued` | Accepted and waiting its turn |
-| `status: in-progress` | Being worked on |
-| `status: awaiting-release` | Fixed, waiting for a version to ship it |
-| `status: shipped` | Available in a released version |
-| `status: closed-unresolved` | Closed without a fix, with the reason stated |
-
----
-
-## What to expect
-
-- Every issue is read and answered.
-- A refusal always comes with a concrete reason. "Out of scope" on its own is not an answer.
-- **We never promise a date.** "Accepted and queued" is as far as it goes.
-- When something you reported ships, you get told on your issue.
-- If a fix doesn't hold, reopen it.
-
----
-
-<div align="center">
 
 ## Português
 
-</div>
+**Aperte um atalho. Fale. O texto aparece onde está o cursor.**
 
-**Aperte um atalho, fale, e o texto aparece onde o cursor está.** Transcrição de voz que roda
-inteiramente no seu Mac — sua voz nunca sai do aparelho.
+Transcrição de voz que roda no seu computador, para Windows e Mac. Gratuito, sem conta, e a sua voz nunca sai do dispositivo.
 
-Este repositório **não contém o código**. Ele existe para que quem usa o Open Whisper tenha onde
-relatar um problema, tirar dúvida ou sugerir melhoria — e receber resposta. Toda issue aberta aqui é
-lida.
+Este repositório não guarda o código do app. Ele é o lugar onde quem usa o Open Whisper relata problemas, tira dúvidas e sugere ideias, e onde cada versão é publicada.
 
-> **O Open Whisper ainda não foi lançado.** Não há link de download nesta página porque ainda não há
-> o que baixar. O canal está aberto desde já, de propósito, para existir antes da primeira versão.
+**O que faz.** Um atalho que funciona de qualquer app: ⇧⌘Espaço no Mac, Ctrl+Shift+Espaço no Windows, e dá para trocar. Dois modos: segure as teclas enquanto fala, ou aperte uma vez para começar e outra para parar. O texto é colado onde você está digitando e, quando isso não é possível, vai para a área de transferência com um aviso: nenhum ditado se perde. A transcrição acontece no seu computador, no idioma que você fala, detectado a cada ditado, ou num idioma que você fixar. Um ícone na barra de menus (Mac) ou na área de notificação (Windows) e uma janela pequena de Ajustes. Também transcreve um vídeo do YouTube ou um arquivo de áudio ou vídeo, numa janela própria ou pela linha de comando (`open-whisper transcribe`).
 
-**O que o app faz:** um atalho global que funciona de qualquer aplicativo, nos modos segurar-para-falar
-ou alternar; idioma detectado automaticamente, sem configurar; texto inserido onde o cursor está, com
-a área de transferência como piso garantido quando a inserção não é possível; ícone na barra de menus
-com os estados; cinco preferências, nada além disso; operável 100% por teclado.
+**O que não faz, por decisão.** Nada de transcrição na nuvem, reescrita ou chat por IA, gravação de reunião ou identificação de quem fala, tradução, histórico, conta ou sincronização, transcrição em lote de pastas ou playlists. Nada de Mac App Store nem Microsoft Store: as caixas de areia das lojas não permitem colar em outros apps. O motivo de cada item está em [O que o Open Whisper não faz](https://openwhisper.entringer.dev/pt/docs/limits/). Uma ideia perto dessas linhas continua bem-vinda: ela é avaliada, não recusada de cara.
 
-**O que o app não faz, por decisão:** nada de engine de transcrição na nuvem, limpeza ou reescrita por
-IA, gravação de reunião, identificação de quem fala, transcrição de arquivos em lote, contas ou
-sincronização. Também não existe versão na Mac App Store — para colar texto em outros aplicativos o
-app precisa da permissão de Acessibilidade do macOS, que a caixa de areia da loja proíbe. Um app da
-loja não conseguiria fazer a única coisa que este app faz.
+**Instalar.** **Windows** 10 (22H2) ou 11, 64 bits, com processador com AVX2 (Intel a partir de 2013, AMD a partir de 2015): baixe o `Open.Whisper_X.Y.Z_x64-setup.exe` em [Releases](https://github.com/fabricio-entringer/open-whisper-public/releases). Ele instala para o seu usuário, sem senha de administrador. O instalador ainda não é assinado, então o Windows mostra "O Windows protegeu o computador": clique em **Mais informações** e depois em **Executar assim mesmo**. Antes, confira o arquivo com o `.sha256`. **Mac**: em breve. Sai assim que a Apple assinar e autenticar o app, e vai instalar pelo Homebrew ou por um `.dmg`, no macOS 14 ou mais recente. Passo a passo: [Instalar](https://openwhisper.entringer.dev/pt/docs/install/).
 
-Caso de fronteira não é recusa: se sua ideia chega perto de uma dessas linhas, abra a issue mesmo
-assim.
+**Ajuda.** A ajuda completa está em **[openwhisper.entringer.dev/pt/docs](https://openwhisper.entringer.dev/pt/docs/)**: [Ditar](https://openwhisper.entringer.dev/pt/docs/dictate/), [Solução de problemas](https://openwhisper.entringer.dev/pt/docs/troubleshooting/), [Perguntas frequentes](https://openwhisper.entringer.dev/pt/docs/faq/), [Linha de comando](https://openwhisper.entringer.dev/pt/docs/command-line/), [Privacidade](https://openwhisper.entringer.dev/pt/docs/privacy/) e o resto.
 
-**Privacidade:** zero tráfego de rede durante a transcrição — aponte qualquer monitor de rede para o
-app enquanto dita e não verá nada. O áudio nunca é gravado em disco. Não há analytics, relatório de
-falhas nem SDK de terceiros.
+**Relatar um problema.** Confira a [Solução de problemas](https://openwhisper.entringer.dev/pt/docs/troubleshooting/) e as [issues já relatadas](https://github.com/fabricio-entringer/open-whisper-public/issues). Depois, [abra uma issue](https://github.com/fabricio-entringer/open-whisper-public/issues/new/choose) contando o que você esperava e o que aconteceu, em qual app estava ditando, o seu sistema e a versão dele, e a versão do app que aparece em **Sobre o Open Whisper**. Pode escrever em português: a resposta vem no idioma da issue. **As issues são públicas**: não cole o que você ditou se for algo privado, e confira as capturas de tela. Toda issue é lida e respondida; uma recusa sempre vem com motivo concreto; nenhuma data é prometida; quando algo que você relatou sai, você é avisado na issue. Mais em [Relatar um problema](https://openwhisper.entringer.dev/pt/docs/report/).
 
-**Ao relatar:** conte o que esperava e o que aconteceu, em qual aplicativo você estava ditando (esse
-é quase sempre o detalhe decisivo), a versão do macOS e a do app, e se acontece sempre ou às vezes.
-**Não cole o que você ditou** se for algo privado — nunca precisamos do conteúdo da transcrição para
-resolver um problema com a transcrição, e esta página é pública.
-
-Pode escrever em português. A resposta vem no idioma em que a issue foi escrita.
+**Privacidade.** O ditado e a transcrição acontecem no seu computador, sem nenhuma rede: aponte qualquer monitor de rede para o app enquanto dita e você não verá nada. O áudio nunca é gravado em disco. Não há conta, métricas de uso, telemetria nem busca de atualização. A internet só é usada quando você pede: para baixar um modelo maior opcional ou para buscar um vídeo do YouTube. Detalhes e como conferir: [Privacidade](https://openwhisper.entringer.dev/pt/docs/privacy/).
 
 ---
 
-<div align="center">
-<sub>Feito por <a href="https://entringer.dev">entringer.dev</a></sub>
-</div>
+<sub>Made by / Feito por [entringer.dev](https://entringer.dev)</sub>
