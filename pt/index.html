@@ -1,12 +1,302 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-os="other">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Open Whisper</title>
-<meta http-equiv="refresh" content="0; url=/pt/docs/">
-<link rel="canonical" href="https://openwhisper.entringer.dev/pt/docs/">
-<script>location.replace("/pt/docs/" + location.hash);</script>
+<title>Open Whisper — segure uma tecla, fale, e o texto aparece no cursor</title>
+<meta name="description" content="Um app gratuito de voz para texto, para Windows e Mac. Segure um atalho, fale, e suas palavras são coladas onde você está escrevendo. A transcrição roda no seu computador: sua voz nunca sai dele.">
+<link rel="canonical" href="https://openwhisper.entringer.dev/pt/">
+<link rel="alternate" hreflang="en" href="https://openwhisper.entringer.dev/">
+<link rel="alternate" hreflang="pt-BR" href="https://openwhisper.entringer.dev/pt/">
+<link rel="alternate" hreflang="x-default" href="https://openwhisper.entringer.dev/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Open Whisper — segure uma tecla, fale, e o texto aparece no cursor">
+<meta property="og:description" content="Um app gratuito de voz para texto, para Windows e Mac. Segure um atalho, fale, e suas palavras são coladas onde você está escrevendo. A transcrição roda no seu computador: sua voz nunca sai dele.">
+<meta property="og:url" content="https://openwhisper.entringer.dev/pt/">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Open Whisper">
+<meta property="og:image" content="https://openwhisper.entringer.dev/assets/og-pt.jpg">
+<meta property="og:image:alt" content="O monitor de preview do Open Whisper com uma frase recém-colada numa nota, ao lado do título “Segure uma tecla, fale, e o texto aparece onde está o cursor.”">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image:alt" content="O monitor de preview do Open Whisper com uma frase recém-colada numa nota, ao lado do título “Segure uma tecla, fale, e o texto aparece onde está o cursor.”">
+<meta name="theme-color" content="#121417">
+<link rel="icon" type="image/png" sizes="64x64" href="../assets/favicon-64.png">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<link rel="preload" href="../assets/fonts/barlow-semi-condensed-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/site.css?v=fc6854744e">
+<script>
+  // Before the first paint, so the keycaps and the download key are the visitor's from the start.
+  (function () {
+    var ua = navigator.userAgent, d = document.documentElement;
+    var touch = matchMedia("(pointer: coarse)").matches && !matchMedia("(pointer: fine)").matches;
+    d.classList.add("js");
+    d.dataset.os = touch ? "touch" : /Windows NT/.test(ua) ? "windows" : /Macintosh|Mac OS X/.test(ua) ? "mac" : "other";
+  })();
+</script>
 </head>
-<body><p><a href="/pt/docs/">Ajuda do Open Whisper</a></p></body>
+<body>
+<a class="skip" href="#download">Pular para o download</a>
+
+<header class="nameplate">
+  <a class="brand" href="../" aria-label="Open Whisper">
+    <img class="brand__icon" src="../assets/icon-64.png" width="32" height="32" alt="">
+    <span class="engrave brand__name">Open Whisper</span>
+  </a>
+  <nav class="nameplate__end" aria-label="Site">
+    <a class="engrave nameplate__help" href="../pt/docs/">Ajuda</a>
+    <span class="latches" role="group" aria-label="Idioma">
+      <a class="latch" href="../" hreflang="en" lang="en"><i class="led" aria-hidden="true"></i>EN</a><a class="latch is-on" href="../pt/" hreflang="pt-BR" lang="pt-BR" aria-current="page"><i class="led" aria-hidden="true"></i>PT</a>
+    </span>
+    <a class="key key--plate" href="#download"><svg class="glyph" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v10m-4.5-4.5L10 13l4.5-4.5M4 16.5h12"/></svg><span>Baixar</span></a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero__wall">
+    <figure class="monitor monitor--preview" id="preview">
+      <figcaption class="monitor__head">
+        <span class="engrave monitor__label" lang="en">Preview</span>
+        <span class="tally" aria-hidden="true"><span class="tally__glass">No ar</span></span>
+        <span class="engrave engrave--dim monitor__note">Demonstração · nenhum áudio é gravado</span>
+      </figcaption>
+      <div class="screen" id="screen" data-state="idle">
+        <div class="menubar" data-for="mac other touch" aria-hidden="true">
+          <span class="menubar__app">Editor</span>
+          <span>Arquivo</span><span>Editar</span><span>Exibir</span>
+          <span class="menubar__end"><img class="tray" data-tray src="../assets/tray/tray-idle-white.png" width="16" height="16" alt=""><span>10:24</span></span>
+        </div>
+        <div class="docwin">
+          <div class="docwin__bar" aria-hidden="true">
+            <span class="docwin__lights" data-for="mac other touch"><i></i><i></i><i></i></span>
+            <span class="docwin__title">Recado para a Marina</span>
+            <span class="docwin__caption" data-for="windows"><svg viewBox="0 0 30 10"><path d="M1 5h8M12.5 1.5h7v7h-7zM23.5 1.5l7 7m0-7l-7 7"/></svg></span>
+          </div>
+          <div class="doc" id="doc" role="region" aria-label="Documento da demonstração">
+            <p>Marina,</p>
+            <p id="para"><span id="typed"></span><span class="caret" aria-hidden="true"></span><span class="ghost" id="ghost" aria-hidden="true"><span data-for="mac">Segure ⇧⌘Espaço e esta nota se escreve sozinha.</span><span data-for="windows other">Segure Ctrl+Shift+Espaço e esta nota se escreve sozinha.</span><span data-for="touch">Segure a tecla abaixo e esta nota se escreve sozinha.</span></span></p>
+          </div>
+        </div>
+        <div class="hud" id="hud" aria-hidden="true">
+          <span class="hud__dot"></span>
+          <span class="hud__meter" id="meter"></span>
+          <span class="hud__label" id="hud-label"></span>
+        </div>
+        <div class="taskbar" data-for="windows" aria-hidden="true">
+          <span class="taskbar__end"><svg class="taskbar__chev" viewBox="0 0 10 6"><path d="M1 5l4-4 4 4"/></svg><img class="tray" data-tray src="../assets/tray/tray-idle-white.png" width="16" height="16" alt=""><span>10:24</span></span>
+        </div>
+      </div>
+    </figure>
+  </div>
+
+  <div class="desk">
+    <div class="desk__inner">
+      <div class="desk__copy">
+        <div class="sign">
+          <img class="sign__lamp" src="../assets/icon-256.png" width="128" height="128" alt="">
+          <h1 id="hero-title"><span class="sign__slogan"><span class="sign__line">No ar.</span> <span class="sign__line">Fora da nuvem.</span></span> <span class="sign__title">Segure uma tecla, fale, e o texto aparece onde está o cursor.</span></h1>
+          <p class="free"><span class="free__mark">100% grátis</span><span class="free__sub">Sem conta, sem assinatura, sem período de teste.</span></p>
+          <p class="lede">O Open Whisper transforma sua voz em texto em qualquer app: no seu computador, na sua língua, sem nada para configurar.</p>
+        </div>
+      </div>
+      <div class="desk__controls">
+        <p class="try">
+          <span class="try__keys" data-for="mac windows other">Experimente: segure <span class="caps" data-for="mac touch"><kbd class="cap cap--inline">⇧</kbd><kbd class="cap cap--inline">⌘</kbd><kbd class="cap cap--inline">Espaço</kbd></span><span class="caps" data-for="windows other"><kbd class="cap cap--inline">Ctrl</kbd><kbd class="cap cap--inline">Shift</kbd><kbd class="cap cap--inline">Espaço</kbd></span>, e solte. <span class="try__esc" data-for="mac other">Esc cancela.</span></span>
+          <span class="try__touch" data-for="touch">Experimente: segure a tecla abaixo.</span>
+          <span class="try__note" id="demo-note">A demonstração usa uma frase de exemplo. Nada é ouvido.</span>
+          <span class="try__nojs">A demonstração precisa de JavaScript; o download abaixo, não.</span>
+        </p>
+        <button class="talkback" id="talkback" type="button" aria-describedby="demo-note">
+          <span class="talkback__led" aria-hidden="true"></span>
+          <span class="talkback__legend engrave">Pressionar para falar</span>
+          <span class="talkback__well" aria-hidden="true"><span class="caps" data-for="mac touch"><kbd class="cap">⇧</kbd><kbd class="cap">⌘</kbd><kbd class="cap">Espaço</kbd></span><span class="caps" data-for="windows other"><kbd class="cap">Ctrl</kbd><kbd class="cap">Shift</kbd><kbd class="cap">Espaço</kbd></span></span>
+        </button>
+        <p id="announce" class="demo-status" aria-live="polite"></p>
+        <div class="get-key">
+          <a class="key key--primary key--go" data-for="windows" href="https://github.com/fabricio-entringer/open-whisper-public/releases/download/v0.1.0/Open.Whisper_0.1.0_x64-setup.exe" data-next><svg class="glyph" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v10m-4.5-4.5L10 13l4.5-4.5M4 16.5h12"/></svg><span class="key__text"><span class="key__main">Baixar para Windows</span><span class="key__sub">Grátis · versão 0.1.0 · 188 MB</span></span></a>
+          <div class="status-plate" data-for="mac"><i class="led" aria-hidden="true"></i><span class="status-plate__text"><span class="status-plate__main">Mac: em breve</span><span class="status-plate__sub"><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/releases.atom">Acompanhar os releases (RSS)</a> · <a class="link" href="#download">Baixar a versão para Windows</a></span></span></div>
+          <a class="key key--primary key--go" data-for="other" href="#download"><svg class="glyph" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5"/></svg><span class="key__text"><span class="key__main">Baixe no seu computador</span><span class="key__sub">Windows · Mac</span></span></a>
+          <button class="key key--primary key--go" data-for="touch" type="button" data-share="https://openwhisper.entringer.dev/pt/" data-share-title="Open Whisper — segure uma tecla, fale, e o texto aparece no cursor"><svg class="glyph" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 12.5V3m-3.5 3.5L10 3l3.5 3.5M6 9H4.5v8h11V9H14"/></svg><span class="key__text"><span class="key__main">Mandar o link para o computador</span><span class="key__sub">O Open Whisper roda no Windows e no Mac</span></span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="broadcast" aria-labelledby="program-title">
+  <div class="broadcast__inner">
+    <div class="program">
+      <div class="program__copy">
+        <h2 id="program-title" class="display">A mesma coisa, de verdade.</h2>
+        <p class="body">Gravado num Mac, sem edição: uma voz sintética lê a mesma frase para o microfone, e o app instalado transcreve no computador e cola. As legendas também são do Open Whisper.</p>
+      </div>
+      <figure class="monitor monitor--program">
+        <figcaption class="monitor__head">
+          <span class="engrave monitor__label" lang="en">Program</span>
+          <span class="readout"><span class="sr-only">Timecode </span><span id="timecode">00:00:00:00</span></span>
+        </figcaption>
+        <div class="screen screen--video">
+          <video id="program" controls playsinline preload="metadata" poster="../assets/media/program-pt.jpg" width="1920" height="1080">
+            <source src="../assets/media/program-pt.mp4" type="video/mp4">
+            <track kind="captions" src="../assets/media/program-pt.pt.vtt" srclang="pt" label="Português" default>
+          </video>
+        </div>
+      </figure>
+    </div>
+
+    <div class="wall" id="wall">
+      <div class="wall__head">
+        <div class="wall__copy">
+          <h2 class="display">Quatro janelas, e você quase não vai abri-las.</h2>
+          <p class="body">O Open Whisper mora na barra de menus no Mac e na área de notificação no Windows. Estas são todas as janelas dele.</p>
+        </div>
+        <div class="latches latches--scheme" role="radiogroup" aria-label="Aparência">
+          <span class="engrave engrave--dim">Aparência</span>
+          <button class="latch" type="button" role="radio" aria-checked="false" tabindex="-1" data-scheme="light"><i class="led" aria-hidden="true"></i>Clara</button>
+          <button class="latch" type="button" role="radio" aria-checked="false" tabindex="-1" data-scheme="dark"><i class="led" aria-hidden="true"></i>Escura</button>
+        </div>
+      </div>
+      <ul class="wall__grid">
+        <li class="feed feed--settings">
+          <figure>
+            <div class="feed__screen">
+              <span class="appwin" style="--w: 460"><span class="wbar wbar--mac" data-for="mac other touch" aria-hidden="true"><span class="wbar__lights"><i></i><i></i><i></i></span><span class="wbar__title">Open Whisper</span></span><span class="wbar wbar--win" data-for="windows" aria-hidden="true"><span class="wbar__title">Open Whisper</span><span class="wbar__caption"><svg viewBox="0 0 30 10"><path d="M1 5h8M12.5 1.5h7v7h-7zM23.5 1.5l7 7m0-7l-7 7"/></svg></span></span><img data-for="mac other touch" data-scheme="light" src="../assets/shots/settings-pt-mac-light-1x.webp" srcset="../assets/shots/settings-pt-mac-light-1x.webp 460w, ../assets/shots/settings-pt-mac-light.webp 920w" sizes="(max-width: 640px) 86vw, 380px" width="460" height="367" loading="lazy" decoding="async" alt="Janela “Ajustes” do Open Whisper"><img data-for="mac other touch" data-scheme="dark" src="../assets/shots/settings-pt-mac-dark-1x.webp" srcset="../assets/shots/settings-pt-mac-dark-1x.webp 460w, ../assets/shots/settings-pt-mac-dark.webp 920w" sizes="(max-width: 640px) 86vw, 380px" width="460" height="367" loading="lazy" decoding="async" alt="Janela “Ajustes” do Open Whisper"><img data-for="windows" data-scheme="light" src="../assets/shots/settings-pt-windows-light-1x.webp" srcset="../assets/shots/settings-pt-windows-light-1x.webp 460w, ../assets/shots/settings-pt-windows-light.webp 920w" sizes="(max-width: 640px) 86vw, 380px" width="460" height="367" loading="lazy" decoding="async" alt="Janela “Ajustes” do Open Whisper"><img data-for="windows" data-scheme="dark" src="../assets/shots/settings-pt-windows-dark-1x.webp" srcset="../assets/shots/settings-pt-windows-dark-1x.webp 460w, ../assets/shots/settings-pt-windows-dark.webp 920w" sizes="(max-width: 640px) 86vw, 380px" width="460" height="367" loading="lazy" decoding="async" alt="Janela “Ajustes” do Open Whisper"></span>
+            </div>
+            <figcaption><span class="engrave">Ajustes</span> <span class="feed__text">O atalho, segurar ou alternar, o idioma. É quase tudo.</span></figcaption>
+          </figure>
+        </li>
+        <li class="feed feed--onboarding">
+          <figure>
+            <div class="feed__screen">
+              <span class="appwin" style="--w: 560"><span class="wbar wbar--mac" data-for="mac other touch" aria-hidden="true"><span class="wbar__lights"><i></i><i></i><i></i></span><span class="wbar__title">Open Whisper</span></span><span class="wbar wbar--win" data-for="windows" aria-hidden="true"><span class="wbar__title">Open Whisper</span><span class="wbar__caption"><svg viewBox="0 0 30 10"><path d="M1 5h8M12.5 1.5h7v7h-7zM23.5 1.5l7 7m0-7l-7 7"/></svg></span></span><img data-for="mac other touch" data-scheme="light" src="../assets/shots/onboarding-pt-mac-light-1x.webp" srcset="../assets/shots/onboarding-pt-mac-light-1x.webp 560w, ../assets/shots/onboarding-pt-mac-light.webp 1120w" sizes="(max-width: 640px) 86vw, 380px" width="560" height="454" loading="lazy" decoding="async" alt="Janela “Primeiro uso” do Open Whisper"><img data-for="mac other touch" data-scheme="dark" src="../assets/shots/onboarding-pt-mac-dark-1x.webp" srcset="../assets/shots/onboarding-pt-mac-dark-1x.webp 560w, ../assets/shots/onboarding-pt-mac-dark.webp 1120w" sizes="(max-width: 640px) 86vw, 380px" width="560" height="454" loading="lazy" decoding="async" alt="Janela “Primeiro uso” do Open Whisper"><img data-for="windows" data-scheme="light" src="../assets/shots/onboarding-pt-windows-light-1x.webp" srcset="../assets/shots/onboarding-pt-windows-light-1x.webp 560w, ../assets/shots/onboarding-pt-windows-light.webp 1120w" sizes="(max-width: 640px) 86vw, 380px" width="560" height="464" loading="lazy" decoding="async" alt="Janela “Primeiro uso” do Open Whisper"><img data-for="windows" data-scheme="dark" src="../assets/shots/onboarding-pt-windows-dark-1x.webp" srcset="../assets/shots/onboarding-pt-windows-dark-1x.webp 560w, ../assets/shots/onboarding-pt-windows-dark.webp 1120w" sizes="(max-width: 640px) 86vw, 380px" width="560" height="464" loading="lazy" decoding="async" alt="Janela “Primeiro uso” do Open Whisper"></span>
+            </div>
+            <figcaption><span class="engrave">Primeiro uso</span> <span class="feed__text">Cada permissão explicada antes de o sistema pedir, e um ditado de teste de verdade no fim.</span></figcaption>
+          </figure>
+        </li>
+        <li class="feed feed--video">
+          <figure>
+            <div class="feed__screen">
+              <span class="appwin" style="--w: 560"><span class="wbar wbar--mac" data-for="mac other touch" aria-hidden="true"><span class="wbar__lights"><i></i><i></i><i></i></span><span class="wbar__title">Open Whisper</span></span><span class="wbar wbar--win" data-for="windows" aria-hidden="true"><span class="wbar__title">Open Whisper</span><span class="wbar__caption"><svg viewBox="0 0 30 10"><path d="M1 5h8M12.5 1.5h7v7h-7zM23.5 1.5l7 7m0-7l-7 7"/></svg></span></span><img data-for="mac other touch" data-scheme="light" src="../assets/shots/video-pt-mac-light-1x.webp" srcset="../assets/shots/video-pt-mac-light-1x.webp 560w, ../assets/shots/video-pt-mac-light.webp 1120w" sizes="(max-width: 640px) 86vw, 380px" width="560" height="316" loading="lazy" decoding="async" alt="Janela “Vídeo” do Open Whisper"><img data-for="mac other touch" data-scheme="dark" src="../assets/shots/video-pt-mac-dark-1x.webp" srcset="../assets/shots/video-pt-mac-dark-1x.webp 560w, ../assets/shots/video-pt-mac-dark.webp 1120w" sizes="(max-width: 640px) 86vw, 380px" width="560" height="316" loading="lazy" decoding="async" alt="Janela “Vídeo” do Open Whisper"><img data-for="windows" data-scheme="light" src="../assets/shots/video-pt-windows-light-1x.webp" srcset="../assets/shots/video-pt-windows-light-1x.webp 560w, ../assets/shots/video-pt-windows-light.webp 1120w" sizes="(max-width: 640px) 86vw, 380px" width="560" height="316" loading="lazy" decoding="async" alt="Janela “Vídeo” do Open Whisper"><img data-for="windows" data-scheme="dark" src="../assets/shots/video-pt-windows-dark-1x.webp" srcset="../assets/shots/video-pt-windows-dark-1x.webp 560w, ../assets/shots/video-pt-windows-dark.webp 1120w" sizes="(max-width: 640px) 86vw, 380px" width="560" height="316" loading="lazy" decoding="async" alt="Janela “Vídeo” do Open Whisper"></span>
+            </div>
+            <figcaption><span class="engrave">Vídeo</span> <span class="feed__text">Transcreva um link de vídeo ou um arquivo de mídia.</span></figcaption>
+          </figure>
+        </li>
+        <li class="feed feed--about">
+          <figure>
+            <div class="feed__screen">
+              <span class="appwin" style="--w: 360"><span class="wbar wbar--mac" data-for="mac other touch" aria-hidden="true"><span class="wbar__lights"><i></i><i></i><i></i></span><span class="wbar__title">Open Whisper</span></span><span class="wbar wbar--win" data-for="windows" aria-hidden="true"><span class="wbar__title">Open Whisper</span><span class="wbar__caption"><svg viewBox="0 0 30 10"><path d="M1 5h8M12.5 1.5h7v7h-7zM23.5 1.5l7 7m0-7l-7 7"/></svg></span></span><img data-for="mac other touch" data-scheme="light" src="../assets/shots/about-pt-mac-light-1x.webp" srcset="../assets/shots/about-pt-mac-light-1x.webp 360w, ../assets/shots/about-pt-mac-light.webp 720w" sizes="(max-width: 640px) 86vw, 380px" width="360" height="430" loading="lazy" decoding="async" alt="Janela “Sobre” do Open Whisper"><img data-for="mac other touch" data-scheme="dark" src="../assets/shots/about-pt-mac-dark-1x.webp" srcset="../assets/shots/about-pt-mac-dark-1x.webp 360w, ../assets/shots/about-pt-mac-dark.webp 720w" sizes="(max-width: 640px) 86vw, 380px" width="360" height="430" loading="lazy" decoding="async" alt="Janela “Sobre” do Open Whisper"><img data-for="windows" data-scheme="light" src="../assets/shots/about-pt-windows-light-1x.webp" srcset="../assets/shots/about-pt-windows-light-1x.webp 360w, ../assets/shots/about-pt-windows-light.webp 720w" sizes="(max-width: 640px) 86vw, 380px" width="360" height="430" loading="lazy" decoding="async" alt="Janela “Sobre” do Open Whisper"><img data-for="windows" data-scheme="dark" src="../assets/shots/about-pt-windows-dark-1x.webp" srcset="../assets/shots/about-pt-windows-dark-1x.webp 360w, ../assets/shots/about-pt-windows-dark.webp 720w" sizes="(max-width: 640px) 86vw, 380px" width="360" height="430" loading="lazy" decoding="async" alt="Janela “Sobre” do Open Whisper"></span>
+            </div>
+            <figcaption><span class="engrave">Sobre</span> <span class="feed__text">A versão, e de onde ela vem.</span></figcaption>
+          </figure>
+        </li>
+      </ul>
+      <p class="wall__note">As janelas do próprio app, renderizadas a partir do código dele.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band band--alu trust" aria-labelledby="trust-title">
+  <h2 id="trust-title" class="sr-only">Três coisas de que ele não abre mão.</h2>
+  <div class="modules">
+    <article class="module">
+      <h3 class="module__legend engrave"><i class="led is-on" aria-hidden="true"></i>Local</h3>
+      <div class="module__body">
+        <p class="module__title">Sua voz fica no seu computador.</p>
+        <p class="body">A transcrição roda na sua máquina, com um modelo que vem dentro do app. Sem conta, sem servidor, sem internet para ditar. Qualquer monitor de rede mostra isso.</p>
+        <dl class="rows"><div class="row"><dt class="row__legend">Conta</dt><dd class="row__value">Nenhuma</dd></div><div class="row"><dt class="row__legend">Áudio enviado</dt><dd class="row__value">Nenhum</dd></div><div class="row"><dt class="row__legend">Analytics</dt><dd class="row__value">Nenhum</dd></div></dl>
+      </div>
+    </article>
+    <article class="module">
+      <h3 class="module__legend engrave"><i class="led is-on" aria-hidden="true"></i>Idioma</h3>
+      <div class="module__body">
+        <p class="module__title">Fale na sua língua. Ele entende sozinho.</p>
+        <p class="body">Português, inglês, espanhol e dezenas de outras, detectadas enquanto você fala. Troque de língua entre um ditado e outro sem mexer em nada.</p>
+        <dl class="rows"><div class="row"><dt class="row__legend">Configuração</dt><dd class="row__value">Nenhuma</dd></div><div class="row"><dt class="row__legend">Troca</dt><dd class="row__value">Entre um ditado e outro, sem mexer em nada</dd></div></dl>
+      </div>
+    </article>
+    <article class="module">
+      <h3 class="module__legend engrave"><i class="led is-on" aria-hidden="true"></i>Área de transferência</h3>
+      <div class="module__body">
+        <p class="module__title">O que você disse nunca se perde.</p>
+        <p class="body">Quando o texto não pode ser colado (um campo de senha, uma janela de administrador, nenhum lugar para escrever), ele espera na área de transferência e o app avisa. Cole onde quiser.</p>
+        <dl class="rows"><div class="row"><dt class="row__legend">Garantia</dt><dd class="row__value">A área de transferência, sempre</dd></div></dl>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="band aux" aria-labelledby="aux-title">
+  <div class="aux__inner">
+    <div class="aux__legend engrave" aria-hidden="true" lang="en">Aux</div>
+    <div class="aux__copy">
+      <h2 id="aux-title" class="display">Também: vídeos e arquivos.</h2>
+      <p class="body">Cole um link do YouTube ou solte um arquivo de áudio ou vídeo e receba a transcrição com os tempos. Ou faça pelo terminal:</p>
+    </div>
+    <div class="aux__cmd">
+      <pre class="terminal"><code><span class="terminal__prompt" aria-hidden="true">&gt;</span> open-whisper transcribe entrevista.m4a --format srt</code></pre>
+      <p class="hint">Um link de vídeo acessa o YouTube para buscar o vídeo. Um arquivo é lido onde está e nunca sai do seu computador.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band band--alu get" id="download" aria-labelledby="get-title" tabindex="-1">
+  <div class="get__head">
+    <h2 id="get-title" class="display">Baixar</h2>
+    <p class="body">Grátis, sem conta e sem assinatura.</p>
+  </div>
+  <div class="modules modules--two">
+    <article class="module module--windows">
+      <h3 class="module__legend engrave"><i class="led is-on" aria-hidden="true"></i>Windows</h3>
+      <div class="module__body">
+        <a class="key key--primary key--go key--wide" href="https://github.com/fabricio-entringer/open-whisper-public/releases/download/v0.1.0/Open.Whisper_0.1.0_x64-setup.exe" data-next><svg class="glyph" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v10m-4.5-4.5L10 13l4.5-4.5M4 16.5h12"/></svg><span class="key__text"><span class="key__main">Baixar para Windows</span><span class="key__sub">versão 0.1.0 · Open.Whisper_0.1.0_x64-setup.exe</span></span></a>
+        <dl class="rows"><div class="row"><dt class="row__legend">Requer</dt><dd class="row__value">Windows 10 (22H2) ou 11, 64 bits, num processador com AVX2 (Intel de 2013 em diante, AMD de 2015 em diante)</dd></div><div class="row"><dt class="row__legend">Tamanho</dt><dd class="row__value">188 MB para baixar</dd></div></dl>
+        <div class="smartscreen" id="next" tabindex="-1">
+          <p class="smartscreen__title"><i class="led led--fault is-on" aria-hidden="true"></i>O Windows vai avisar uma vez. Veja o que fazer.</p>
+          <ol class="steps"><li>Abra o instalador que você baixou.</li><li>O Windows mostra “O Windows protegeu o computador”: escolha Mais informações e depois Executar assim mesmo. O instalador ainda não é assinado.</li><li>Siga o instalador. Ele instala só para o seu usuário e nunca pede permissão de administrador.</li><li>O Open Whisper aparece na área de notificação, ao lado do relógio.</li></ol>
+        </div>
+        <details class="verify">
+          <summary>Conferir o download (opcional)</summary>
+          <p class="hint">Confira o download e compare com o arquivo .sha256 na página do release:</p>
+          <div class="copyline">
+            <pre class="terminal terminal--small"><code id="hashcmd">certutil -hashfile Open.Whisper_0.1.0_x64-setup.exe SHA256</code></pre>
+            <button class="key key--icon" type="button" data-copy="hashcmd" aria-label="Copiar o comando"><svg class="glyph" viewBox="0 0 20 20" aria-hidden="true"><rect x="7" y="7" width="9.5" height="9.5" rx="1.5"/><path d="M13 4.5H5.5a1 1 0 0 0-1 1V13"/></svg><svg class="glyph glyph--done" viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg></button>
+          </div>
+          <p class="links"><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/releases/download/v0.1.0/Open.Whisper_0.1.0_x64-setup.exe.sha256">Open.Whisper_0.1.0_x64-setup.exe.sha256</a></p>
+        </details>
+        <p class="sr-only" id="copy-status" aria-live="polite"></p>
+        <p class="links"><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/releases/tag/v0.1.0">Notas do release</a></p>
+      </div>
+    </article>
+    <article class="module module--mac">
+      <h3 class="module__legend engrave"><i class="led" aria-hidden="true"></i>Mac</h3>
+      <div class="module__body">
+        <div class="status-plate status-plate--wide"><i class="led" aria-hidden="true"></i><span class="status-plate__text"><span class="status-plate__main">Em breve</span><span class="status-plate__sub"><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/releases.atom">Acompanhar os releases (RSS)</a></span></span></div>
+        <p class="body">A versão para Mac sai assim que a Apple assinar e notarizar o app. Ela vai instalar pelo Homebrew ou por um .dmg.</p>
+        <dl class="rows"><div class="row"><dt class="row__legend">Requer</dt><dd class="row__value">macOS 14 ou posterior, Apple Silicon ou Intel</dd></div></dl>
+      </div>
+    </article>
+  </div>
+</section>
+</main>
+
+<footer class="footplate">
+  <div class="footplate__inner">
+    <p class="footplate__free">O Open Whisper é gratuito. <span class="footplate__privacy">Este site não usa cookies e não mede nada.</span></p>
+    <ul class="footplate__links">
+      <li><a class="link" href="../pt/docs/">Ajuda e documentação</a></li>
+      <li><a class="link" href="../terms.txt">Termos de uso</a></li>
+      <li><a class="link" href="../third-party-notices.txt">Avisos de terceiros</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/releases">Todos os releases</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/issues">Relatar um problema</a></li>
+    </ul>
+    <p class="signature"><span class="signature__intro">feito por</span> <a class="signature__mark" href="https://entringer.dev">entringer.dev</a></p>
+  </div>
+</footer>
+
+<script type="application/json" id="demo-data">{"sentences":["Mando o capítulo revisado hoje à noite. A segunda metade ficou bem melhor, e o final finalmente funciona.","Podemos conversar amanhã às dez? Queria que você olhasse o primeiro parágrafo antes de enviar.","Valeu de novo pela paciência com este."],"hud":{"recording":"Gravando","processing":"Transcrevendo","cancelled":"Cancelado"},"announce":{"recording":"Demonstração: gravando. Solte para transcrever.","processing":"Demonstração: transcrevendo.","pasted":"Demonstração: texto colado no cursor.","cancelled":"Demonstração: cancelado. Nada foi colado.","short":"Segure enquanto fala e depois solte."},"copied":"Comando copiado.","copyFailed":"Não deu para copiar. Selecione o comando e copie.","shared":"Link copiado. Abra no seu computador."}</script>
+<script type="module" src="../assets/demo.js?v=fc6854744e"></script>
+</body>
 </html>
