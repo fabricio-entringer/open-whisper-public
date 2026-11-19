@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="pt-BR" data-os="other">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O ícone e o menu · Ajuda do Open Whisper</title>
+<meta name="description" content="Onde fica o ícone, o que as cores dele querem dizer e o que faz cada item do menu.">
+<link rel="canonical" href="https://openwhisper.entringer.dev/pt/docs/menu/">
+<link rel="alternate" hreflang="en" href="https://openwhisper.entringer.dev/docs/menu/">
+<link rel="alternate" hreflang="pt-BR" href="https://openwhisper.entringer.dev/pt/docs/menu/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="O ícone e o menu · Ajuda do Open Whisper">
+<meta property="og:description" content="Onde fica o ícone, o que as cores dele querem dizer e o que faz cada item do menu.">
+<meta property="og:url" content="https://openwhisper.entringer.dev/pt/docs/menu/">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Open Whisper">
+<meta property="og:image" content="https://openwhisper.entringer.dev/assets/og-pt.jpg">
+<meta name="theme-color" content="#191314">
+<link rel="icon" type="image/png" sizes="64x64" href="../../../assets/favicon-64.png">
+<link rel="apple-touch-icon" href="../../../assets/icon-180.png">
+<link rel="preload" href="../../../assets/fonts/barlow-semi-condensed-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../../assets/site.css?v=fc6854744e">
+<link rel="stylesheet" href="../../../assets/docs.css?v=fc6854744e">
+<script>
+  // Before the first paint, so the keycaps, the windows and the platform order are the visitor's.
+  (function () {
+    var ua = navigator.userAgent, d = document.documentElement;
+    var touch = matchMedia("(pointer: coarse)").matches && !matchMedia("(pointer: fine)").matches;
+    d.classList.add("js");
+    d.dataset.os = /Windows NT/.test(ua) ? "windows" : /Macintosh|Mac OS X/.test(ua) && !touch ? "mac" : touch ? "touch" : "other";
+  })();
+</script>
+</head>
+<body class="docs-body">
+<a class="skip" href="#plate">Ir para a página</a>
+<header class="nameplate nameplate--docs">
+  <a class="brand" href="../../" aria-label="Open Whisper">
+    <img class="brand__icon" src="../../../assets/icon-64.png" width="32" height="32" alt="">
+    <span class="engrave brand__name">Open Whisper</span>
+  </a>
+  <a class="engrave brand__docs" href="../">Ajuda</a>
+  <form class="search" role="search" action="../" data-index="../../../assets/search-pt.json">
+    <label class="sr-only" for="search">Buscar na ajuda</label>
+    <span class="search__well">
+      <svg class="glyph" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M12.6 12.6L17 17"/></svg>
+      <input id="search" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="Buscar na ajuda" aria-describedby="search-hint" aria-controls="results">
+      <kbd class="cap cap--inline search__key" aria-hidden="true">/</kbd>
+    </span>
+    <span class="sr-only" id="search-hint">Digite para buscar; aperte / em qualquer lugar para voltar aqui.</span>
+    <div class="results" id="results" hidden><p class="results__count" id="results-count" aria-live="polite"></p><ol class="results__list"></ol></div>
+  </form>
+  <nav class="nameplate__end" aria-label="Site">
+    <span class="latches" role="group" aria-label="Idioma">
+      <a class="latch" href="../../../docs/menu/" hreflang="en" lang="en"><i class="led" aria-hidden="true"></i>EN</a><a class="latch is-on" href="../../../pt/docs/menu/" hreflang="pt-BR" lang="pt-BR" aria-current="page"><i class="led" aria-hidden="true"></i>PT</a>
+    </span>
+  </nav>
+</header>
+<div class="docs">
+<nav class="rundown" id="rundown" aria-label="Roteiro">
+  <details class="rundown__fold" open>
+    <summary class="rundown__head"><svg class="glyph rundown__chev" viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5L13 10l-5.5 5.5"/></svg><span class="engrave">Roteiro</span><span class="engrave engrave--dim rundown__count">11 blocos · min</span></summary>
+    <ol class="rundown__list"><li><a class="cue" href="../install/" data-slug="install"><span class="cue__no">01</span><span class="cue__title">Instalar</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../first-run/" data-slug="first-run"><span class="cue__no">02</span><span class="cue__title">Primeira execução</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../dictate/" data-slug="dictate"><span class="cue__no">03</span><span class="cue__title">Ditar</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../paste/" data-slug="paste"><span class="cue__no">04</span><span class="cue__title">Onde o texto vai parar</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue is-on" href="../menu/" data-slug="menu" aria-current="page"><span class="cue__no">05</span><span class="cue__title">O ícone e o menu</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../settings/" data-slug="settings"><span class="cue__no">06</span><span class="cue__title">Ajustes</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../models/" data-slug="models"><span class="cue__no">07</span><span class="cue__title">Modelos</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../video/" data-slug="video"><span class="cue__no">08</span><span class="cue__title">Vídeo e arquivos</span><span class="cue__time">8<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../command-line/" data-slug="command-line"><span class="cue__no">09</span><span class="cue__title">Linha de comando</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../privacy/" data-slug="privacy"><span class="cue__no">10</span><span class="cue__title">Privacidade</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../troubleshooting/" data-slug="troubleshooting"><span class="cue__no">11</span><span class="cue__title">Solução de problemas</span><span class="cue__time">9<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+    <p class="rundown__head rundown__head--sub"><span class="engrave">Anexos</span></p>
+    <ol class="rundown__list rundown__list--appendix"><li><a class="cue" href="../faq/" data-slug="faq"><span class="cue__no">A1</span><span class="cue__title">Perguntas frequentes</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../shortcuts/" data-slug="shortcuts"><span class="cue__no">A2</span><span class="cue__title">Atalhos e teclas</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../command-reference/" data-slug="command-reference"><span class="cue__no">A3</span><span class="cue__title">Referência do comando</span><span class="cue__time">7<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../data-and-uninstall/" data-slug="data-and-uninstall"><span class="cue__no">A4</span><span class="cue__title">Dados e desinstalação</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../limits/" data-slug="limits"><span class="cue__no">A5</span><span class="cue__title">O que ele não faz</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../report/" data-slug="report"><span class="cue__no">A6</span><span class="cue__title">Relatar um problema</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../about/" data-slug="about"><span class="cue__no">A7</span><span class="cue__title">Sobre e termos</span><span class="cue__time">2<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+  </details>
+</nav>
+<main class="plate" id="plate" tabindex="-1">
+  <header class="block__head">
+    <h1 class="block__title"><span class="readout block__no"><span class="sr-only">Bloco </span>05</span> <span class="block__name">O ícone e o menu</span></h1>
+    <p class="engrave engrave--dim block__time">Leitura · 3 min</p>
+    <p class="block__summary">Onde fica o ícone, o que as cores dele querem dizer e o que faz cada item do menu.</p>
+    <nav class="toc" aria-label="Neste bloco"><p class="engrave toc__head">Neste bloco</p><ol><li><a href="#onde-fica-o-icone">Onde fica o ícone</a></li><li><a href="#o-que-o-icone-indica">O que o ícone indica</a></li><li><a href="#o-menu-item-por-item">O menu, item por item</a></li><li><a href="#as-teclas-que-aparecem-no-menu">As teclas que aparecem no menu</a></li><li><a href="#sair">Sair</a></li></ol></nav>
+  </header>
+  <article class="block" data-slug="menu">
+<p>O Open Whisper não tem janela principal: o ícone é tudo o que você vê dele, e o menu desse ícone leva a todo o resto. Esta página mostra onde fica o ícone, o que ele indica e cada item do menu.</p>
+<section class="block__section" aria-labelledby="onde-fica-o-icone"><div class="block__text">
+<h2 class="block__h2" id="onde-fica-o-icone"><a class="anchor" href="#onde-fica-o-icone">Onde fica o ícone</a></h2>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p>Na barra de menus, no canto superior direito, perto do relógio. O Open Whisper não tem ícone no Dock.</p></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><p>Na área de notificação, perto do relógio. Se você não estiver vendo, clique no <strong>^</strong> e arraste o ícone do Open Whisper para a barra de tarefas.</p></div></div></div>
+<p>Clique no ícone para abrir o menu.</p>
+<p>Só uma cópia do Open Whisper roda por vez. Abrir o app de novo enquanto ele está rodando deixa a cópia que já estava aberta no comando: não aparece um segundo ícone.</p>
+</div></section>
+<section class="block__section" aria-labelledby="o-que-o-icone-indica"><div class="block__text">
+<h2 class="block__h2" id="o-que-o-icone-indica"><a class="anchor" href="#o-que-o-icone-indica">O que o ícone indica</a></h2>
+<div class="table"><table><thead><tr><th scope="col">Estado</th><th scope="col">O ícone</th></tr></thead><tbody><tr><th scope="row">Pronto</th><td data-label="O ícone">O ícone normal. No Mac, ele fica da cor dos outros ícones da barra de menus; no Windows, fica branco numa barra de tarefas escura e preto numa clara.</td></tr><tr><th scope="row">Gravando</th><td data-label="O ícone">Vermelho.</td></tr><tr><th scope="row">Transcrevendo e colando</th><td data-label="O ícone">Pulsa. Fica parado se o movimento estiver reduzido no sistema (Mac: Acessibilidade → Reduzir movimento; Windows: Efeitos de animação desligados).</td></tr><tr><th scope="row">Erro</th><td data-label="O ícone">Âmbar, por um instante, e depois volta ao normal. Uma notificação diz o que aconteceu.</td></tr></tbody></table></div>
+<p>Uma transcrição de vídeo rodando em segundo plano não muda o ícone: o andamento aparece no menu. Leitores de tela leem a primeira linha do menu, como <strong>Open Whisper — Pronto</strong>, como o nome do ícone.</p>
+</div></section>
+<section class="block__section" aria-labelledby="o-menu-item-por-item"><div class="block__text">
+<h2 class="block__h2" id="o-menu-item-por-item"><a class="anchor" href="#o-menu-item-por-item">O menu, item por item</a></h2>
+<p>De cima para baixo, com linhas separando os grupos:</p>
+<div class="table"><table><thead><tr><th scope="col">Item</th><th scope="col">O que faz</th></tr></thead><tbody><tr><th scope="row"><strong>Open Whisper — Pronto</strong></th><td data-label="O que faz">A linha de status. Não é clicável. Também pode mostrar <strong>Gravando…</strong>, <strong>Transcrevendo…</strong>, <strong>Entregando…</strong> (colando o texto), <strong>Erro</strong> ou <strong>Gravação cancelada</strong>.</td></tr><tr><th scope="row"><strong>Iniciar Gravação</strong></th><td data-label="O que faz">Começa um ditado, como o atalho, e vira <strong>Parar Gravação</strong> enquanto grava. Funciona como o modo Alternar nos dois modos. Mostra o seu atalho ao lado e só fica disponível quando o Open Whisper está pronto ou gravando.</td></tr><tr><th scope="row"><strong>Copiar Última Transcrição</strong></th><td data-label="O que faz">Coloca o texto do último ditado na área de transferência. Veja <a class="link" href="../paste/">Onde o texto vai parar</a>.</td></tr><tr><th scope="row"><strong>Repetir Última Transcrição</strong></th><td data-label="O que faz">Cola de novo o texto do último ditado, sem transcrever outra vez. Veja <a class="link" href="../paste/">Onde o texto vai parar</a>.</td></tr><tr><th scope="row"><strong>Ativar colagem automática…</strong></th><td data-label="O que faz">Só no Mac: abre os Ajustes do Sistema em Acessibilidade, para ligar a colagem automática.</td></tr><tr><th scope="row"><strong>Transcrever vídeo do YouTube…</strong></th><td data-label="O que faz">Abre a janela de vídeo, para um link do YouTube ou um arquivo de vídeo ou áudio do seu computador. Enquanto um vídeo está sendo transcrito, mostra o andamento, como <strong>(42%)</strong>. Veja <a class="link" href="../video/">Vídeo e arquivos</a>.</td></tr><tr><th scope="row"><strong>Ajustes…</strong></th><td data-label="O que faz">Abre os <a class="link" href="../settings/">Ajustes</a>.</td></tr><tr><th scope="row"><strong>Sobre o Open Whisper</strong></th><td data-label="O que faz">Abre a janela Sobre, com o número da versão. Veja <a class="link" href="../about/">Sobre, versões e termos</a>.</td></tr><tr><th scope="row"><strong>Sair do Open Whisper</strong></th><td data-label="O que faz">Fecha o app (veja <a class="link" href="../menu/#sair">Sair</a>).</td></tr></tbody></table></div>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p>Com a Acessibilidade ligada, <strong>Ativar colagem automática…</strong> vira <strong>Colagem automática ativa</strong>, que não é clicável. Se você ativou e o item continua mostrando <strong>Ativar colagem automática…</strong>, feche o Open Whisper e abra de novo.</p></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><p>O Windows não exige permissão para a colagem automática, então o menu não tem esse item. No Windows, o item <strong>Ajustes…</strong> se chama <strong>Configurações…</strong> e abre a janela <strong>Configurações</strong>.</p></div></div></div>
+</div></section>
+<section class="block__section" aria-labelledby="as-teclas-que-aparecem-no-menu"><div class="block__text">
+<h2 class="block__h2" id="as-teclas-que-aparecem-no-menu"><a class="anchor" href="#as-teclas-que-aparecem-no-menu">As teclas que aparecem no menu</a></h2>
+<p>O menu mostra teclas ao lado de alguns itens: o seu atalho de ditado ao lado de <strong>Iniciar Gravação</strong>, <span class="caps caps--inline"><kbd class="cap cap--inline">⇧</kbd><kbd class="cap cap--inline">⌘</kbd><kbd class="cap cap--inline">C</kbd></span> ao lado de <strong>Copiar Última Transcrição</strong>, <span class="caps caps--inline"><kbd class="cap cap--inline">⌘</kbd><kbd class="cap cap--inline">,</kbd></span> ao lado de <strong>Ajustes…</strong> e <span class="caps caps--inline"><kbd class="cap cap--inline">⌘</kbd><kbd class="cap cap--inline">Q</kbd></span> ao lado de <strong>Sair do Open Whisper</strong>. No Windows, são <span class="caps caps--inline"><kbd class="cap cap--inline">Ctrl</kbd><kbd class="cap cap--inline">Shift</kbd><kbd class="cap cap--inline">C</kbd></span>, <span class="caps caps--inline"><kbd class="cap cap--inline">Ctrl</kbd><kbd class="cap cap--inline">,</kbd></span> e <span class="caps caps--inline"><kbd class="cap cap--inline">Ctrl</kbd><kbd class="cap cap--inline">Q</kbd></span>.</p>
+<p>Elas não são atalhos que funcionam a partir de qualquer app. Fora do menu, só o seu atalho de ditado chega ao Open Whisper, mais o <span class="caps caps--inline"><kbd class="cap cap--inline">Esc</kbd></span> enquanto ele está gravando. Todas as teclas estão em <a class="link" href="../shortcuts/">Atalhos e teclas</a>.</p>
+</div></section>
+<section class="block__section" aria-labelledby="sair"><div class="block__text">
+<h2 class="block__h2" id="sair"><a class="anchor" href="#sair">Sair</a></h2>
+<p>Escolha <strong>Sair do Open Whisper</strong>. O atalho para de funcionar até você abrir o app de novo, e o último ditado, que fica só na memória, é esquecido.</p>
+<p>Se um vídeo estiver sendo transcrito, o Open Whisper pergunta antes: <strong>Uma transcrição de vídeo está em andamento. Se você sair agora, ela será perdida.</strong> Escolha <strong>Continuar</strong> para seguir, ou <strong>Sair mesmo assim</strong> para sair e perder essa transcrição.</p>
+<p>Para o Open Whisper abrir sozinho quando você entra no computador, ligue <strong>Abrir ao iniciar o Mac</strong> (no Windows, <strong>Abrir ao iniciar o Windows</strong>) nos <a class="link" href="../settings/">Ajustes</a>.</p>
+</div></section>
+  </article>
+  <nav class="block__foot" aria-label="Bloco anterior e próximo"><a class="key key--step key--prev" href="../paste/" rel="prev"><span class="key__text"><span class="key__sub engrave">Anterior · 04</span><span class="key__main">Onde o texto vai parar</span></span></a><a class="key key--step key--next" href="../settings/" rel="next"><span class="key__text"><span class="key__sub engrave">Próximo · 06</span><span class="key__main">Ajustes</span></span></a></nav>
+</main>
+</div>
+<footer class="footplate">
+  <div class="footplate__inner">
+    <p class="footplate__free">O Open Whisper é gratuito. <span class="footplate__privacy">Este site não usa cookies e não mede nada.</span></p>
+    <ul class="footplate__links">
+      <li><a class="link" href="../../">Página do Open Whisper</a></li>
+      <li><a class="link" href="../../../terms.txt">Termos de uso</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/releases">Todos os releases</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/issues">Relatar um problema</a></li>
+    </ul>
+    <p class="signature"><span class="signature__intro">feito por</span> <a class="signature__mark" href="https://entringer.dev">entringer.dev</a></p>
+  </div>
+</footer>
+<script type="application/json" id="docs-data">{"result":"1 resultado","results":"{n} resultados","noResults":"Nada encontrado para “{q}”."}</script>
+<script type="module" src="../../../assets/docs.js?v=fc6854744e"></script>
+</body>
+</html>

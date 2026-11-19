@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="pt-BR" data-os="other">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dados e desinstalação · Ajuda do Open Whisper</title>
+<meta name="description" content="Onde o Open Whisper guarda preferências, modelos e transcrições salvas, como zerar tudo e como desinstalar em cada plataforma.">
+<link rel="canonical" href="https://openwhisper.entringer.dev/pt/docs/data-and-uninstall/">
+<link rel="alternate" hreflang="en" href="https://openwhisper.entringer.dev/docs/data-and-uninstall/">
+<link rel="alternate" hreflang="pt-BR" href="https://openwhisper.entringer.dev/pt/docs/data-and-uninstall/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dados e desinstalação · Ajuda do Open Whisper">
+<meta property="og:description" content="Onde o Open Whisper guarda preferências, modelos e transcrições salvas, como zerar tudo e como desinstalar em cada plataforma.">
+<meta property="og:url" content="https://openwhisper.entringer.dev/pt/docs/data-and-uninstall/">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Open Whisper">
+<meta property="og:image" content="https://openwhisper.entringer.dev/assets/og-pt.jpg">
+<meta name="theme-color" content="#191314">
+<link rel="icon" type="image/png" sizes="64x64" href="../../../assets/favicon-64.png">
+<link rel="apple-touch-icon" href="../../../assets/icon-180.png">
+<link rel="preload" href="../../../assets/fonts/barlow-semi-condensed-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../../assets/site.css?v=fc6854744e">
+<link rel="stylesheet" href="../../../assets/docs.css?v=fc6854744e">
+<script>
+  // Before the first paint, so the keycaps, the windows and the platform order are the visitor's.
+  (function () {
+    var ua = navigator.userAgent, d = document.documentElement;
+    var touch = matchMedia("(pointer: coarse)").matches && !matchMedia("(pointer: fine)").matches;
+    d.classList.add("js");
+    d.dataset.os = /Windows NT/.test(ua) ? "windows" : /Macintosh|Mac OS X/.test(ua) && !touch ? "mac" : touch ? "touch" : "other";
+  })();
+</script>
+</head>
+<body class="docs-body">
+<a class="skip" href="#plate">Ir para a página</a>
+<header class="nameplate nameplate--docs">
+  <a class="brand" href="../../" aria-label="Open Whisper">
+    <img class="brand__icon" src="../../../assets/icon-64.png" width="32" height="32" alt="">
+    <span class="engrave brand__name">Open Whisper</span>
+  </a>
+  <a class="engrave brand__docs" href="../">Ajuda</a>
+  <form class="search" role="search" action="../" data-index="../../../assets/search-pt.json">
+    <label class="sr-only" for="search">Buscar na ajuda</label>
+    <span class="search__well">
+      <svg class="glyph" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M12.6 12.6L17 17"/></svg>
+      <input id="search" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="Buscar na ajuda" aria-describedby="search-hint" aria-controls="results">
+      <kbd class="cap cap--inline search__key" aria-hidden="true">/</kbd>
+    </span>
+    <span class="sr-only" id="search-hint">Digite para buscar; aperte / em qualquer lugar para voltar aqui.</span>
+    <div class="results" id="results" hidden><p class="results__count" id="results-count" aria-live="polite"></p><ol class="results__list"></ol></div>
+  </form>
+  <nav class="nameplate__end" aria-label="Site">
+    <span class="latches" role="group" aria-label="Idioma">
+      <a class="latch" href="../../../docs/data-and-uninstall/" hreflang="en" lang="en"><i class="led" aria-hidden="true"></i>EN</a><a class="latch is-on" href="../../../pt/docs/data-and-uninstall/" hreflang="pt-BR" lang="pt-BR" aria-current="page"><i class="led" aria-hidden="true"></i>PT</a>
+    </span>
+  </nav>
+</header>
+<div class="docs">
+<nav class="rundown" id="rundown" aria-label="Roteiro">
+  <details class="rundown__fold" open>
+    <summary class="rundown__head"><svg class="glyph rundown__chev" viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5L13 10l-5.5 5.5"/></svg><span class="engrave">Roteiro</span><span class="engrave engrave--dim rundown__count">11 blocos · min</span></summary>
+    <ol class="rundown__list"><li><a class="cue" href="../install/" data-slug="install"><span class="cue__no">01</span><span class="cue__title">Instalar</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../first-run/" data-slug="first-run"><span class="cue__no">02</span><span class="cue__title">Primeira execução</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../dictate/" data-slug="dictate"><span class="cue__no">03</span><span class="cue__title">Ditar</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../paste/" data-slug="paste"><span class="cue__no">04</span><span class="cue__title">Onde o texto vai parar</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../menu/" data-slug="menu"><span class="cue__no">05</span><span class="cue__title">O ícone e o menu</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../settings/" data-slug="settings"><span class="cue__no">06</span><span class="cue__title">Ajustes</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../models/" data-slug="models"><span class="cue__no">07</span><span class="cue__title">Modelos</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../video/" data-slug="video"><span class="cue__no">08</span><span class="cue__title">Vídeo e arquivos</span><span class="cue__time">8<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../command-line/" data-slug="command-line"><span class="cue__no">09</span><span class="cue__title">Linha de comando</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../privacy/" data-slug="privacy"><span class="cue__no">10</span><span class="cue__title">Privacidade</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../troubleshooting/" data-slug="troubleshooting"><span class="cue__no">11</span><span class="cue__title">Solução de problemas</span><span class="cue__time">9<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+    <p class="rundown__head rundown__head--sub"><span class="engrave">Anexos</span></p>
+    <ol class="rundown__list rundown__list--appendix"><li><a class="cue" href="../faq/" data-slug="faq"><span class="cue__no">A1</span><span class="cue__title">Perguntas frequentes</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../shortcuts/" data-slug="shortcuts"><span class="cue__no">A2</span><span class="cue__title">Atalhos e teclas</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../command-reference/" data-slug="command-reference"><span class="cue__no">A3</span><span class="cue__title">Referência do comando</span><span class="cue__time">7<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue is-on" href="../data-and-uninstall/" data-slug="data-and-uninstall" aria-current="page"><span class="cue__no">A4</span><span class="cue__title">Dados e desinstalação</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../limits/" data-slug="limits"><span class="cue__no">A5</span><span class="cue__title">O que ele não faz</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../report/" data-slug="report"><span class="cue__no">A6</span><span class="cue__title">Relatar um problema</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../about/" data-slug="about"><span class="cue__no">A7</span><span class="cue__title">Sobre e termos</span><span class="cue__time">2<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+  </details>
+</nav>
+<main class="plate" id="plate" tabindex="-1">
+  <header class="block__head">
+    <h1 class="block__title"><span class="readout block__no"><span class="sr-only">Anexo </span>A4</span> <span class="block__name">Dados e desinstalação</span></h1>
+    <p class="engrave engrave--dim block__time">Leitura · 4 min</p>
+    <p class="block__summary">Onde o Open Whisper guarda preferências, modelos e transcrições salvas, como zerar tudo e como desinstalar em cada plataforma.</p>
+    <nav class="toc" aria-label="Neste bloco"><p class="engrave toc__head">Neste bloco</p><ol><li><a href="#onde-ficam-os-seus-dados">Onde ficam os seus dados</a></li><li><a href="#zerar-as-preferencias">Zerar as preferências</a></li><li><a href="#remover-um-modelo-baixado">Remover um modelo baixado</a></li><li><a href="#desinstalar">Desinstalar</a></li><li><a href="#zerar-as-permissoes">Zerar as permissões</a></li></ol></nav>
+  </header>
+  <article class="block" data-slug="data-and-uninstall">
+<p>O Open Whisper guarda muito pouco no seu computador: as suas preferências, algum modelo que você tenha baixado e as transcrições de vídeo que você decidiu salvar. Esta página diz onde fica cada coisa e como remover o app.</p>
+<section class="block__section" aria-labelledby="onde-ficam-os-seus-dados"><div class="block__text">
+<h2 class="block__h2" id="onde-ficam-os-seus-dados"><a class="anchor" href="#onde-ficam-os-seus-dados">Onde ficam os seus dados</a></h2>
+<div class="table"><table><thead><tr><th scope="col">O quê</th><th scope="col">Mac</th><th scope="col">Windows</th></tr></thead><tbody><tr><th scope="row">Preferências</th><td data-label="Mac"><code>~/Library/Application Support/open-whisper/preferences.json</code></td><td data-label="Windows"><code>%APPDATA%\open-whisper\preferences.json</code></td></tr><tr><th scope="row">Modelos baixados</th><td data-label="Mac"><code>~/Library/Application Support/open-whisper/models/</code></td><td data-label="Windows"><code>%LOCALAPPDATA%\open-whisper\models\</code></td></tr><tr><th scope="row">Modelo embutido</th><td data-label="Mac">dentro do <code>Open Whisper.app</code></td><td data-label="Windows">na pasta de instalação do app</td></tr><tr><th scope="row">Transcrições de vídeo salvas</th><td data-label="Mac"><code>~/.open-whisper/transcripts/</code></td><td data-label="Windows"><code>%USERPROFILE%\.open-whisper\transcripts\</code></td></tr><tr><th scope="row">Abrir ao iniciar</th><td data-label="Mac"><strong>Ajustes do Sistema → Geral → Itens de Início</strong></td><td data-label="Windows"><strong>Configurações → Aplicativos → Inicialização</strong></td></tr></tbody></table></div>
+<p>O que nunca vai para o disco:</p>
+<ul class="list"><li><strong>Áudio.</strong> Fica na memória e é descartado depois da transcrição.</li><li><strong>Texto ditado.</strong> O último ditado fica na memória até você sair do app. Não existe histórico.</li><li><strong>Logs.</strong> O Open Whisper não grava arquivo de log.</li><li><strong>Nada da linha de comando.</strong> O comando não grava nada em lugar nenhum.</li></ul>
+<p>No Windows, os modelos baixados ficam na pasta local, para não viajarem junto com um perfil móvel.</p>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p>A pasta das transcrições começa com ponto, então o Finder a esconde. Para abrir, aperte <span class="caps caps--inline"><kbd class="cap cap--inline">⇧</kbd><kbd class="cap cap--inline">⌘</kbd><kbd class="cap cap--inline">G</kbd></span> no Finder e digite <code>~/.open-whisper/transcripts</code>.</p></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><p>Para abrir uma pasta, cole o caminho dela, como <code>%APPDATA%\open-whisper</code>, na barra de endereços do Explorador de Arquivos.</p></div></div></div>
+</div></section>
+<section class="block__section" aria-labelledby="zerar-as-preferencias"><div class="block__text">
+<h2 class="block__h2" id="zerar-as-preferencias"><a class="anchor" href="#zerar-as-preferencias">Zerar as preferências</a></h2>
+<ol class="cues"><li>Saia do Open Whisper pelo menu (<strong>Sair do Open Whisper</strong>).</li><li>Apague o <code>preferences.json</code> da pasta acima.</li><li>Abra o Open Whisper de novo. Todos os ajustes voltam ao padrão, e a configuração inicial abre outra vez.</li></ol>
+</div></section>
+<section class="block__section" aria-labelledby="remover-um-modelo-baixado"><div class="block__text">
+<h2 class="block__h2" id="remover-um-modelo-baixado"><a class="anchor" href="#remover-um-modelo-baixado">Remover um modelo baixado</a></h2>
+<p>Não há botão para isso: apague o arquivo do modelo.</p>
+<ol class="cues"><li>Nos <a class="link" href="../settings/">Ajustes</a> → <strong>Avançado</strong> → <strong>Modelo</strong>, escolha <strong>Padrão</strong>, para o modelo que você vai apagar não ser o que está em uso. Se ele for o modelo de vídeo, escolha <strong>Padrão</strong> também em <strong>Qualidade</strong>, na janela de vídeo.</li><li>Saia do Open Whisper.</li><li>Apague o arquivo da pasta de modelos acima: <code>base.bin</code>, <code>medium-q5_0.bin</code> ou <code>large-v3-turbo-q5_0.bin</code>.</li></ol>
+<p>O modelo embutido não pode ser removido: ele faz parte do app.</p>
+</div></section>
+<section class="block__section" aria-labelledby="desinstalar"><div class="block__text">
+<h2 class="block__h2" id="desinstalar"><a class="anchor" href="#desinstalar">Desinstalar</a></h2>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p>Pelo Homebrew:</p>
+<pre class="terminal terminal--doc" data-lang="sh"><code><span class="prompt" aria-hidden="true">&gt;</span> brew uninstall --cask open-whisper</code></pre>
+<p>Para remover também as preferências, os modelos e os outros arquivos do app:</p>
+<pre class="terminal terminal--doc" data-lang="sh"><code><span class="prompt" aria-hidden="true">&gt;</span> brew uninstall --zap --cask open-whisper</code></pre>
+<p>A opção <code>--zap</code> move para a Lixeira: <code>~/Library/Application Support/open-whisper</code>, as pastas chamadas <code>dev.entringer.openwhisper</code> em <code>~/Library/Caches</code>, <code>~/Library/HTTPStorages</code>, <code>~/Library/Saved Application State</code> e <code>~/Library/WebKit</code>, e o <code>~/Library/Preferences/dev.entringer.openwhisper.plist</code>.</p>
+<p>À mão:</p>
+<ol class="cues"><li>Saia do Open Whisper pelo menu (<strong>Sair do Open Whisper</strong>).</li><li>Arraste o <code>Open Whisper.app</code> da pasta Aplicativos para a Lixeira.</li><li>Para remover as preferências e os modelos, apague <code>~/Library/Application Support/open-whisper</code>. As outras pastas listadas acima também podem ir.</li><li>Se você criou o link do comando à mão, remova o link, como <code>/opt/homebrew/bin/open-whisper</code>.</li></ol>
+<p>Nenhum dos dois jeitos apaga as transcrições de vídeo salvas em <code>~/.open-whisper/transcripts</code>. Apague essa pasta você mesmo se quiser que elas sumam.</p></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><ol class="cues"><li>Abra <strong>Configurações → Aplicativos</strong>.</li><li>Procure o <strong>Open Whisper</strong> e clique em <strong>Desinstalar</strong>.</li><li>Para remover também os seus dados, marque a caixa que apaga os dados do aplicativo.</li></ol>
+<div class="table"><table><thead><tr><th scope="col"></th><th scope="col">Removido</th></tr></thead><tbody><tr><th scope="row">Sempre</th><td data-label="Removido">O app, o atalho no menu Iniciar, o comando <code>open-whisper</code> e a entrada dele no PATH, e o Abrir ao iniciar.</td></tr><tr><th scope="row">Só se você marcar a caixa</th><td data-label="Removido">As suas preferências (<code>%APPDATA%\open-whisper</code>) e os modelos baixados (<code>%LOCALAPPDATA%\open-whisper</code>).</td></tr><tr><th scope="row">Nunca</th><td data-label="Removido">As transcrições de vídeo salvas em <code>%USERPROFILE%\.open-whisper\transcripts</code>. Apague essa pasta você mesmo se quiser que elas sumam.</td></tr></tbody></table></div>
+<p>Instalar uma versão nova por cima da antiga nunca apaga os seus dados.</p></div></div></div>
+</div></section>
+<section class="block__section" aria-labelledby="zerar-as-permissoes"><div class="block__text">
+<h2 class="block__h2" id="zerar-as-permissoes"><a class="anchor" href="#zerar-as-permissoes">Zerar as permissões</a></h2>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p>Para limpar a permissão de Acessibilidade, de modo que o macOS pergunte tudo de novo, rode isto no Terminal:</p>
+<pre class="terminal terminal--doc" data-lang="sh"><code><span class="prompt" aria-hidden="true">&gt;</span> tccutil reset Accessibility dev.entringer.openwhisper</code></pre>
+<p>Depois, conceda de novo com <strong>Ativar colagem automática…</strong> no menu e reabra o app.</p>
+<p>Para o Open Whisper deixar de usar o microfone, desative-o em <strong>Ajustes do Sistema → Privacidade e Segurança → Microfone</strong>.</p></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><p>O Windows não tem permissão de Acessibilidade. O microfone é controlado em <strong>Configurações → Privacidade e segurança → Microfone</strong>, com <strong>Permitir que aplicativos da área de trabalho acessem o microfone</strong>.</p></div></div></div>
+</div></section>
+  </article>
+  <nav class="block__foot" aria-label="Bloco anterior e próximo"><a class="key key--step key--prev" href="../command-reference/" rel="prev"><span class="key__text"><span class="key__sub engrave">Anterior · A3</span><span class="key__main">Referência do comando</span></span></a><a class="key key--step key--next" href="../limits/" rel="next"><span class="key__text"><span class="key__sub engrave">Próximo · A5</span><span class="key__main">O que o Open Whisper não faz</span></span></a></nav>
+</main>
+</div>
+<footer class="footplate">
+  <div class="footplate__inner">
+    <p class="footplate__free">O Open Whisper é gratuito. <span class="footplate__privacy">Este site não usa cookies e não mede nada.</span></p>
+    <ul class="footplate__links">
+      <li><a class="link" href="../../">Página do Open Whisper</a></li>
+      <li><a class="link" href="../../../terms.txt">Termos de uso</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/releases">Todos os releases</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/issues">Relatar um problema</a></li>
+    </ul>
+    <p class="signature"><span class="signature__intro">feito por</span> <a class="signature__mark" href="https://entringer.dev">entringer.dev</a></p>
+  </div>
+</footer>
+<script type="application/json" id="docs-data">{"result":"1 resultado","results":"{n} resultados","noResults":"Nada encontrado para “{q}”."}</script>
+<script type="module" src="../../../assets/docs.js?v=fc6854744e"></script>
+</body>
+</html>

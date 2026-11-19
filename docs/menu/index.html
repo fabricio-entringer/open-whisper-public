@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en" data-os="other">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The icon and its menu · Open Whisper Help</title>
+<meta name="description" content="Where the icon is, what its colours mean, and what each item in its menu does.">
+<link rel="canonical" href="https://openwhisper.entringer.dev/docs/menu/">
+<link rel="alternate" hreflang="en" href="https://openwhisper.entringer.dev/docs/menu/">
+<link rel="alternate" hreflang="pt-BR" href="https://openwhisper.entringer.dev/pt/docs/menu/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The icon and its menu · Open Whisper Help">
+<meta property="og:description" content="Where the icon is, what its colours mean, and what each item in its menu does.">
+<meta property="og:url" content="https://openwhisper.entringer.dev/docs/menu/">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Open Whisper">
+<meta property="og:image" content="https://openwhisper.entringer.dev/assets/og-en.jpg">
+<meta name="theme-color" content="#191314">
+<link rel="icon" type="image/png" sizes="64x64" href="../../assets/favicon-64.png">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<link rel="preload" href="../../assets/fonts/barlow-semi-condensed-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=fc6854744e">
+<link rel="stylesheet" href="../../assets/docs.css?v=fc6854744e">
+<script>
+  // Before the first paint, so the keycaps, the windows and the platform order are the visitor's.
+  (function () {
+    var ua = navigator.userAgent, d = document.documentElement;
+    var touch = matchMedia("(pointer: coarse)").matches && !matchMedia("(pointer: fine)").matches;
+    d.classList.add("js");
+    d.dataset.os = /Windows NT/.test(ua) ? "windows" : /Macintosh|Mac OS X/.test(ua) && !touch ? "mac" : touch ? "touch" : "other";
+  })();
+</script>
+</head>
+<body class="docs-body">
+<a class="skip" href="#plate">Skip to the page</a>
+<header class="nameplate nameplate--docs">
+  <a class="brand" href="../../" aria-label="Open Whisper">
+    <img class="brand__icon" src="../../assets/icon-64.png" width="32" height="32" alt="">
+    <span class="engrave brand__name">Open Whisper</span>
+  </a>
+  <a class="engrave brand__docs" href="../">Docs</a>
+  <form class="search" role="search" action="../" data-index="../../assets/search-en.json">
+    <label class="sr-only" for="search">Search the help</label>
+    <span class="search__well">
+      <svg class="glyph" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M12.6 12.6L17 17"/></svg>
+      <input id="search" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search the help" aria-describedby="search-hint" aria-controls="results">
+      <kbd class="cap cap--inline search__key" aria-hidden="true">/</kbd>
+    </span>
+    <span class="sr-only" id="search-hint">Type to search; press / anywhere to come back here.</span>
+    <div class="results" id="results" hidden><p class="results__count" id="results-count" aria-live="polite"></p><ol class="results__list"></ol></div>
+  </form>
+  <nav class="nameplate__end" aria-label="Site">
+    <span class="latches" role="group" aria-label="Language">
+      <a class="latch is-on" href="../../docs/menu/" hreflang="en" lang="en" aria-current="page"><i class="led" aria-hidden="true"></i>EN</a><a class="latch" href="../../pt/docs/menu/" hreflang="pt-BR" lang="pt-BR"><i class="led" aria-hidden="true"></i>PT</a>
+    </span>
+  </nav>
+</header>
+<div class="docs">
+<nav class="rundown" id="rundown" aria-label="Rundown">
+  <details class="rundown__fold" open>
+    <summary class="rundown__head"><svg class="glyph rundown__chev" viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5L13 10l-5.5 5.5"/></svg><span class="engrave">Rundown</span><span class="engrave engrave--dim rundown__count">11 blocks · min</span></summary>
+    <ol class="rundown__list"><li><a class="cue" href="../install/" data-slug="install"><span class="cue__no">01</span><span class="cue__title">Install</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../first-run/" data-slug="first-run"><span class="cue__no">02</span><span class="cue__title">First run</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../dictate/" data-slug="dictate"><span class="cue__no">03</span><span class="cue__title">Dictate</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../paste/" data-slug="paste"><span class="cue__no">04</span><span class="cue__title">Where the text lands</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue is-on" href="../menu/" data-slug="menu" aria-current="page"><span class="cue__no">05</span><span class="cue__title">The icon and its menu</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../settings/" data-slug="settings"><span class="cue__no">06</span><span class="cue__title">Settings</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../models/" data-slug="models"><span class="cue__no">07</span><span class="cue__title">Models</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../video/" data-slug="video"><span class="cue__no">08</span><span class="cue__title">Video and files</span><span class="cue__time">8<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../command-line/" data-slug="command-line"><span class="cue__no">09</span><span class="cue__title">Command line</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../privacy/" data-slug="privacy"><span class="cue__no">10</span><span class="cue__title">Privacy</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../troubleshooting/" data-slug="troubleshooting"><span class="cue__no">11</span><span class="cue__title">Troubleshooting</span><span class="cue__time">9<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+    <p class="rundown__head rundown__head--sub"><span class="engrave">Appendices</span></p>
+    <ol class="rundown__list rundown__list--appendix"><li><a class="cue" href="../faq/" data-slug="faq"><span class="cue__no">A1</span><span class="cue__title">FAQ</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../shortcuts/" data-slug="shortcuts"><span class="cue__no">A2</span><span class="cue__title">Shortcuts and keys</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../command-reference/" data-slug="command-reference"><span class="cue__no">A3</span><span class="cue__title">Command reference</span><span class="cue__time">7<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../data-and-uninstall/" data-slug="data-and-uninstall"><span class="cue__no">A4</span><span class="cue__title">Data and uninstalling</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../limits/" data-slug="limits"><span class="cue__no">A5</span><span class="cue__title">What it doesn&#39;t do</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../report/" data-slug="report"><span class="cue__no">A6</span><span class="cue__title">Reporting a problem</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../about/" data-slug="about"><span class="cue__no">A7</span><span class="cue__title">About and terms</span><span class="cue__time">2<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+  </details>
+</nav>
+<main class="plate" id="plate" tabindex="-1">
+  <header class="block__head">
+    <h1 class="block__title"><span class="readout block__no"><span class="sr-only">Block </span>05</span> <span class="block__name">The icon and its menu</span></h1>
+    <p class="engrave engrave--dim block__time">Reading time · 3 min</p>
+    <p class="block__summary">Where the icon is, what its colours mean, and what each item in its menu does.</p>
+    <nav class="toc" aria-label="In this block"><p class="engrave toc__head">In this block</p><ol><li><a href="#where-the-icon-is">Where the icon is</a></li><li><a href="#what-the-icon-tells-you">What the icon tells you</a></li><li><a href="#the-menu-item-by-item">The menu, item by item</a></li><li><a href="#the-keys-shown-in-the-menu">The keys shown in the menu</a></li><li><a href="#quitting">Quitting</a></li></ol></nav>
+  </header>
+  <article class="block" data-slug="menu">
+<p>Open Whisper has no main window: an icon is all you see of it, and its menu reaches everything else. This page covers where the icon is, what it tells you, and every item in the menu.</p>
+<section class="block__section" aria-labelledby="where-the-icon-is"><div class="block__text">
+<h2 class="block__h2" id="where-the-icon-is"><a class="anchor" href="#where-the-icon-is">Where the icon is</a></h2>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p>In the menu bar, at the top right, near the clock. Open Whisper has no icon in the Dock.</p></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><p>In the notification area, next to the clock. If you do not see it, click <strong>^</strong> and drag the Open Whisper icon onto the taskbar.</p></div></div></div>
+<p>Click the icon to open its menu.</p>
+<p>Only one copy of Open Whisper runs at a time. Opening it again while it is running leaves the running copy in charge: no second icon appears.</p>
+</div></section>
+<section class="block__section" aria-labelledby="what-the-icon-tells-you"><div class="block__text">
+<h2 class="block__h2" id="what-the-icon-tells-you"><a class="anchor" href="#what-the-icon-tells-you">What the icon tells you</a></h2>
+<div class="table"><table><thead><tr><th scope="col">State</th><th scope="col">The icon</th></tr></thead><tbody><tr><th scope="row">Ready</th><td data-label="The icon">The plain icon. On the Mac it takes the colour of the other menu-bar icons; on Windows it is white on a dark taskbar and black on a light one.</td></tr><tr><th scope="row">Recording</th><td data-label="The icon">Red.</td></tr><tr><th scope="row">Transcribing and pasting</th><td data-label="The icon">Pulses. It stays still if motion is reduced in the system (Mac: Accessibility → Reduce motion; Windows: Animation effects off).</td></tr><tr><th scope="row">Error</th><td data-label="The icon">Amber, for a moment, then back to ready. A notification says what happened.</td></tr></tbody></table></div>
+<p>A video transcription running in the background does not change the icon: the menu shows its progress instead. Screen readers read the menu&#39;s first line, such as <strong>Open Whisper — Ready</strong>, as the icon&#39;s name.</p>
+</div></section>
+<section class="block__section" aria-labelledby="the-menu-item-by-item"><div class="block__text">
+<h2 class="block__h2" id="the-menu-item-by-item"><a class="anchor" href="#the-menu-item-by-item">The menu, item by item</a></h2>
+<p>From top to bottom, with lines separating the groups:</p>
+<div class="table"><table><thead><tr><th scope="col">Item</th><th scope="col">What it does</th></tr></thead><tbody><tr><th scope="row"><strong>Open Whisper — Ready</strong></th><td data-label="What it does">The status line. It cannot be clicked. It also reads <strong>Recording…</strong>, <strong>Transcribing…</strong>, <strong>Delivering…</strong> (pasting the text), <strong>Error</strong> or <strong>Recording cancelled</strong>.</td></tr><tr><th scope="row"><strong>Start Recording</strong></th><td data-label="What it does">Starts a dictation, as the shortcut does, and becomes <strong>Stop Recording</strong> while it records. It works like Toggle in both modes. Shows your shortcut beside it, and is available only when Open Whisper is ready or recording.</td></tr><tr><th scope="row"><strong>Copy Last Transcription</strong></th><td data-label="What it does">Puts the last dictation&#39;s text on the clipboard. See <a class="link" href="../paste/">Where the text lands</a>.</td></tr><tr><th scope="row"><strong>Retry Last Transcription</strong></th><td data-label="What it does">Pastes the last dictation&#39;s text again, without transcribing it again. See <a class="link" href="../paste/">Where the text lands</a>.</td></tr><tr><th scope="row"><strong>Enable auto-paste…</strong></th><td data-label="What it does">Mac only: opens System Settings at Accessibility, to turn auto-paste on.</td></tr><tr><th scope="row"><strong>Transcribe YouTube Video…</strong></th><td data-label="What it does">Opens the video window, for a YouTube link or a video or audio file on your computer. While a video is being transcribed, it shows the progress, such as <strong>(42%)</strong>. See <a class="link" href="../video/">Video and files</a>.</td></tr><tr><th scope="row"><strong>Settings…</strong></th><td data-label="What it does">Opens <a class="link" href="../settings/">Settings</a>.</td></tr><tr><th scope="row"><strong>About Open Whisper</strong></th><td data-label="What it does">Opens the About window, with the version number. See <a class="link" href="../about/">About, versions and terms</a>.</td></tr><tr><th scope="row"><strong>Quit Open Whisper</strong></th><td data-label="What it does">Quits the app (see <a class="link" href="../menu/#quitting">Quitting</a>).</td></tr></tbody></table></div>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p>Once Accessibility is on, <strong>Enable auto-paste…</strong> turns into <strong>Auto-paste is on</strong>, which cannot be clicked. If you switched it on and it still says <strong>Enable auto-paste…</strong>, quit Open Whisper and open it again.</p></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><p>Windows needs no permission for auto-paste, so the menu has no such item.</p></div></div></div>
+</div></section>
+<section class="block__section" aria-labelledby="the-keys-shown-in-the-menu"><div class="block__text">
+<h2 class="block__h2" id="the-keys-shown-in-the-menu"><a class="anchor" href="#the-keys-shown-in-the-menu">The keys shown in the menu</a></h2>
+<p>The menu shows keys beside some items: your dictation shortcut beside <strong>Start Recording</strong>, <span class="caps caps--inline"><kbd class="cap cap--inline">⇧</kbd><kbd class="cap cap--inline">⌘</kbd><kbd class="cap cap--inline">C</kbd></span> beside <strong>Copy Last Transcription</strong>, <span class="caps caps--inline"><kbd class="cap cap--inline">⌘</kbd><kbd class="cap cap--inline">,</kbd></span> beside <strong>Settings…</strong> and <span class="caps caps--inline"><kbd class="cap cap--inline">⌘</kbd><kbd class="cap cap--inline">Q</kbd></span> beside <strong>Quit Open Whisper</strong>. On Windows they are <span class="caps caps--inline"><kbd class="cap cap--inline">Ctrl</kbd><kbd class="cap cap--inline">Shift</kbd><kbd class="cap cap--inline">C</kbd></span>, <span class="caps caps--inline"><kbd class="cap cap--inline">Ctrl</kbd><kbd class="cap cap--inline">,</kbd></span> and <span class="caps caps--inline"><kbd class="cap cap--inline">Ctrl</kbd><kbd class="cap cap--inline">Q</kbd></span>.</p>
+<p>They are not shortcuts that work from any app. Outside the menu, only your dictation shortcut reaches Open Whisper, plus <span class="caps caps--inline"><kbd class="cap cap--inline">Esc</kbd></span> while it is recording. All the keys are listed in <a class="link" href="../shortcuts/">Shortcuts and keys</a>.</p>
+</div></section>
+<section class="block__section" aria-labelledby="quitting"><div class="block__text">
+<h2 class="block__h2" id="quitting"><a class="anchor" href="#quitting">Quitting</a></h2>
+<p>Choose <strong>Quit Open Whisper</strong>. The shortcut stops working until you open the app again, and the last dictation, kept only in memory, is forgotten.</p>
+<p>If a video is being transcribed, Open Whisper asks first: <strong>A video transcription is still running. Quitting now will lose it.</strong> Choose <strong>Keep running</strong> to go on, or <strong>Quit anyway</strong> to quit and lose that transcription.</p>
+<p>To have Open Whisper start by itself when you log in, turn on <strong>Open at login</strong> in <a class="link" href="../settings/">Settings</a>.</p>
+</div></section>
+  </article>
+  <nav class="block__foot" aria-label="Previous and next blocks"><a class="key key--step key--prev" href="../paste/" rel="prev"><span class="key__text"><span class="key__sub engrave">Previous · 04</span><span class="key__main">Where the text lands</span></span></a><a class="key key--step key--next" href="../settings/" rel="next"><span class="key__text"><span class="key__sub engrave">Next · 06</span><span class="key__main">Settings</span></span></a></nav>
+</main>
+</div>
+<footer class="footplate">
+  <div class="footplate__inner">
+    <p class="footplate__free">Open Whisper is free. <span class="footplate__privacy">This site sets no cookies and measures nothing.</span></p>
+    <ul class="footplate__links">
+      <li><a class="link" href="../../">Open Whisper home</a></li>
+      <li><a class="link" href="../../terms.txt">Terms of use</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/releases">All releases</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/issues">Report a problem</a></li>
+    </ul>
+    <p class="signature"><span class="signature__intro">made by</span> <a class="signature__mark" href="https://entringer.dev">entringer.dev</a></p>
+  </div>
+</footer>
+<script type="application/json" id="docs-data">{"result":"1 result","results":"{n} results","noResults":"Nothing found for “{q}”."}</script>
+<script type="module" src="../../assets/docs.js?v=fc6854744e"></script>
+</body>
+</html>

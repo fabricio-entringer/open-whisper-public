@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="pt-BR" data-os="other">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacidade · Ajuda do Open Whisper</title>
+<meta name="description" content="O que fica no seu computador, as poucas coisas que usam a internet e quando, e como conferir você mesmo.">
+<link rel="canonical" href="https://openwhisper.entringer.dev/pt/docs/privacy/">
+<link rel="alternate" hreflang="en" href="https://openwhisper.entringer.dev/docs/privacy/">
+<link rel="alternate" hreflang="pt-BR" href="https://openwhisper.entringer.dev/pt/docs/privacy/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Privacidade · Ajuda do Open Whisper">
+<meta property="og:description" content="O que fica no seu computador, as poucas coisas que usam a internet e quando, e como conferir você mesmo.">
+<meta property="og:url" content="https://openwhisper.entringer.dev/pt/docs/privacy/">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Open Whisper">
+<meta property="og:image" content="https://openwhisper.entringer.dev/assets/og-pt.jpg">
+<meta name="theme-color" content="#191314">
+<link rel="icon" type="image/png" sizes="64x64" href="../../../assets/favicon-64.png">
+<link rel="apple-touch-icon" href="../../../assets/icon-180.png">
+<link rel="preload" href="../../../assets/fonts/barlow-semi-condensed-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../../assets/site.css?v=fc6854744e">
+<link rel="stylesheet" href="../../../assets/docs.css?v=fc6854744e">
+<script>
+  // Before the first paint, so the keycaps, the windows and the platform order are the visitor's.
+  (function () {
+    var ua = navigator.userAgent, d = document.documentElement;
+    var touch = matchMedia("(pointer: coarse)").matches && !matchMedia("(pointer: fine)").matches;
+    d.classList.add("js");
+    d.dataset.os = /Windows NT/.test(ua) ? "windows" : /Macintosh|Mac OS X/.test(ua) && !touch ? "mac" : touch ? "touch" : "other";
+  })();
+</script>
+</head>
+<body class="docs-body">
+<a class="skip" href="#plate">Ir para a página</a>
+<header class="nameplate nameplate--docs">
+  <a class="brand" href="../../" aria-label="Open Whisper">
+    <img class="brand__icon" src="../../../assets/icon-64.png" width="32" height="32" alt="">
+    <span class="engrave brand__name">Open Whisper</span>
+  </a>
+  <a class="engrave brand__docs" href="../">Ajuda</a>
+  <form class="search" role="search" action="../" data-index="../../../assets/search-pt.json">
+    <label class="sr-only" for="search">Buscar na ajuda</label>
+    <span class="search__well">
+      <svg class="glyph" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M12.6 12.6L17 17"/></svg>
+      <input id="search" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="Buscar na ajuda" aria-describedby="search-hint" aria-controls="results">
+      <kbd class="cap cap--inline search__key" aria-hidden="true">/</kbd>
+    </span>
+    <span class="sr-only" id="search-hint">Digite para buscar; aperte / em qualquer lugar para voltar aqui.</span>
+    <div class="results" id="results" hidden><p class="results__count" id="results-count" aria-live="polite"></p><ol class="results__list"></ol></div>
+  </form>
+  <nav class="nameplate__end" aria-label="Site">
+    <span class="latches" role="group" aria-label="Idioma">
+      <a class="latch" href="../../../docs/privacy/" hreflang="en" lang="en"><i class="led" aria-hidden="true"></i>EN</a><a class="latch is-on" href="../../../pt/docs/privacy/" hreflang="pt-BR" lang="pt-BR" aria-current="page"><i class="led" aria-hidden="true"></i>PT</a>
+    </span>
+  </nav>
+</header>
+<div class="docs">
+<nav class="rundown" id="rundown" aria-label="Roteiro">
+  <details class="rundown__fold" open>
+    <summary class="rundown__head"><svg class="glyph rundown__chev" viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5L13 10l-5.5 5.5"/></svg><span class="engrave">Roteiro</span><span class="engrave engrave--dim rundown__count">11 blocos · min</span></summary>
+    <ol class="rundown__list"><li><a class="cue" href="../install/" data-slug="install"><span class="cue__no">01</span><span class="cue__title">Instalar</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../first-run/" data-slug="first-run"><span class="cue__no">02</span><span class="cue__title">Primeira execução</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../dictate/" data-slug="dictate"><span class="cue__no">03</span><span class="cue__title">Ditar</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../paste/" data-slug="paste"><span class="cue__no">04</span><span class="cue__title">Onde o texto vai parar</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../menu/" data-slug="menu"><span class="cue__no">05</span><span class="cue__title">O ícone e o menu</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../settings/" data-slug="settings"><span class="cue__no">06</span><span class="cue__title">Ajustes</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../models/" data-slug="models"><span class="cue__no">07</span><span class="cue__title">Modelos</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../video/" data-slug="video"><span class="cue__no">08</span><span class="cue__title">Vídeo e arquivos</span><span class="cue__time">8<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../command-line/" data-slug="command-line"><span class="cue__no">09</span><span class="cue__title">Linha de comando</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue is-on" href="../privacy/" data-slug="privacy" aria-current="page"><span class="cue__no">10</span><span class="cue__title">Privacidade</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../troubleshooting/" data-slug="troubleshooting"><span class="cue__no">11</span><span class="cue__title">Solução de problemas</span><span class="cue__time">9<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+    <p class="rundown__head rundown__head--sub"><span class="engrave">Anexos</span></p>
+    <ol class="rundown__list rundown__list--appendix"><li><a class="cue" href="../faq/" data-slug="faq"><span class="cue__no">A1</span><span class="cue__title">Perguntas frequentes</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../shortcuts/" data-slug="shortcuts"><span class="cue__no">A2</span><span class="cue__title">Atalhos e teclas</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../command-reference/" data-slug="command-reference"><span class="cue__no">A3</span><span class="cue__title">Referência do comando</span><span class="cue__time">7<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../data-and-uninstall/" data-slug="data-and-uninstall"><span class="cue__no">A4</span><span class="cue__title">Dados e desinstalação</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../limits/" data-slug="limits"><span class="cue__no">A5</span><span class="cue__title">O que ele não faz</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../report/" data-slug="report"><span class="cue__no">A6</span><span class="cue__title">Relatar um problema</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../about/" data-slug="about"><span class="cue__no">A7</span><span class="cue__title">Sobre e termos</span><span class="cue__time">2<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+  </details>
+</nav>
+<main class="plate" id="plate" tabindex="-1">
+  <header class="block__head">
+    <h1 class="block__title"><span class="readout block__no"><span class="sr-only">Bloco </span>10</span> <span class="block__name">Privacidade</span></h1>
+    <p class="engrave engrave--dim block__time">Leitura · 4 min</p>
+    <p class="block__summary">O que fica no seu computador, as poucas coisas que usam a internet e quando, e como conferir você mesmo.</p>
+    <nav class="toc" aria-label="Neste bloco"><p class="engrave toc__head">Neste bloco</p><ol><li><a href="#o-que-fica-no-seu-computador">O que fica no seu computador</a></li><li><a href="#as-unicas-coisas-que-usam-a-internet">As únicas coisas que usam a internet</a></li><li><a href="#sem-conta-sem-metricas">Sem conta, sem métricas</a></li><li><a href="#a-area-de-transferencia">A área de transferência</a></li><li><a href="#transcricoes-que-voce-salva">Transcrições que você salva</a></li><li><a href="#para-que-servem-as-permissoes">Para que servem as permissões</a></li><li><a href="#confira-voce-mesmo">Confira você mesmo</a></li></ol></nav>
+  </header>
+  <article class="block" data-slug="privacy">
+<p>O Open Whisper transcreve no seu computador. Esta página lista o que fica nele, as únicas coisas que usam a internet e como acompanhar tudo isso com o seu próprio monitor de rede.</p>
+<section class="block__section" aria-labelledby="o-que-fica-no-seu-computador"><div class="block__text">
+<h2 class="block__h2" id="o-que-fica-no-seu-computador"><a class="anchor" href="#o-que-fica-no-seu-computador">O que fica no seu computador</a></h2>
+<ul class="list"><li><strong>A sua voz.</strong> O áudio fica na memória enquanto você dita e é descartado depois da transcrição. Ele nunca é gravado em disco.</li><li><strong>A transcrição.</strong> Acontece no seu computador, sem nenhuma rede. O ditado funciona igual com a internet desligada.</li><li><strong>O texto.</strong> Vai para onde está o cursor, ou para a área de transferência. O Open Whisper guarda o último ditado na memória para que <strong>Copiar Última Transcrição</strong> e <strong>Repetir Última Transcrição</strong> funcionem. Ele some quando você sai do app. Não existe histórico.</li><li><strong>Arquivos de vídeo do seu computador.</strong> Um arquivo que você transcreve é lido onde está. Nada é copiado, e nenhuma rede é usada.</li></ul>
+</div></section>
+<section class="block__section" aria-labelledby="as-unicas-coisas-que-usam-a-internet"><div class="block__text">
+<h2 class="block__h2" id="as-unicas-coisas-que-usam-a-internet"><a class="anchor" href="#as-unicas-coisas-que-usam-a-internet">As únicas coisas que usam a internet</a></h2>
+<p>Nada desta lista acontece durante um ditado.</p>
+<div class="table"><table><thead><tr><th scope="col">O quê</th><th scope="col">Quando</th><th scope="col">Para onde vai</th></tr></thead><tbody><tr><th scope="row">Baixar um modelo opcional</th><td data-label="Quando">Só quando você escolhe um modelo que não vem embutido, nos <a class="link" href="../settings/">Ajustes</a> ou na janela de vídeo. Uma vez por modelo.</td><td data-label="Para onde vai"><code>huggingface.co</code>. O arquivo é conferido antes de ser usado.</td></tr><tr><th scope="row">Transcrever um vídeo do YouTube</th><td data-label="Quando">Só quando você cola o link de um vídeo e pede.</td><td data-label="Para onde vai">YouTube, para buscar as legendas ou o áudio. A janela avisa antes de qualquer coisa começar.</td></tr><tr><th scope="row">O link <strong>Feito por entringer.dev</strong> no Sobre</th><td data-label="Quando">Só quando você clica nele.</td><td data-label="Para onde vai">O seu navegador abre a página. O app em si não envia nada.</td></tr><tr><th scope="row">O instalador do Windows</th><td data-label="Quando">Só durante a instalação, e só se faltar o WebView2 no Windows.</td><td data-label="Para onde vai">Microsoft, para baixar o WebView2.</td></tr></tbody></table></div>
+<p>Num link de vídeo, quem busca o áudio é o yt-dlp, uma ferramenta à parte que você mesmo instala. Depois que o áudio está no seu computador, a transcrição em si não usa rede. Veja <a class="link" href="../video/">Vídeo e arquivos</a>.</p>
+</div></section>
+<section class="block__section" aria-labelledby="sem-conta-sem-metricas"><div class="block__text">
+<h2 class="block__h2" id="sem-conta-sem-metricas"><a class="anchor" href="#sem-conta-sem-metricas">Sem conta, sem métricas</a></h2>
+<ul class="list"><li>Sem conta, sem cadastro, sem chave de API.</li><li>Sem métricas de uso, sem telemetria, sem relatório de falhas.</li><li>Sem busca de atualização. O Open Whisper nunca liga para casa atrás de versão nova. As versões novas saem na <a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/releases" rel="noopener">página de Releases</a>.</li><li>Sem arquivos de log. O Open Whisper não registra nada do que você faz.</li></ul>
+</div></section>
+<section class="block__section" aria-labelledby="a-area-de-transferencia"><div class="block__text">
+<h2 class="block__h2" id="a-area-de-transferencia"><a class="anchor" href="#a-area-de-transferencia">A área de transferência</a></h2>
+<p>Para colar, o Open Whisper põe o texto na área de transferência e aperta colar por você.</p>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p>Quando a colagem dá certo, o que estava na área de transferência antes volta meio segundo depois. Só texto volta: uma imagem ou outro conteúdo que você tinha copiado pode não voltar.</p>
+<p>Quando o texto não pode ser colado, ele fica na área de transferência para nada se perder, e um aviso diz <strong>Copiado para a área de transferência — cole com ⌘V.</strong></p></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><p>Quando a colagem dá certo, o que estava na área de transferência antes volta meio segundo depois. Só texto volta: uma imagem ou outro conteúdo que você tinha copiado pode não voltar.</p>
+<p>Quando o texto não pode ser colado, ele fica na área de transferência para nada se perder, e um aviso diz <strong>Copiado para a área de transferência — cole com Ctrl+V.</strong></p>
+<p>Todo texto ditado fica fora do histórico da área de transferência (<span class="caps caps--inline"><kbd class="cap cap--inline">Win</kbd><kbd class="cap cap--inline">V</kbd></span>) e fora da sincronização na nuvem. Isso vale também quando o texto fica na área de transferência: ele nunca aparece no <span class="caps caps--inline"><kbd class="cap cap--inline">Win</kbd><kbd class="cap cap--inline">V</kbd></span> e nunca chega aos seus outros dispositivos.</p></div></div></div>
+</div></section>
+<section class="block__section" aria-labelledby="transcricoes-que-voce-salva"><div class="block__text">
+<h2 class="block__h2" id="transcricoes-que-voce-salva"><a class="anchor" href="#transcricoes-que-voce-salva">Transcrições que você salva</a></h2>
+<p>Ditados nunca são salvos. Uma transcrição de vídeo só é salva quando você clica em <strong>Salvar</strong> ou <strong>Salvar como…</strong> na janela de vídeo.</p>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p><strong>Salvar</strong> grava em <code>~/.open-whisper/transcripts/</code>. Essa pasta fica oculta no Finder e é criada na primeira vez que você salva.</p></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><p><strong>Salvar</strong> grava em <code>%USERPROFILE%\.open-whisper\transcripts\</code>. Essa pasta é criada na primeira vez que você salva.</p></div></div></div>
+<p><strong>Salvar como…</strong> grava onde você escolher. A linha de comando nunca grava arquivo. Todos os lugares que o app usa estão em <a class="link" href="../data-and-uninstall/">Dados e desinstalação</a>.</p>
+</div></section>
+<section class="block__section" aria-labelledby="para-que-servem-as-permissoes"><div class="block__text">
+<h2 class="block__h2" id="para-que-servem-as-permissoes"><a class="anchor" href="#para-que-servem-as-permissoes">Para que servem as permissões</a></h2>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><ul class="list"><li><strong>Microfone</strong>: usado só enquanto você dita, nunca em segundo plano.</li><li><strong>Acessibilidade</strong>: usada só para enviar <span class="caps caps--inline"><kbd class="cap cap--inline">⌘</kbd><kbd class="cap cap--inline">V</kbd></span> ao app em que você está. Para decidir se cola, o Open Whisper pergunta ao macOS que tipo de campo está em foco (se dá para digitar nele, se é um campo de senha). Ele nunca lê a sua tela nem o que você digita.</li></ul></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><ul class="list"><li><strong>Microfone</strong>: usado só enquanto você dita, nunca em segundo plano.</li><li>No Windows não existe a permissão de Acessibilidade. Para decidir se cola, o Open Whisper pergunta ao Windows que tipo de campo está em foco (se dá para digitar nele, se é um campo de senha). Ele nunca lê a sua tela nem o que você digita.</li></ul></div></div></div>
+</div></section>
+<section class="block__section" aria-labelledby="confira-voce-mesmo"><div class="block__text">
+<h2 class="block__h2" id="confira-voce-mesmo"><a class="anchor" href="#confira-voce-mesmo">Confira você mesmo</a></h2>
+<p>Você não precisa acreditar na nossa palavra. Observe o tráfego de rede do app enquanto dita.</p>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><ol class="cues"><li>Abra um monitor de rede, como o Little Snitch, ou rode <code>nettop</code> no Terminal.</li><li>Procure o Open Whisper (o processo se chama <code>open-whisper</code>).</li><li>Dite algumas frases. Nenhuma conexão aparece.</li><li>Para um segundo teste, desligue o Wi-Fi e dite de novo. Funciona igual.</li></ol></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><ol class="cues"><li>Abra o Monitor de Recursos: digite <code>resmon</code> no menu Iniciar e aperte <span class="caps caps--inline"><kbd class="cap cap--inline">Enter</kbd></span>.</li><li>Vá na aba <strong>Rede</strong> e marque o processo do Open Whisper na lista, para ver só o tráfego dele.</li><li>Dite algumas frases. Nenhuma conexão aparece.</li><li>Para um segundo teste, desconecte da internet e dite de novo. Funciona igual.</li></ol></div></div></div>
+<aside class="callout callout--note"><p class="callout__legend engrave">Nota</p><div class="callout__body"><p>Você só verá tráfego quando fizer uma das coisas da tabela acima: baixar um modelo ou transcrever um link do YouTube.</p></div></aside>
+</div></section>
+  </article>
+  <nav class="block__foot" aria-label="Bloco anterior e próximo"><a class="key key--step key--prev" href="../command-line/" rel="prev"><span class="key__text"><span class="key__sub engrave">Anterior · 09</span><span class="key__main">Linha de comando</span></span></a><a class="key key--step key--next" href="../troubleshooting/" rel="next"><span class="key__text"><span class="key__sub engrave">Próximo · 11</span><span class="key__main">Solução de problemas</span></span></a></nav>
+</main>
+</div>
+<footer class="footplate">
+  <div class="footplate__inner">
+    <p class="footplate__free">O Open Whisper é gratuito. <span class="footplate__privacy">Este site não usa cookies e não mede nada.</span></p>
+    <ul class="footplate__links">
+      <li><a class="link" href="../../">Página do Open Whisper</a></li>
+      <li><a class="link" href="../../../terms.txt">Termos de uso</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/releases">Todos os releases</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/issues">Relatar um problema</a></li>
+    </ul>
+    <p class="signature"><span class="signature__intro">feito por</span> <a class="signature__mark" href="https://entringer.dev">entringer.dev</a></p>
+  </div>
+</footer>
+<script type="application/json" id="docs-data">{"result":"1 resultado","results":"{n} resultados","noResults":"Nada encontrado para “{q}”."}</script>
+<script type="module" src="../../../assets/docs.js?v=fc6854744e"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR" data-os="other">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ajuda do Open Whisper</title>
+<meta name="description" content="Como instalar e usar o Open Whisper no Windows e no Mac: ditado, ajustes, a janela de vídeo, a linha de comando, privacidade e solução de problemas.">
+<link rel="canonical" href="https://openwhisper.entringer.dev/pt/docs/">
+<link rel="alternate" hreflang="en" href="https://openwhisper.entringer.dev/docs/">
+<link rel="alternate" hreflang="pt-BR" href="https://openwhisper.entringer.dev/pt/docs/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ajuda do Open Whisper">
+<meta property="og:description" content="Como instalar e usar o Open Whisper no Windows e no Mac: ditado, ajustes, a janela de vídeo, a linha de comando, privacidade e solução de problemas.">
+<meta property="og:url" content="https://openwhisper.entringer.dev/pt/docs/">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Open Whisper">
+<meta property="og:image" content="https://openwhisper.entringer.dev/assets/og-pt.jpg">
+<meta name="theme-color" content="#191314">
+<link rel="icon" type="image/png" sizes="64x64" href="../../assets/favicon-64.png">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<link rel="preload" href="../../assets/fonts/barlow-semi-condensed-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=fc6854744e">
+<link rel="stylesheet" href="../../assets/docs.css?v=fc6854744e">
+<script>
+  // Before the first paint, so the keycaps, the windows and the platform order are the visitor's.
+  (function () {
+    var ua = navigator.userAgent, d = document.documentElement;
+    var touch = matchMedia("(pointer: coarse)").matches && !matchMedia("(pointer: fine)").matches;
+    d.classList.add("js");
+    d.dataset.os = /Windows NT/.test(ua) ? "windows" : /Macintosh|Mac OS X/.test(ua) && !touch ? "mac" : touch ? "touch" : "other";
+  })();
+</script>
+</head>
+<body class="docs-body">
+<a class="skip" href="#plate">Ir para a página</a>
+<header class="nameplate nameplate--docs">
+  <a class="brand" href="../" aria-label="Open Whisper">
+    <img class="brand__icon" src="../../assets/icon-64.png" width="32" height="32" alt="">
+    <span class="engrave brand__name">Open Whisper</span>
+  </a>
+  <a class="engrave brand__docs" href="./">Ajuda</a>
+  <form class="search" role="search" action="./" data-index="../../assets/search-pt.json">
+    <label class="sr-only" for="search">Buscar na ajuda</label>
+    <span class="search__well">
+      <svg class="glyph" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M12.6 12.6L17 17"/></svg>
+      <input id="search" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="Buscar na ajuda" aria-describedby="search-hint" aria-controls="results">
+      <kbd class="cap cap--inline search__key" aria-hidden="true">/</kbd>
+    </span>
+    <span class="sr-only" id="search-hint">Digite para buscar; aperte / em qualquer lugar para voltar aqui.</span>
+    <div class="results" id="results" hidden><p class="results__count" id="results-count" aria-live="polite"></p><ol class="results__list"></ol></div>
+  </form>
+  <nav class="nameplate__end" aria-label="Site">
+    <span class="latches" role="group" aria-label="Idioma">
+      <a class="latch" href="../../docs/" hreflang="en" lang="en"><i class="led" aria-hidden="true"></i>EN</a><a class="latch is-on" href="../../pt/docs/" hreflang="pt-BR" lang="pt-BR" aria-current="page"><i class="led" aria-hidden="true"></i>PT</a>
+    </span>
+  </nav>
+</header>
+<div class="docs docs--index">
+<nav class="rundown" id="rundown" aria-label="Roteiro">
+  <details class="rundown__fold" open>
+    <summary class="rundown__head"><svg class="glyph rundown__chev" viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5L13 10l-5.5 5.5"/></svg><span class="engrave">Roteiro</span><span class="engrave engrave--dim rundown__count">11 blocos · min</span></summary>
+    <ol class="rundown__list"><li><a class="cue" href="./install/" data-slug="install"><span class="cue__no">01</span><span class="cue__title">Instalar</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="./first-run/" data-slug="first-run"><span class="cue__no">02</span><span class="cue__title">Primeira execução</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="./dictate/" data-slug="dictate"><span class="cue__no">03</span><span class="cue__title">Ditar</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="./paste/" data-slug="paste"><span class="cue__no">04</span><span class="cue__title">Onde o texto vai parar</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="./menu/" data-slug="menu"><span class="cue__no">05</span><span class="cue__title">O ícone e o menu</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="./settings/" data-slug="settings"><span class="cue__no">06</span><span class="cue__title">Ajustes</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="./models/" data-slug="models"><span class="cue__no">07</span><span class="cue__title">Modelos</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="./video/" data-slug="video"><span class="cue__no">08</span><span class="cue__title">Vídeo e arquivos</span><span class="cue__time">8<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="./command-line/" data-slug="command-line"><span class="cue__no">09</span><span class="cue__title">Linha de comando</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="./privacy/" data-slug="privacy"><span class="cue__no">10</span><span class="cue__title">Privacidade</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="./troubleshooting/" data-slug="troubleshooting"><span class="cue__no">11</span><span class="cue__title">Solução de problemas</span><span class="cue__time">9<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+    <p class="rundown__head rundown__head--sub"><span class="engrave">Anexos</span></p>
+    <ol class="rundown__list rundown__list--appendix"><li><a class="cue" href="./faq/" data-slug="faq"><span class="cue__no">A1</span><span class="cue__title">Perguntas frequentes</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="./shortcuts/" data-slug="shortcuts"><span class="cue__no">A2</span><span class="cue__title">Atalhos e teclas</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="./command-reference/" data-slug="command-reference"><span class="cue__no">A3</span><span class="cue__title">Referência do comando</span><span class="cue__time">7<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="./data-and-uninstall/" data-slug="data-and-uninstall"><span class="cue__no">A4</span><span class="cue__title">Dados e desinstalação</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="./limits/" data-slug="limits"><span class="cue__no">A5</span><span class="cue__title">O que ele não faz</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="./report/" data-slug="report"><span class="cue__no">A6</span><span class="cue__title">Relatar um problema</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="./about/" data-slug="about"><span class="cue__no">A7</span><span class="cue__title">Sobre e termos</span><span class="cue__time">2<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+  </details>
+</nav>
+<main class="plate" id="plate" tabindex="-1">
+  <header class="block__head">
+    <h1 class="block__title"><span class="block__name">O roteiro</span></h1>
+    <p class="block__summary">Tudo o que o Open Whisper faz, bloco a bloco, na ordem em que você vai usar. Comece de onde estiver, ou busque.</p>
+  </header>
+  <section class="sheet" aria-labelledby="sheet-blocks">
+    <h2 class="sheet__head engrave" id="sheet-blocks">Roteiro</h2>
+    <ol class="sheet__list"><li><a class="sheet__row" href="./install/" data-slug="install"><span class="readout sheet__no">01</span><span class="sheet__text"><span class="sheet__title">Instalar</span><span class="sheet__summary">O que o computador precisa ter, e como baixar, conferir e instalar o Open Whisper no Windows e, quando sair, no Mac.</span></span><span class="sheet__time">4 min</span><i class="led" aria-hidden="true"></i></a></li><li><a class="sheet__row" href="./first-run/" data-slug="first-run"><span class="readout sheet__no">02</span><span class="sheet__text"><span class="sheet__title">Primeira execução</span><span class="sheet__summary">A janela de configuração que abre na primeira vez: microfone, colagem, atalho e um ditado de teste de verdade, passo a passo.</span></span><span class="sheet__time">5 min</span><i class="led" aria-hidden="true"></i></a></li><li><a class="sheet__row" href="./dictate/" data-slug="dictate"><span class="readout sheet__no">03</span><span class="sheet__text"><span class="sheet__title">Ditar</span><span class="sheet__summary">Segure o atalho, fale e solte. Os dois modos, cancelar com Esc, gravações que terminam sozinhas, idioma e o que você vê e ouve.</span></span><span class="sheet__time">6 min</span><i class="led" aria-hidden="true"></i></a></li><li><a class="sheet__row" href="./paste/" data-slug="paste"><span class="readout sheet__no">04</span><span class="sheet__text"><span class="sheet__title">Onde o texto vai parar</span><span class="sheet__summary">Como o texto chega ao cursor, quando ele fica na área de transferência e como recuperar o último ditado.</span></span><span class="sheet__time">5 min</span><i class="led" aria-hidden="true"></i></a></li><li><a class="sheet__row" href="./menu/" data-slug="menu"><span class="readout sheet__no">05</span><span class="sheet__text"><span class="sheet__title">O ícone e o menu</span><span class="sheet__summary">Onde fica o ícone, o que as cores dele querem dizer e o que faz cada item do menu.</span></span><span class="sheet__time">3 min</span><i class="led" aria-hidden="true"></i></a></li><li><a class="sheet__row" href="./settings/" data-slug="settings"><span class="readout sheet__no">06</span><span class="sheet__text"><span class="sheet__title">Ajustes</span><span class="sheet__summary">Cada campo da janela de ajustes: o atalho, o modo, o idioma e as quatro opções avançadas.</span></span><span class="sheet__time">6 min</span><i class="led" aria-hidden="true"></i></a></li><li><a class="sheet__row" href="./models/" data-slug="models"><span class="readout sheet__no">07</span><span class="sheet__text"><span class="sheet__title">Modelos</span><span class="sheet__summary">Os quatro modelos de fala, para que serve cada um, como funciona o download e onde ficam os arquivos.</span></span><span class="sheet__time">4 min</span><i class="led" aria-hidden="true"></i></a></li><li><a class="sheet__row" href="./video/" data-slug="video"><span class="readout sheet__no">08</span><span class="sheet__text"><span class="sheet__title">Vídeo e arquivos</span><span class="sheet__summary">Transforme um vídeo do YouTube ou um arquivo de áudio ou vídeo em texto ou legendas, pela janela de vídeo.</span></span><span class="sheet__time">8 min</span><i class="led" aria-hidden="true"></i></a></li><li><a class="sheet__row" href="./command-line/" data-slug="command-line"><span class="readout sheet__no">09</span><span class="sheet__text"><span class="sheet__title">Linha de comando</span><span class="sheet__summary">Transcreva um arquivo ou um vídeo pelo terminal com open-whisper transcribe, em texto, legendas ou JSON.</span></span><span class="sheet__time">6 min</span><i class="led" aria-hidden="true"></i></a></li><li><a class="sheet__row" href="./privacy/" data-slug="privacy"><span class="readout sheet__no">10</span><span class="sheet__text"><span class="sheet__title">Privacidade</span><span class="sheet__summary">O que fica no seu computador, as poucas coisas que usam a internet e quando, e como conferir você mesmo.</span></span><span class="sheet__time">4 min</span><i class="led" aria-hidden="true"></i></a></li><li><a class="sheet__row" href="./troubleshooting/" data-slug="troubleshooting"><span class="readout sheet__no">11</span><span class="sheet__text"><span class="sheet__title">Solução de problemas</span><span class="sheet__summary">Todos os problemas conhecidos, pelo que você vê: a causa e os passos que resolvem, no Mac e no Windows.</span></span><span class="sheet__time">9 min</span><i class="led" aria-hidden="true"></i></a></li></ol>
+  </section>
+  <section class="sheet sheet--appendix" aria-labelledby="sheet-appendix">
+    <h2 class="sheet__head engrave" id="sheet-appendix">Anexos</h2>
+    <ol class="sheet__list"><li><a class="sheet__row" href="./faq/" data-slug="faq"><span class="readout sheet__no">A1</span><span class="sheet__text"><span class="sheet__title">Perguntas frequentes</span><span class="sheet__summary">Respostas curtas para o que se pergunta primeiro: preço, internet, idiomas, Windows e Mac, o atalho.</span></span><span class="sheet__time">3 min</span><i class="led" aria-hidden="true"></i></a></li><li><a class="sheet__row" href="./shortcuts/" data-slug="shortcuts"><span class="readout sheet__no">A2</span><span class="sheet__text"><span class="sheet__title">Atalhos e teclas</span><span class="sheet__summary">Todas as teclas que o Open Whisper usa, no Mac e no Windows: o atalho de ditado, o Esc e as teclas de cada janela.</span></span><span class="sheet__time">3 min</span><i class="led" aria-hidden="true"></i></a></li><li><a class="sheet__row" href="./command-reference/" data-slug="command-reference"><span class="readout sheet__no">A3</span><span class="sheet__text"><span class="sheet__title">Referência do comando</span><span class="sheet__summary">O comando open-whisper transcribe completo: cada opção, os formatos, as duas saídas, os campos do JSON e cada código de saída.</span></span><span class="sheet__time">7 min</span><i class="led" aria-hidden="true"></i></a></li><li><a class="sheet__row" href="./data-and-uninstall/" data-slug="data-and-uninstall"><span class="readout sheet__no">A4</span><span class="sheet__text"><span class="sheet__title">Dados e desinstalação</span><span class="sheet__summary">Onde o Open Whisper guarda preferências, modelos e transcrições salvas, como zerar tudo e como desinstalar em cada plataforma.</span></span><span class="sheet__time">4 min</span><i class="led" aria-hidden="true"></i></a></li><li><a class="sheet__row" href="./limits/" data-slug="limits"><span class="readout sheet__no">A5</span><span class="sheet__text"><span class="sheet__title">O que o Open Whisper não faz</span><span class="sheet__summary">O que o Open Whisper deixa de fora de propósito, e o motivo concreto de cada escolha.</span></span><span class="sheet__time">3 min</span><i class="led" aria-hidden="true"></i></a></li><li><a class="sheet__row" href="./report/" data-slug="report"><span class="readout sheet__no">A6</span><span class="sheet__text"><span class="sheet__title">Relatar um problema</span><span class="sheet__summary">Onde relatar um problema ou sugerir uma ideia, o que torna um relato resolvível e o que acontece depois que você envia.</span></span><span class="sheet__time">3 min</span><i class="led" aria-hidden="true"></i></a></li><li><a class="sheet__row" href="./about/" data-slug="about"><span class="readout sheet__no">A7</span><span class="sheet__text"><span class="sheet__title">Sobre, versões e termos</span><span class="sheet__summary">A janela Sobre, como ler a versão e o build, os termos de uso, os avisos de terceiros e onde os releases são publicados.</span></span><span class="sheet__time">2 min</span><i class="led" aria-hidden="true"></i></a></li></ol>
+  </section>
+</main>
+</div>
+<footer class="footplate">
+  <div class="footplate__inner">
+    <p class="footplate__free">O Open Whisper é gratuito. <span class="footplate__privacy">Este site não usa cookies e não mede nada.</span></p>
+    <ul class="footplate__links">
+      <li><a class="link" href="../">Página do Open Whisper</a></li>
+      <li><a class="link" href="../../terms.txt">Termos de uso</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/releases">Todos os releases</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/issues">Relatar um problema</a></li>
+    </ul>
+    <p class="signature"><span class="signature__intro">feito por</span> <a class="signature__mark" href="https://entringer.dev">entringer.dev</a></p>
+  </div>
+</footer>
+<script type="application/json" id="docs-data">{"result":"1 resultado","results":"{n} resultados","noResults":"Nada encontrado para “{q}”."}</script>
+<script type="module" src="../../assets/docs.js?v=fc6854744e"></script>
+</body>
+</html>

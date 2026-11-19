@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="pt-BR" data-os="other">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solução de problemas · Ajuda do Open Whisper</title>
+<meta name="description" content="Todos os problemas conhecidos, pelo que você vê: a causa e os passos que resolvem, no Mac e no Windows.">
+<link rel="canonical" href="https://openwhisper.entringer.dev/pt/docs/troubleshooting/">
+<link rel="alternate" hreflang="en" href="https://openwhisper.entringer.dev/docs/troubleshooting/">
+<link rel="alternate" hreflang="pt-BR" href="https://openwhisper.entringer.dev/pt/docs/troubleshooting/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Solução de problemas · Ajuda do Open Whisper">
+<meta property="og:description" content="Todos os problemas conhecidos, pelo que você vê: a causa e os passos que resolvem, no Mac e no Windows.">
+<meta property="og:url" content="https://openwhisper.entringer.dev/pt/docs/troubleshooting/">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Open Whisper">
+<meta property="og:image" content="https://openwhisper.entringer.dev/assets/og-pt.jpg">
+<meta name="theme-color" content="#191314">
+<link rel="icon" type="image/png" sizes="64x64" href="../../../assets/favicon-64.png">
+<link rel="apple-touch-icon" href="../../../assets/icon-180.png">
+<link rel="preload" href="../../../assets/fonts/barlow-semi-condensed-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../../assets/site.css?v=fc6854744e">
+<link rel="stylesheet" href="../../../assets/docs.css?v=fc6854744e">
+<script>
+  // Before the first paint, so the keycaps, the windows and the platform order are the visitor's.
+  (function () {
+    var ua = navigator.userAgent, d = document.documentElement;
+    var touch = matchMedia("(pointer: coarse)").matches && !matchMedia("(pointer: fine)").matches;
+    d.classList.add("js");
+    d.dataset.os = /Windows NT/.test(ua) ? "windows" : /Macintosh|Mac OS X/.test(ua) && !touch ? "mac" : touch ? "touch" : "other";
+  })();
+</script>
+</head>
+<body class="docs-body">
+<a class="skip" href="#plate">Ir para a página</a>
+<header class="nameplate nameplate--docs">
+  <a class="brand" href="../../" aria-label="Open Whisper">
+    <img class="brand__icon" src="../../../assets/icon-64.png" width="32" height="32" alt="">
+    <span class="engrave brand__name">Open Whisper</span>
+  </a>
+  <a class="engrave brand__docs" href="../">Ajuda</a>
+  <form class="search" role="search" action="../" data-index="../../../assets/search-pt.json">
+    <label class="sr-only" for="search">Buscar na ajuda</label>
+    <span class="search__well">
+      <svg class="glyph" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M12.6 12.6L17 17"/></svg>
+      <input id="search" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="Buscar na ajuda" aria-describedby="search-hint" aria-controls="results">
+      <kbd class="cap cap--inline search__key" aria-hidden="true">/</kbd>
+    </span>
+    <span class="sr-only" id="search-hint">Digite para buscar; aperte / em qualquer lugar para voltar aqui.</span>
+    <div class="results" id="results" hidden><p class="results__count" id="results-count" aria-live="polite"></p><ol class="results__list"></ol></div>
+  </form>
+  <nav class="nameplate__end" aria-label="Site">
+    <span class="latches" role="group" aria-label="Idioma">
+      <a class="latch" href="../../../docs/troubleshooting/" hreflang="en" lang="en"><i class="led" aria-hidden="true"></i>EN</a><a class="latch is-on" href="../../../pt/docs/troubleshooting/" hreflang="pt-BR" lang="pt-BR" aria-current="page"><i class="led" aria-hidden="true"></i>PT</a>
+    </span>
+  </nav>
+</header>
+<div class="docs">
+<nav class="rundown" id="rundown" aria-label="Roteiro">
+  <details class="rundown__fold" open>
+    <summary class="rundown__head"><svg class="glyph rundown__chev" viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5L13 10l-5.5 5.5"/></svg><span class="engrave">Roteiro</span><span class="engrave engrave--dim rundown__count">11 blocos · min</span></summary>
+    <ol class="rundown__list"><li><a class="cue" href="../install/" data-slug="install"><span class="cue__no">01</span><span class="cue__title">Instalar</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../first-run/" data-slug="first-run"><span class="cue__no">02</span><span class="cue__title">Primeira execução</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../dictate/" data-slug="dictate"><span class="cue__no">03</span><span class="cue__title">Ditar</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../paste/" data-slug="paste"><span class="cue__no">04</span><span class="cue__title">Onde o texto vai parar</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../menu/" data-slug="menu"><span class="cue__no">05</span><span class="cue__title">O ícone e o menu</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../settings/" data-slug="settings"><span class="cue__no">06</span><span class="cue__title">Ajustes</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../models/" data-slug="models"><span class="cue__no">07</span><span class="cue__title">Modelos</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../video/" data-slug="video"><span class="cue__no">08</span><span class="cue__title">Vídeo e arquivos</span><span class="cue__time">8<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../command-line/" data-slug="command-line"><span class="cue__no">09</span><span class="cue__title">Linha de comando</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../privacy/" data-slug="privacy"><span class="cue__no">10</span><span class="cue__title">Privacidade</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue is-on" href="../troubleshooting/" data-slug="troubleshooting" aria-current="page"><span class="cue__no">11</span><span class="cue__title">Solução de problemas</span><span class="cue__time">9<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+    <p class="rundown__head rundown__head--sub"><span class="engrave">Anexos</span></p>
+    <ol class="rundown__list rundown__list--appendix"><li><a class="cue" href="../faq/" data-slug="faq"><span class="cue__no">A1</span><span class="cue__title">Perguntas frequentes</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../shortcuts/" data-slug="shortcuts"><span class="cue__no">A2</span><span class="cue__title">Atalhos e teclas</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../command-reference/" data-slug="command-reference"><span class="cue__no">A3</span><span class="cue__title">Referência do comando</span><span class="cue__time">7<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../data-and-uninstall/" data-slug="data-and-uninstall"><span class="cue__no">A4</span><span class="cue__title">Dados e desinstalação</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../limits/" data-slug="limits"><span class="cue__no">A5</span><span class="cue__title">O que ele não faz</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../report/" data-slug="report"><span class="cue__no">A6</span><span class="cue__title">Relatar um problema</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../about/" data-slug="about"><span class="cue__no">A7</span><span class="cue__title">Sobre e termos</span><span class="cue__time">2<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+  </details>
+</nav>
+<main class="plate" id="plate" tabindex="-1">
+  <header class="block__head">
+    <h1 class="block__title"><span class="readout block__no"><span class="sr-only">Bloco </span>11</span> <span class="block__name">Solução de problemas</span></h1>
+    <p class="engrave engrave--dim block__time">Leitura · 9 min</p>
+    <p class="block__summary">Todos os problemas conhecidos, pelo que você vê: a causa e os passos que resolvem, no Mac e no Windows.</p>
+    <nav class="toc" aria-label="Neste bloco"><p class="engrave toc__head">Neste bloco</p><ol><li><a href="#instalacao">Instalação</a></li><li><a href="#permissoes">Permissões</a></li><li><a href="#o-atalho">O atalho</a></li><li><a href="#gravacao">Gravação</a></li><li><a href="#o-texto-nao-foi-colado">O texto não foi colado</a></li><li><a href="#video">Vídeo</a></li><li><a href="#linha-de-comando">Linha de comando</a></li><li><a href="#ainda-sem-solucao">Ainda sem solução?</a></li></ol></nav>
+  </header>
+  <article class="block" data-slug="troubleshooting">
+<p>Procure o que você está vendo, entenda por que acontece e siga os passos. Os problemas estão agrupados por momento: instalação, permissões, o atalho, a gravação, a colagem, vídeo e linha de comando.</p>
+<section class="block__section" aria-labelledby="instalacao"><div class="block__text">
+<h2 class="block__h2" id="instalacao"><a class="anchor" href="#instalacao">Instalação</a></h2>
+<h3 class="block__h3">&quot;O Windows protegeu o computador&quot;</h3>
+<p>O instalador ainda não é assinado, então o SmartScreen não o reconhece. O aviso é esperado.</p>
+<ol class="cues"><li>Confira o arquivo antes: na pasta onde você o baixou, rode <code>certutil -hashfile Open.Whisper_X.Y.Z_x64-setup.exe SHA256</code> (com o nome do arquivo da sua versão).</li><li>Compare o resultado com o hash do arquivo <code>.sha256</code> do mesmo release. Eles precisam ser iguais.</li><li>Abra o instalador de novo e clique em <strong>Mais informações</strong> e depois em <strong>Executar assim mesmo</strong>.</li></ol>
+<h3 class="block__h3">O instalador precisa de internet</h3>
+<p>Se faltar o WebView2 no Windows, o instalador o baixa durante a instalação. Conecte-se à internet e rode o instalador de novo. Depois disso, o Open Whisper em si não precisa de internet.</p>
+<h3 class="block__h3">O seu processador é mais antigo</h3>
+<p>No Windows, o Open Whisper precisa de um processador com AVX2 (Intel a partir de 2013, AMD a partir de 2015). Processadores mais antigos não são suportados.</p>
+<h3 class="block__h3">O app parece não abrir</h3>
+<p>O Open Whisper não tem janela nem botão no Dock ou na barra de tarefas. Ele vive num ícone.</p>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p>Procure na barra de menus, perto do relógio. Clique no ícone para abrir o menu.</p></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><p>Procure na área de notificação, perto do relógio. Se não estiver vendo, clique em <strong>^</strong> (mostrar ícones ocultos) e arraste o ícone do Open Whisper para a barra de tarefas.</p>
+<p>Abrir o app uma segunda vez não muda nada na tela: a cópia que já está aberta continua no comando.</p></div></div></div>
+<h3 class="block__h3">&quot;Abrir ao iniciar&quot; não liga</h3>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p>A mensagem <strong>Mova o Open Whisper para a pasta Aplicativos para usar esta opção.</strong> quer dizer que o app está rodando de outro lugar: do <code>.dmg</code>, da pasta Downloads ou de uma subpasta.</p>
+<ol class="cues"><li>Saia do Open Whisper.</li><li>Mova o <code>Open Whisper.app</code> direto para <code>/Applications</code> (a pasta Aplicativos, não uma subpasta como Utilitários).</li><li>Abra o app de lá e ligue a opção de novo.</li></ol>
+<p>Se aparecer <strong>Falta aprovar o Open Whisper em Ajustes do Sistema → Itens de Início.</strong>, clique em <strong>Abrir Ajustes do Sistema</strong> e ative o Open Whisper em <strong>Itens de Início</strong>.</p></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><p>A mensagem <strong>Instale o Open Whisper pelo instalador para usar esta opção.</strong> quer dizer que esta cópia não é a que o instalador pôs no seu PC. Instale pelo instalador e abra essa cópia.</p>
+<p>Se aparecer <strong>Desligado em Configurações do Windows → Aplicativos → Inicialização.</strong>, a opção foi desligada no Windows. Ligue de novo no Open Whisper, ou clique em <strong>Abrir as Configurações do Windows</strong> e ative em <strong>Inicialização</strong>.</p></div></div></div>
+</div></section>
+<section class="block__section" aria-labelledby="permissoes"><div class="block__text">
+<h2 class="block__h2" id="permissoes"><a class="anchor" href="#permissoes">Permissões</a></h2>
+<h3 class="block__h3">O acesso ao microfone está desligado</h3>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p>O ditado precisa do microfone. Se você recusou, ou a configuração diz <strong>O acesso ao microfone está desligado</strong>:</p>
+<ol class="cues"><li>Abra <strong>Ajustes do Sistema → Privacidade e Segurança → Microfone</strong>.</li><li>Ative o <strong>Open Whisper</strong>.</li><li>Dite de novo.</li></ol></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><p>O Windows deixa os apps usarem o microfone, a não ser que isso tenha sido desligado nas configurações dele. Quando está desligado, o Open Whisper não grava e avisa: <strong>O Windows está bloqueando o microfone. Libere em Configurações → Privacidade e segurança → Microfone, inclusive para aplicativos da área de trabalho.</strong> As Configurações do Open Whisper mostram o mesmo aviso no topo de <strong>Gravação</strong>, com a tecla <strong>Abrir as Configurações do Windows</strong>.</p>
+<ol class="cues"><li>Abra <strong>Configurações → Privacidade e segurança → Microfone</strong>.</li><li>Ative o acesso ao microfone no topo da página e <strong>Permitir que aplicativos da área de trabalho acessem o microfone</strong>.</li><li>Dite de novo.</li></ol></div></div></div>
+<h3 class="block__h3">A colagem automática não liga (Mac)</h3>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p>O macOS só aplica a permissão de Acessibilidade quando o app abre de novo. Se a chave nos Ajustes do Sistema está ligada mas o texto continua indo para a área de transferência:</p>
+<ol class="cues"><li>Saia do Open Whisper pelo menu (<strong>Sair do Open Whisper</strong>) e abra de novo. Na configuração inicial, <strong>Reabrir o Open Whisper</strong> faz isso por você.</li><li>Se a chave volta a desligar sozinha, confira se você está usando a cópia baixada do canal oficial.</li><li>Continua sem funcionar? Limpe a permissão no Terminal e conceda de novo:<br><code>tccutil reset Accessibility dev.entringer.openwhisper</code></li><li>Escolha <strong>Ativar colagem automática…</strong> no menu, ative o Open Whisper e reabra o app.</li></ol></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><p>No Windows não existe a permissão de Acessibilidade: a colagem automática está sempre disponível. Se o texto não foi colado, veja <a class="link" href="#o-texto-nao-foi-colado">O texto não foi colado</a>.</p></div></div></div>
+</div></section>
+<section class="block__section" aria-labelledby="o-atalho"><div class="block__text">
+<h2 class="block__h2" id="o-atalho"><a class="anchor" href="#o-atalho">O atalho</a></h2>
+<h3 class="block__h3">Apertar o atalho não faz nada</h3>
+<ol class="cues"><li>Abra o menu e olhe <strong>Iniciar Gravação</strong>: a tecla mostrada ao lado é o atalho que está valendo de verdade.</li><li>Se outro app já usa a sua combinação, os Ajustes dizem <strong>Não foi possível registrar …</strong>. Escolha outra combinação nos <a class="link" href="../settings/">Ajustes</a>.</li><li>Enquanto isso, <strong>Iniciar Gravação</strong> no menu sempre funciona.</li><li>Se o atalho funciona mas nada é colado, veja <a class="link" href="#gravacao">Gravação</a> e <a class="link" href="#o-texto-nao-foi-colado">O texto não foi colado</a>.</li></ol>
+<h3 class="block__h3">&quot;… é reservado pelo macOS&quot; ou &quot;… é reservado pelo Windows&quot;</h3>
+<p>O sistema guarda essa combinação para ele. Enquanto ela estiver escolhida, o Open Whisper usa <span class="caps caps--inline"><kbd class="cap cap--inline">⇧</kbd><kbd class="cap cap--inline">⌘</kbd><kbd class="cap cap--inline">D</kbd></span> no Mac ou <span class="caps caps--inline"><kbd class="cap cap--inline">Ctrl</kbd><kbd class="cap cap--inline">Shift</kbd><kbd class="cap cap--inline">D</kbd></span> no Windows no lugar.</p>
+<ol class="cues"><li>Nos <a class="link" href="../settings/">Ajustes</a>, clique em <strong>Alterar</strong> e aperte outra combinação.</li><li>Ou clique em <strong>Manter</strong> e use a alternativa mostrada ao lado de <strong>Iniciar Gravação</strong> no menu.</li></ol>
+<p>A lista completa de combinações reservadas está em <a class="link" href="../shortcuts/">Atalhos e teclas</a>.</p>
+<h3 class="block__h3">O gravador não aceita a combinação</h3>
+<p>Um atalho precisa de um modificador. Uma tecla sozinha, mesmo uma tecla de função como F5, não serve de atalho.</p>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p>Inclua <span class="caps caps--inline"><kbd class="cap cap--inline">⌘</kbd></span>, <span class="caps caps--inline"><kbd class="cap cap--inline">⌃</kbd></span> ou <span class="caps caps--inline"><kbd class="cap cap--inline">⌥</kbd></span>. Shift sozinho não conta. Se aparecer <strong>Não foi possível salvar as preferências</strong>, a combinação está sem modificador: aperte de novo com um.</p></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><p>Inclua <span class="caps caps--inline"><kbd class="cap cap--inline">Ctrl</kbd></span> ou <span class="caps caps--inline"><kbd class="cap cap--inline">Alt</kbd></span>. Shift sozinho não conta, e a tecla Windows não pode fazer parte do atalho. Se aparecer <strong>Não foi possível salvar as preferências</strong>, a combinação está sem modificador: aperte de novo com um.</p></div></div></div>
+<h3 class="block__h3">O atalho atrapalha outro app</h3>
+<p>No Windows, <span class="caps caps--inline"><kbd class="cap cap--inline">Ctrl</kbd><kbd class="cap cap--inline">Shift</kbd><kbd class="cap cap--inline">Espaço</kbd></span> também tem uso no Word e no VS Code. Escolha outra combinação nos <a class="link" href="../settings/">Ajustes</a>, como <span class="caps caps--inline"><kbd class="cap cap--inline">Ctrl</kbd><kbd class="cap cap--inline">Alt</kbd><kbd class="cap cap--inline">Espaço</kbd></span>.</p>
+<h3 class="block__h3">Esc não cancela</h3>
+<p>O Esc só cancela enquanto o Open Whisper diz <strong>Gravando</strong>. Quando ele passa a dizer <strong>Transcrevendo</strong>, a gravação já terminou e o Esc não cancela mais.</p>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p>No modo Pressionar para falar, aperte <span class="caps caps--inline"><kbd class="cap cap--inline">Esc</kbd></span> ainda segurando o atalho. As duas formas funcionam: Esc sozinho, ou as teclas que você segura mais Esc. Se o seu atalho usa <span class="caps caps--inline"><kbd class="cap cap--inline">⌥</kbd></span> e <span class="caps caps--inline"><kbd class="cap cap--inline">⌘</kbd></span> juntos, <span class="caps caps--inline"><kbd class="cap cap--inline">⌥</kbd><kbd class="cap cap--inline">⌘</kbd><kbd class="cap cap--inline">Esc</kbd></span> é do macOS (Forçar Encerrar): use o modo Alternar para cancelar com Esc.</p></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><p>No modo Pressionar para falar com <span class="caps caps--inline"><kbd class="cap cap--inline">Ctrl</kbd><kbd class="cap cap--inline">Shift</kbd><kbd class="cap cap--inline">Espaço</kbd></span>, o Esc não cancela: <span class="caps caps--inline"><kbd class="cap cap--inline">Ctrl</kbd><kbd class="cap cap--inline">Shift</kbd><kbd class="cap cap--inline">Esc</kbd></span> abre o Gerenciador de Tarefas. Você pode:</p>
+<ol class="cues"><li>Soltar as teclas: a gravação termina e é transcrita normalmente.</li><li>Mudar para o modo Alternar, em que o <span class="caps caps--inline"><kbd class="cap cap--inline">Esc</kbd></span> cancela.</li><li>Ou escolher um atalho como <span class="caps caps--inline"><kbd class="cap cap--inline">Ctrl</kbd><kbd class="cap cap--inline">Alt</kbd><kbd class="cap cap--inline">Espaço</kbd></span>, que cancela com <span class="caps caps--inline"><kbd class="cap cap--inline">Ctrl</kbd><kbd class="cap cap--inline">Alt</kbd><kbd class="cap cap--inline">Esc</kbd></span>.</li></ol></div></div></div>
+</div></section>
+<section class="block__section" aria-labelledby="gravacao"><div class="block__text">
+<h2 class="block__h2" id="gravacao"><a class="anchor" href="#gravacao">Gravação</a></h2>
+<h3 class="block__h3">&quot;Microfone indisponível — verifique a permissão ou se outro app está usando.&quot;</h3>
+<p>Nenhum microfone foi encontrado, ou outro app está ocupando o microfone.</p>
+<ol class="cues"><li>Confira se há um microfone conectado e escolhido nos ajustes de som do sistema.</li><li>Feche o app que está usando o microfone (uma chamada, um gravador) e tente de novo.</li><li>Se não for isso, confira a permissão (veja <a class="link" href="#permissoes">Permissões</a>).</li></ol>
+<h3 class="block__h3">&quot;Nada foi gravado — confira a permissão do microfone ou segure o atalho um pouco mais.&quot;</h3>
+<p>O toque foi curto demais para captar áudio, ou o microfone não entregou nada.</p>
+<ol class="cues"><li>Segure o atalho, comece a falar e só solte depois da última palavra.</li><li>Se continuar acontecendo, confira a permissão (veja <a class="link" href="#permissoes">Permissões</a>).</li></ol>
+<h3 class="block__h3">Nada acontece depois que você fala</h3>
+<p>Quando nenhuma fala é ouvida, nada é colado e não há aviso, só o som de fim. Fale um pouco mais perto do microfone e tente de novo. No Windows, confira também se o microfone não está bloqueado (veja <a class="link" href="#permissoes">Permissões</a>).</p>
+<h3 class="block__h3">A gravação parou sozinha</h3>
+<p>Dois ajustes podem encerrar uma gravação:</p>
+<ul class="list"><li><strong>Gravação máxima</strong>: no limite (120 segundos, por padrão) a gravação para e o que foi captado é transcrito. Um aviso diz <strong>Gravação interrompida no limite de tempo — transcrevendo o áudio capturado.</strong> Aumente até 1800 segundos nos <a class="link" href="../settings/">Ajustes</a>, em <strong>Avançado</strong>.</li><li><strong>Encerrar após silêncio</strong> (só no modo Alternar): depois que você fala, esse tempo calado encerra a gravação. Aumente o tempo ou desligue em <strong>Avançado</strong>. Uma frase dita muito baixinho bem no final pode ficar de fora.</li></ul>
+<h3 class="block__h3">&quot;Não foi possível carregar o modelo. Verifique nos Ajustes.&quot;</h3>
+<p>O modelo escolhido está faltando ou corrompido.</p>
+<ol class="cues"><li>Abra os <a class="link" href="../settings/">Ajustes</a> e expanda <strong>Avançado</strong>.</li><li>Em <strong>Modelo</strong>, escolha <strong>Padrão</strong> (o que vem embutido).</li><li>Se isso também falhar, reinstale o Open Whisper.</li></ol>
+<h3 class="block__h3">&quot;Falha no download. O modelo atual continua em uso.&quot;</h3>
+<p>O modelo não foi baixado. O anterior continua funcionando.</p>
+<ol class="cues"><li>Confira a sua conexão com a internet.</li><li>Escolha o modelo de novo em <strong>Avançado → Modelo</strong> para tentar outra vez. Um download não começa durante um ditado.</li></ol>
+<h3 class="block__h3">As palavras saem erradas, ou no idioma errado</h3>
+<p>Nos <a class="link" href="../settings/">Ajustes</a>, troque <strong>Idioma</strong> de <strong>Detectar automaticamente</strong> para o idioma que você fala. Modelos maiores erram menos, em troca de um download e de mais tempo: veja <a class="link" href="../models/">Modelos</a>.</p>
+</div></section>
+<section class="block__section" aria-labelledby="o-texto-nao-foi-colado"><div class="block__text">
+<h2 class="block__h2" id="o-texto-nao-foi-colado"><a class="anchor" href="#o-texto-nao-foi-colado">O texto não foi colado</a></h2>
+<h3 class="block__h3">Um aviso diz &quot;Copiado para a área de transferência&quot;</h3>
+<p>O texto não pôde ser colado onde você estava, então ficou na área de transferência. Nada se perdeu.</p>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p>Acontece quando a colagem automática está desligada (os Ajustes mostram <strong>Colagem automática: desligada</strong>), num campo de senha, ou quando nada em que se possa digitar está em foco (a mesa, uma janela do Finder, uma página que você só está lendo).</p>
+<ol class="cues"><li>Clique onde o texto deve ir.</li><li>Aperte <span class="caps caps--inline"><kbd class="cap cap--inline">⌘</kbd><kbd class="cap cap--inline">V</kbd></span>, ou escolha <strong>Repetir Última Transcrição</strong> no menu.</li><li>Para colar sozinho daqui para a frente, clique em <strong>Ativar…</strong> nos Ajustes, ou em <strong>Ativar colagem automática…</strong> no menu.</li></ol></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><p>Acontece numa janela aberta como administrador (o Windows não deixa outros apps digitarem nela), num campo de senha, ou quando nada em que se possa digitar está em foco.</p>
+<ol class="cues"><li>Clique onde o texto deve ir.</li><li>Aperte <span class="caps caps--inline"><kbd class="cap cap--inline">Ctrl</kbd><kbd class="cap cap--inline">V</kbd></span>, ou escolha <strong>Repetir Última Transcrição</strong> no menu.</li></ol>
+<p>Rodar o próprio Open Whisper como administrador não é recomendado.</p></div></div></div>
+<h3 class="block__h3">O texto não apareceu em lugar nenhum</h3>
+<p>Em navegadores e em apps feitos sobre eles (Chrome, VS Code, Slack, Discord), o Open Whisper nem sempre consegue saber se há um campo de texto em foco, então cola mesmo assim. Se nenhum campo estava em foco, a colagem cai no vazio e a área de transferência volta ao que tinha antes.</p>
+<ol class="cues"><li>Clique no campo.</li><li>Escolha <strong>Copiar Última Transcrição</strong> no menu e cole. O último ditado fica guardado até você sair do app.</li></ol>
+<h3 class="block__h3">Os ditados não aparecem no histórico da área de transferência do Windows</h3>
+<p>É de propósito. O texto ditado nunca vai para o <span class="caps caps--inline"><kbd class="cap cap--inline">Win</kbd><kbd class="cap cap--inline">V</kbd></span> nem para a sincronização na nuvem, mesmo quando fica na área de transferência. Veja <a class="link" href="../privacy/">Privacidade</a>.</p>
+<h3 class="block__h3">O que você tinha copiado não voltou</h3>
+<p>Depois de colar, o Open Whisper devolve o que estava na área de transferência, mas só texto. Uma imagem ou outro conteúdo que você tinha copiado pode não voltar.</p>
+</div></section>
+<section class="block__section" aria-labelledby="video"><div class="block__text">
+<h2 class="block__h2" id="video"><a class="anchor" href="#video">Vídeo</a></h2>
+<h3 class="block__h3">&quot;O Open Whisper precisa do yt-dlp para acessar vídeos&quot;</h3>
+<p>Links de vídeo precisam do yt-dlp, uma ferramenta gratuita que você mesmo instala. O Open Whisper nunca instala nem atualiza o yt-dlp. Arquivos do seu computador não precisam dele.</p>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><pre class="terminal terminal--doc" data-lang="sh"><code><span class="prompt" aria-hidden="true">&gt;</span> brew install yt-dlp</code></pre>
+<p>Se disser que o yt-dlp instalado é antigo demais (a versão mínima é 2025.01.01):</p>
+<pre class="terminal terminal--doc" data-lang="sh"><code><span class="prompt" aria-hidden="true">&gt;</span> brew upgrade yt-dlp</code></pre></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><pre class="terminal terminal--doc" data-lang="sh"><code><span class="prompt" aria-hidden="true">&gt;</span> winget install yt-dlp.yt-dlp</code></pre>
+<p>Se disser que o yt-dlp instalado é antigo demais (a versão mínima é 2025.01.01):</p>
+<pre class="terminal terminal--doc" data-lang="sh"><code><span class="prompt" aria-hidden="true">&gt;</span> winget upgrade yt-dlp.yt-dlp</code></pre></div></div></div>
+<p>Se o yt-dlp está instalado num lugar onde o Open Whisper não procura, defina a variável de ambiente <code>OPEN_WHISPER_YT_DLP</code> com o caminho completo dele.</p>
+<h3 class="block__h3">&quot;Falhou por um motivo que o Open Whisper não reconhece&quot;</h3>
+<p>O YouTube muda com frequência, e um yt-dlp antigo para de funcionar. Atualize o yt-dlp (acima) e tente de novo.</p>
+<h3 class="block__h3">&quot;Isso não é o link de um vídeo do YouTube&quot;</h3>
+<p>Só links de um único vídeo do YouTube funcionam. Playlists, canais e outros sites são recusados. Abra o próprio vídeo e copie o link dele.</p>
+<h3 class="block__h3">&quot;Este vídeo não tem legendas utilizáveis&quot;</h3>
+<p>Clique em <strong>Transcrever neste dispositivo</strong>. Isso baixa o áudio e transcreve no seu computador, o que leva alguns minutos.</p>
+<h3 class="block__h3">&quot;O YouTube está limitando os acessos agora&quot; ou &quot;Sem conexão com a internet.&quot;</h3>
+<p>Espere alguns minutos, confira a sua conexão e tente de novo.</p>
+<h3 class="block__h3">&quot;O Open Whisper não consegue decodificar o áudio deste arquivo&quot;</h3>
+<p>O arquivo usa um formato que o app não lê (Opus, AC-3, E-AC-3, DTS, ou um arquivo AVI, WMV ou ASF). Exporte como MP4 ou M4A com AAC, ou como MP3, FLAC ou WAV, e tente de novo.</p>
+<h3 class="block__h3">&quot;Este vídeo passa do limite de 3 horas&quot;</h3>
+<p>Vídeos e arquivos com mais de 3 horas não cabem na memória com segurança. Corte a gravação em partes menores que 3 horas.</p>
+<h3 class="block__h3">&quot;O Open Whisper transcreve um vídeo por vez&quot;</h3>
+<p>Espere o trabalho atual terminar ou cancele. <strong>Copiar</strong> também é recusado enquanto você dita: espere o ditado terminar e clique de novo.</p>
+<h3 class="block__h3">O vídeo sai no idioma que você usava antes</h3>
+<p>Se você trocou o <strong>Idioma</strong> nos Ajustes e um vídeo continua saindo no idioma antigo, saia do Open Whisper e abra de novo.</p>
+<h3 class="block__h3">Sair pergunta sobre um vídeo</h3>
+<p><strong>Uma transcrição de vídeo está em andamento. Se você sair agora, ela será perdida.</strong> Clique em <strong>Continuar</strong> para deixar terminar, ou em <strong>Sair mesmo assim</strong> para perder o trabalho.</p>
+</div></section>
+<section class="block__section" aria-labelledby="linha-de-comando"><div class="block__text">
+<h2 class="block__h2" id="linha-de-comando"><a class="anchor" href="#linha-de-comando">Linha de comando</a></h2>
+<h3 class="block__h3">&quot;open-whisper&quot; não é encontrado</h3>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p>Se você instalou pelo Homebrew, o comando já está no PATH. Se instalou pelo <code>.dmg</code>, crie o link uma vez:</p>
+<pre class="terminal terminal--doc" data-lang="sh"><code><span class="prompt" aria-hidden="true">&gt;</span> ln -s &quot;/Applications/Open Whisper.app/Contents/MacOS/open-whisper&quot; /opt/homebrew/bin/open-whisper</code></pre>
+<p>Num Mac com Intel, use <code>/usr/local/bin/open-whisper</code> na última parte.</p></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><ol class="cues"><li>Abra uma janela nova do terminal: as janelas que estavam abertas durante a instalação ainda não enxergam o comando.</li><li>Se continuar sem encontrar, o seu PATH era longo demais para o instalador acrescentar o comando. Rode o <code>open-whisper.com</code> pelo caminho completo, na pasta onde o Open Whisper está instalado.</li></ol>
+<p>Rodar <code>open-whisper</code> sem argumentos termina com erro de uso, de propósito: o app em si abre pelo menu Iniciar.</p></div></div></div>
+<h3 class="block__h3">Código de saída 2</h3>
+<p>O comando foi digitado errado: uma opção ou um valor desconhecido, faltou a entrada, sobraram duas entradas, ou uma entrada veio sem <code>transcribe</code>. Rode <code>open-whisper --help</code> e confira o comando.</p>
+<h3 class="block__h3">Código de saída 4</h3>
+<p>O modelo não está baixado, e o comando nunca baixa nada sozinho. Acrescente <code>--model small-q5_1</code> para usar o embutido, ou baixe o modelo no app antes.</p>
+<h3 class="block__h3">Código de saída 7</h3>
+<p>O vídeo não tem legendas utilizáveis. Rode de novo com <code>--on-device</code> para transcrever o áudio no seu computador.</p>
+<p>Todos os códigos de saída, com o que fazer em cada um, estão na <a class="link" href="../command-reference/">Referência do comando</a>.</p>
+</div></section>
+<section class="block__section" aria-labelledby="ainda-sem-solucao"><div class="block__text">
+<h2 class="block__h2" id="ainda-sem-solucao"><a class="anchor" href="#ainda-sem-solucao">Ainda sem solução?</a></h2>
+<p>Se o seu problema não está aqui, ou uma solução não funcionou, conte para a gente. <a class="link" href="../report/">Relatar um problema</a> explica onde e o que incluir.</p>
+</div></section>
+  </article>
+  <nav class="block__foot" aria-label="Bloco anterior e próximo"><a class="key key--step key--prev" href="../privacy/" rel="prev"><span class="key__text"><span class="key__sub engrave">Anterior · 10</span><span class="key__main">Privacidade</span></span></a><a class="key key--step key--next" href="../faq/" rel="next"><span class="key__text"><span class="key__sub engrave">Próximo · A1</span><span class="key__main">Perguntas frequentes</span></span></a></nav>
+</main>
+</div>
+<footer class="footplate">
+  <div class="footplate__inner">
+    <p class="footplate__free">O Open Whisper é gratuito. <span class="footplate__privacy">Este site não usa cookies e não mede nada.</span></p>
+    <ul class="footplate__links">
+      <li><a class="link" href="../../">Página do Open Whisper</a></li>
+      <li><a class="link" href="../../../terms.txt">Termos de uso</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/releases">Todos os releases</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/issues">Relatar um problema</a></li>
+    </ul>
+    <p class="signature"><span class="signature__intro">feito por</span> <a class="signature__mark" href="https://entringer.dev">entringer.dev</a></p>
+  </div>
+</footer>
+<script type="application/json" id="docs-data">{"result":"1 resultado","results":"{n} resultados","noResults":"Nada encontrado para “{q}”."}</script>
+<script type="module" src="../../../assets/docs.js?v=fc6854744e"></script>
+</body>
+</html>

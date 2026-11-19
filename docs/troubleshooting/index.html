@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en" data-os="other">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Troubleshooting · Open Whisper Help</title>
+<meta name="description" content="Every known problem, by what you see: the cause and the steps that fix it, on Mac and Windows.">
+<link rel="canonical" href="https://openwhisper.entringer.dev/docs/troubleshooting/">
+<link rel="alternate" hreflang="en" href="https://openwhisper.entringer.dev/docs/troubleshooting/">
+<link rel="alternate" hreflang="pt-BR" href="https://openwhisper.entringer.dev/pt/docs/troubleshooting/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Troubleshooting · Open Whisper Help">
+<meta property="og:description" content="Every known problem, by what you see: the cause and the steps that fix it, on Mac and Windows.">
+<meta property="og:url" content="https://openwhisper.entringer.dev/docs/troubleshooting/">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Open Whisper">
+<meta property="og:image" content="https://openwhisper.entringer.dev/assets/og-en.jpg">
+<meta name="theme-color" content="#191314">
+<link rel="icon" type="image/png" sizes="64x64" href="../../assets/favicon-64.png">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<link rel="preload" href="../../assets/fonts/barlow-semi-condensed-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=fc6854744e">
+<link rel="stylesheet" href="../../assets/docs.css?v=fc6854744e">
+<script>
+  // Before the first paint, so the keycaps, the windows and the platform order are the visitor's.
+  (function () {
+    var ua = navigator.userAgent, d = document.documentElement;
+    var touch = matchMedia("(pointer: coarse)").matches && !matchMedia("(pointer: fine)").matches;
+    d.classList.add("js");
+    d.dataset.os = /Windows NT/.test(ua) ? "windows" : /Macintosh|Mac OS X/.test(ua) && !touch ? "mac" : touch ? "touch" : "other";
+  })();
+</script>
+</head>
+<body class="docs-body">
+<a class="skip" href="#plate">Skip to the page</a>
+<header class="nameplate nameplate--docs">
+  <a class="brand" href="../../" aria-label="Open Whisper">
+    <img class="brand__icon" src="../../assets/icon-64.png" width="32" height="32" alt="">
+    <span class="engrave brand__name">Open Whisper</span>
+  </a>
+  <a class="engrave brand__docs" href="../">Docs</a>
+  <form class="search" role="search" action="../" data-index="../../assets/search-en.json">
+    <label class="sr-only" for="search">Search the help</label>
+    <span class="search__well">
+      <svg class="glyph" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M12.6 12.6L17 17"/></svg>
+      <input id="search" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search the help" aria-describedby="search-hint" aria-controls="results">
+      <kbd class="cap cap--inline search__key" aria-hidden="true">/</kbd>
+    </span>
+    <span class="sr-only" id="search-hint">Type to search; press / anywhere to come back here.</span>
+    <div class="results" id="results" hidden><p class="results__count" id="results-count" aria-live="polite"></p><ol class="results__list"></ol></div>
+  </form>
+  <nav class="nameplate__end" aria-label="Site">
+    <span class="latches" role="group" aria-label="Language">
+      <a class="latch is-on" href="../../docs/troubleshooting/" hreflang="en" lang="en" aria-current="page"><i class="led" aria-hidden="true"></i>EN</a><a class="latch" href="../../pt/docs/troubleshooting/" hreflang="pt-BR" lang="pt-BR"><i class="led" aria-hidden="true"></i>PT</a>
+    </span>
+  </nav>
+</header>
+<div class="docs">
+<nav class="rundown" id="rundown" aria-label="Rundown">
+  <details class="rundown__fold" open>
+    <summary class="rundown__head"><svg class="glyph rundown__chev" viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5L13 10l-5.5 5.5"/></svg><span class="engrave">Rundown</span><span class="engrave engrave--dim rundown__count">11 blocks · min</span></summary>
+    <ol class="rundown__list"><li><a class="cue" href="../install/" data-slug="install"><span class="cue__no">01</span><span class="cue__title">Install</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../first-run/" data-slug="first-run"><span class="cue__no">02</span><span class="cue__title">First run</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../dictate/" data-slug="dictate"><span class="cue__no">03</span><span class="cue__title">Dictate</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../paste/" data-slug="paste"><span class="cue__no">04</span><span class="cue__title">Where the text lands</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../menu/" data-slug="menu"><span class="cue__no">05</span><span class="cue__title">The icon and its menu</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../settings/" data-slug="settings"><span class="cue__no">06</span><span class="cue__title">Settings</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../models/" data-slug="models"><span class="cue__no">07</span><span class="cue__title">Models</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../video/" data-slug="video"><span class="cue__no">08</span><span class="cue__title">Video and files</span><span class="cue__time">8<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../command-line/" data-slug="command-line"><span class="cue__no">09</span><span class="cue__title">Command line</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../privacy/" data-slug="privacy"><span class="cue__no">10</span><span class="cue__title">Privacy</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue is-on" href="../troubleshooting/" data-slug="troubleshooting" aria-current="page"><span class="cue__no">11</span><span class="cue__title">Troubleshooting</span><span class="cue__time">9<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+    <p class="rundown__head rundown__head--sub"><span class="engrave">Appendices</span></p>
+    <ol class="rundown__list rundown__list--appendix"><li><a class="cue" href="../faq/" data-slug="faq"><span class="cue__no">A1</span><span class="cue__title">FAQ</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../shortcuts/" data-slug="shortcuts"><span class="cue__no">A2</span><span class="cue__title">Shortcuts and keys</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../command-reference/" data-slug="command-reference"><span class="cue__no">A3</span><span class="cue__title">Command reference</span><span class="cue__time">7<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../data-and-uninstall/" data-slug="data-and-uninstall"><span class="cue__no">A4</span><span class="cue__title">Data and uninstalling</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../limits/" data-slug="limits"><span class="cue__no">A5</span><span class="cue__title">What it doesn&#39;t do</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../report/" data-slug="report"><span class="cue__no">A6</span><span class="cue__title">Reporting a problem</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../about/" data-slug="about"><span class="cue__no">A7</span><span class="cue__title">About and terms</span><span class="cue__time">2<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+  </details>
+</nav>
+<main class="plate" id="plate" tabindex="-1">
+  <header class="block__head">
+    <h1 class="block__title"><span class="readout block__no"><span class="sr-only">Block </span>11</span> <span class="block__name">Troubleshooting</span></h1>
+    <p class="engrave engrave--dim block__time">Reading time · 9 min</p>
+    <p class="block__summary">Every known problem, by what you see: the cause and the steps that fix it, on Mac and Windows.</p>
+    <nav class="toc" aria-label="In this block"><p class="engrave toc__head">In this block</p><ol><li><a href="#installing">Installing</a></li><li><a href="#permissions">Permissions</a></li><li><a href="#the-shortcut">The shortcut</a></li><li><a href="#recording">Recording</a></li><li><a href="#the-text-was-not-pasted">The text was not pasted</a></li><li><a href="#video">Video</a></li><li><a href="#command-line">Command line</a></li><li><a href="#still-stuck">Still stuck?</a></li></ol></nav>
+  </header>
+  <article class="block" data-slug="troubleshooting">
+<p>Find what you see, read why it happens, and follow the steps. The problems are grouped by moment: installing, permissions, the shortcut, recording, the paste, video and the command line.</p>
+<section class="block__section" aria-labelledby="installing"><div class="block__text">
+<h2 class="block__h2" id="installing"><a class="anchor" href="#installing">Installing</a></h2>
+<h3 class="block__h3">&quot;Windows protected your PC&quot;</h3>
+<p>The installer isn&#39;t signed yet, so SmartScreen doesn&#39;t recognise it. The warning is expected.</p>
+<ol class="cues"><li>Check the file first: in the folder where you downloaded it, run <code>certutil -hashfile Open.Whisper_X.Y.Z_x64-setup.exe SHA256</code> (with your version&#39;s file name).</li><li>Compare the result with the hash in the <code>.sha256</code> file from the same release. They must match.</li><li>Open the installer again and click <strong>More info</strong>, then <strong>Run anyway</strong>.</li></ol>
+<h3 class="block__h3">The installer needs the internet</h3>
+<p>If Windows lacks WebView2, the installer downloads it during installation. Connect to the internet and run the installer again. Open Whisper itself doesn&#39;t need the internet afterwards.</p>
+<h3 class="block__h3">Your processor is older</h3>
+<p>On Windows, Open Whisper needs a processor with AVX2 (Intel from 2013, AMD from 2015). An older processor is not supported.</p>
+<h3 class="block__h3">The app doesn&#39;t seem to open</h3>
+<p>Open Whisper has no window and no Dock or taskbar button. It lives in one icon.</p>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p>Look in the menu bar, near the clock. Click the icon to open the menu.</p></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><p>Look in the notification area, next to the clock. If you don&#39;t see it, click <strong>^</strong> (show hidden icons) and drag the Open Whisper icon onto the taskbar.</p>
+<p>Starting the app a second time does nothing visible: the copy that is already running stays in charge.</p></div></div></div>
+<h3 class="block__h3">&quot;Open at login&quot; can&#39;t be turned on</h3>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p>The message <strong>Move Open Whisper to the Applications folder to use this option.</strong> means the app is running from somewhere else: the <code>.dmg</code>, Downloads, or a subfolder.</p>
+<ol class="cues"><li>Quit Open Whisper.</li><li>Move <code>Open Whisper.app</code> directly into <code>/Applications</code> (not into a subfolder such as Utilities).</li><li>Open it from there and turn the option on again.</li></ol>
+<p>If it says <strong>Approve Open Whisper in System Settings → Login Items.</strong>, click <strong>Open System Settings</strong> and switch Open Whisper on under <strong>Login Items</strong>.</p></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><p>The message <strong>Install Open Whisper with its installer to use this option.</strong> means this copy isn&#39;t the one the installer put on your PC. Install it with the installer and open that copy.</p>
+<p>If it says <strong>Turned off in Windows Settings → Apps → Startup.</strong>, the option was switched off in Windows. Turn it on again in Open Whisper, or click <strong>Open Windows Settings</strong> and switch it on under <strong>Startup</strong>.</p></div></div></div>
+</div></section>
+<section class="block__section" aria-labelledby="permissions"><div class="block__text">
+<h2 class="block__h2" id="permissions"><a class="anchor" href="#permissions">Permissions</a></h2>
+<h3 class="block__h3">Microphone access is off</h3>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p>Dictation needs the microphone. If you refused it, or setup says <strong>Microphone access is off</strong>:</p>
+<ol class="cues"><li>Open <strong>System Settings → Privacy &amp; Security → Microphone</strong>.</li><li>Switch <strong>Open Whisper</strong> on.</li><li>Dictate again.</li></ol></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><p>Windows lets apps use the microphone unless it was turned off in its settings. When it is off, Open Whisper doesn&#39;t record and says so: <strong>Windows is blocking the microphone. Allow it in Settings → Privacy &amp; security → Microphone, including for desktop apps.</strong> Open Whisper&#39;s Settings show the same line at the top of <strong>Recording</strong>, with the key <strong>Open Windows Settings</strong>.</p>
+<ol class="cues"><li>Open <strong>Settings → Privacy &amp; security → Microphone</strong>.</li><li>Turn on microphone access at the top of the page, and <strong>Let desktop apps access your microphone</strong>.</li><li>Dictate again.</li></ol></div></div></div>
+<h3 class="block__h3">Auto-paste won&#39;t turn on (Mac)</h3>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p>macOS applies the Accessibility permission only when the app opens again. If the switch in System Settings is on but the text still goes to the clipboard:</p>
+<ol class="cues"><li>Quit Open Whisper from its menu (<strong>Quit Open Whisper</strong>) and open it again. During setup, <strong>Reopen Open Whisper</strong> does this for you.</li><li>If the switch keeps flipping back off, make sure you&#39;re using the copy from the official download.</li><li>Still stuck? Clear the permission in Terminal and grant it again:<br><code>tccutil reset Accessibility dev.entringer.openwhisper</code></li><li>Choose <strong>Enable auto-paste…</strong> in the menu, switch Open Whisper on, and reopen the app.</li></ol></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><p>There is no Accessibility permission on Windows: auto-paste is always available. If the text isn&#39;t pasted, see <a class="link" href="#the-text-was-not-pasted">The text was not pasted</a>.</p></div></div></div>
+</div></section>
+<section class="block__section" aria-labelledby="the-shortcut"><div class="block__text">
+<h2 class="block__h2" id="the-shortcut"><a class="anchor" href="#the-shortcut">The shortcut</a></h2>
+<h3 class="block__h3">Pressing the shortcut does nothing</h3>
+<ol class="cues"><li>Open the menu and look at <strong>Start Recording</strong>: the key shown beside it is the shortcut that is really active.</li><li>If another app already uses your combination, Settings says <strong>… could not be registered.</strong> Pick another combination in <a class="link" href="../settings/">Settings</a>.</li><li>Until then, <strong>Start Recording</strong> in the menu always works.</li><li>If the shortcut works but nothing is pasted, see <a class="link" href="#recording">Recording</a> and <a class="link" href="#the-text-was-not-pasted">The text was not pasted</a>.</li></ol>
+<h3 class="block__h3">&quot;… is reserved by macOS&quot; or &quot;… is reserved by Windows&quot;</h3>
+<p>The system keeps that combination for itself. While it is chosen, Open Whisper uses <span class="caps caps--inline"><kbd class="cap cap--inline">⇧</kbd><kbd class="cap cap--inline">⌘</kbd><kbd class="cap cap--inline">D</kbd></span> on the Mac or <span class="caps caps--inline"><kbd class="cap cap--inline">Ctrl</kbd><kbd class="cap cap--inline">Shift</kbd><kbd class="cap cap--inline">D</kbd></span> on Windows instead.</p>
+<ol class="cues"><li>In <a class="link" href="../settings/">Settings</a>, click <strong>Change</strong> and press another combination.</li><li>Or click <strong>Keep</strong> and use the fallback shown beside <strong>Start Recording</strong> in the menu.</li></ol>
+<p>The full list of reserved combinations is in <a class="link" href="../shortcuts/">Shortcuts and keys</a>.</p>
+<h3 class="block__h3">The recorder doesn&#39;t accept the combination</h3>
+<p>A shortcut needs a modifier. A key on its own, even a function key such as F5, can&#39;t be the shortcut.</p>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p>Include <span class="caps caps--inline"><kbd class="cap cap--inline">⌘</kbd></span>, <span class="caps caps--inline"><kbd class="cap cap--inline">⌃</kbd></span> or <span class="caps caps--inline"><kbd class="cap cap--inline">⌥</kbd></span>. Shift alone doesn&#39;t count. If you see <strong>Could not save preferences</strong>, the combination has no modifier: press it again with one.</p></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><p>Include <span class="caps caps--inline"><kbd class="cap cap--inline">Ctrl</kbd></span> or <span class="caps caps--inline"><kbd class="cap cap--inline">Alt</kbd></span>. Shift alone doesn&#39;t count, and the Windows key can&#39;t be part of the shortcut. If you see <strong>Could not save preferences</strong>, the combination has no modifier: press it again with one.</p></div></div></div>
+<h3 class="block__h3">The shortcut gets in the way of another app</h3>
+<p>On Windows, <span class="caps caps--inline"><kbd class="cap cap--inline">Ctrl</kbd><kbd class="cap cap--inline">Shift</kbd><kbd class="cap cap--inline">Space</kbd></span> also means something in Word and VS Code. Choose another combination in <a class="link" href="../settings/">Settings</a>, such as <span class="caps caps--inline"><kbd class="cap cap--inline">Ctrl</kbd><kbd class="cap cap--inline">Alt</kbd><kbd class="cap cap--inline">Space</kbd></span>.</p>
+<h3 class="block__h3">Esc doesn&#39;t cancel</h3>
+<p>Esc cancels only while Open Whisper says <strong>Recording</strong>. Once it says <strong>Transcribing</strong>, the recording is over and Esc no longer cancels.</p>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p>In Hold to Talk, press <span class="caps caps--inline"><kbd class="cap cap--inline">Esc</kbd></span> while you still hold the shortcut. Both work: Esc alone, or the held keys plus Esc. If your shortcut holds both <span class="caps caps--inline"><kbd class="cap cap--inline">⌥</kbd></span> and <span class="caps caps--inline"><kbd class="cap cap--inline">⌘</kbd></span>, <span class="caps caps--inline"><kbd class="cap cap--inline">⌥</kbd><kbd class="cap cap--inline">⌘</kbd><kbd class="cap cap--inline">Esc</kbd></span> belongs to macOS (Force Quit): use Toggle mode to cancel with Esc.</p></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><p>In Hold to Talk with <span class="caps caps--inline"><kbd class="cap cap--inline">Ctrl</kbd><kbd class="cap cap--inline">Shift</kbd><kbd class="cap cap--inline">Space</kbd></span>, Esc can&#39;t cancel: <span class="caps caps--inline"><kbd class="cap cap--inline">Ctrl</kbd><kbd class="cap cap--inline">Shift</kbd><kbd class="cap cap--inline">Esc</kbd></span> opens Task Manager. Either:</p>
+<ol class="cues"><li>Release the keys: the recording ends and is transcribed as usual.</li><li>Switch to Toggle mode, where <span class="caps caps--inline"><kbd class="cap cap--inline">Esc</kbd></span> cancels.</li><li>Or choose a shortcut such as <span class="caps caps--inline"><kbd class="cap cap--inline">Ctrl</kbd><kbd class="cap cap--inline">Alt</kbd><kbd class="cap cap--inline">Space</kbd></span>, which cancels with <span class="caps caps--inline"><kbd class="cap cap--inline">Ctrl</kbd><kbd class="cap cap--inline">Alt</kbd><kbd class="cap cap--inline">Esc</kbd></span>.</li></ol></div></div></div>
+</div></section>
+<section class="block__section" aria-labelledby="recording"><div class="block__text">
+<h2 class="block__h2" id="recording"><a class="anchor" href="#recording">Recording</a></h2>
+<h3 class="block__h3">&quot;Microphone unavailable — check the permission or whether another app is using it.&quot;</h3>
+<p>No microphone was found, or another app is holding it.</p>
+<ol class="cues"><li>Check that a microphone is connected and selected in the system&#39;s sound settings.</li><li>Close the app that is using it (a call, a recorder) and try again.</li><li>If that isn&#39;t it, check the permission (see <a class="link" href="#permissions">Permissions</a>).</li></ol>
+<h3 class="block__h3">&quot;Nothing was recorded — check the microphone permission, or hold the shortcut a moment longer.&quot;</h3>
+<p>The press was too short to capture any audio, or the microphone gave nothing.</p>
+<ol class="cues"><li>Hold the shortcut, start speaking, and release only after the last word.</li><li>If it keeps happening, check the permission (see <a class="link" href="#permissions">Permissions</a>).</li></ol>
+<h3 class="block__h3">Nothing happens after you speak</h3>
+<p>When no speech was heard, nothing is pasted and there is no notice, only the closing sound. Speak a little closer to the microphone and try again. On Windows, also check that the microphone isn&#39;t blocked (see <a class="link" href="#permissions">Permissions</a>).</p>
+<h3 class="block__h3">The recording stopped by itself</h3>
+<p>Two settings can end a recording:</p>
+<ul class="list"><li><strong>Max recording</strong>: at the limit (120 seconds by default) the recording stops and what was captured is transcribed. A notice says <strong>Recording stopped at the time limit — transcribing what was captured.</strong> Raise it up to 1800 seconds in <a class="link" href="../settings/">Settings</a>, under <strong>Advanced</strong>.</li><li><strong>Stop after silence</strong> (Toggle mode only): after you&#39;ve spoken, that much silence ends the recording. Raise the time or turn it off in <strong>Advanced</strong>. A phrase spoken very quietly at the very end can be left out.</li></ul>
+<h3 class="block__h3">&quot;Couldn&#39;t load the speech model. Check Settings.&quot;</h3>
+<p>The model you chose is missing or damaged.</p>
+<ol class="cues"><li>Open <a class="link" href="../settings/">Settings</a> and expand <strong>Advanced</strong>.</li><li>Under <strong>Model</strong>, choose <strong>Default</strong> (the bundled one).</li><li>If that fails too, reinstall Open Whisper.</li></ol>
+<h3 class="block__h3">&quot;Download failed. The current model is still in use.&quot;</h3>
+<p>The model didn&#39;t download. The previous one keeps working.</p>
+<ol class="cues"><li>Check your internet connection.</li><li>Choose the model again in <strong>Advanced → Model</strong> to retry. A download can&#39;t start during a dictation.</li></ol>
+<h3 class="block__h3">Words come out wrong, or in the wrong language</h3>
+<p>In <a class="link" href="../settings/">Settings</a>, set <strong>Language</strong> to the language you speak instead of <strong>Auto-detect</strong>. Larger models make fewer mistakes, in exchange for a download and more time: see <a class="link" href="../models/">Models</a>.</p>
+</div></section>
+<section class="block__section" aria-labelledby="the-text-was-not-pasted"><div class="block__text">
+<h2 class="block__h2" id="the-text-was-not-pasted"><a class="anchor" href="#the-text-was-not-pasted">The text was not pasted</a></h2>
+<h3 class="block__h3">A notice says &quot;Copied to clipboard&quot;</h3>
+<p>The text couldn&#39;t be pasted where you were, so it was kept on the clipboard. Nothing was lost.</p>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p>It happens when auto-paste is off (Settings shows <strong>Automatic paste: off</strong>), in a password field, or when nothing you can type in has focus (the desktop, a Finder window, a page you&#39;re only reading).</p>
+<ol class="cues"><li>Click where the text should go.</li><li>Press <span class="caps caps--inline"><kbd class="cap cap--inline">⌘</kbd><kbd class="cap cap--inline">V</kbd></span>, or choose <strong>Retry Last Transcription</strong> in the menu.</li><li>To paste automatically from now on, click <strong>Turn on…</strong> in Settings, or <strong>Enable auto-paste…</strong> in the menu.</li></ol></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><p>It happens in a window opened as administrator (Windows doesn&#39;t let other apps type into it), in a password field, or when nothing you can type in has focus.</p>
+<ol class="cues"><li>Click where the text should go.</li><li>Press <span class="caps caps--inline"><kbd class="cap cap--inline">Ctrl</kbd><kbd class="cap cap--inline">V</kbd></span>, or choose <strong>Retry Last Transcription</strong> in the menu.</li></ol>
+<p>Running Open Whisper itself as administrator is not recommended.</p></div></div></div>
+<h3 class="block__h3">The text appeared nowhere</h3>
+<p>In browsers and apps built on them (Chrome, VS Code, Slack, Discord), Open Whisper can&#39;t always tell whether a text field has focus, so it pastes anyway. If no field had focus, the paste lands nowhere and the clipboard goes back to what it held before.</p>
+<ol class="cues"><li>Click in the field.</li><li>Choose <strong>Copy Last Transcription</strong> in the menu, then paste. The last dictation is kept until you quit.</li></ol>
+<h3 class="block__h3">Dictations don&#39;t show in Windows clipboard history</h3>
+<p>This is on purpose. Dictated text never goes into <span class="caps caps--inline"><kbd class="cap cap--inline">Win</kbd><kbd class="cap cap--inline">V</kbd></span> or cloud clipboard sync, even when it stays on the clipboard. See <a class="link" href="../privacy/">Privacy</a>.</p>
+<h3 class="block__h3">What you had copied didn&#39;t come back</h3>
+<p>After a paste, Open Whisper puts back what the clipboard held, but only text. An image or other content you had copied may not come back.</p>
+</div></section>
+<section class="block__section" aria-labelledby="video"><div class="block__text">
+<h2 class="block__h2" id="video"><a class="anchor" href="#video">Video</a></h2>
+<h3 class="block__h3">&quot;Open Whisper needs yt-dlp to reach videos&quot;</h3>
+<p>Video links need yt-dlp, a free tool you install yourself. Open Whisper never installs or updates it. Files on your computer don&#39;t need it.</p>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><pre class="terminal terminal--doc" data-lang="sh"><code><span class="prompt" aria-hidden="true">&gt;</span> brew install yt-dlp</code></pre>
+<p>If it says the installed yt-dlp is too old (2025.01.01 is the minimum):</p>
+<pre class="terminal terminal--doc" data-lang="sh"><code><span class="prompt" aria-hidden="true">&gt;</span> brew upgrade yt-dlp</code></pre></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><pre class="terminal terminal--doc" data-lang="sh"><code><span class="prompt" aria-hidden="true">&gt;</span> winget install yt-dlp.yt-dlp</code></pre>
+<p>If it says the installed yt-dlp is too old (2025.01.01 is the minimum):</p>
+<pre class="terminal terminal--doc" data-lang="sh"><code><span class="prompt" aria-hidden="true">&gt;</span> winget upgrade yt-dlp.yt-dlp</code></pre></div></div></div>
+<p>If yt-dlp is installed somewhere Open Whisper doesn&#39;t look, set the <code>OPEN_WHISPER_YT_DLP</code> environment variable to its full path.</p>
+<h3 class="block__h3">&quot;It failed for a reason Open Whisper does not recognize&quot;</h3>
+<p>YouTube changes often, and an older yt-dlp stops working. Update yt-dlp (above) and try again.</p>
+<h3 class="block__h3">&quot;That is not a YouTube video link&quot;</h3>
+<p>Only links to a single YouTube video work. Playlists, channels and other sites are refused. Open the video itself and copy its link.</p>
+<h3 class="block__h3">&quot;This video has no usable captions&quot;</h3>
+<p>Click <strong>Transcribe on this device</strong>. It downloads the audio and transcribes it on your computer, which takes a few minutes.</p>
+<h3 class="block__h3">&quot;YouTube is rate-limiting requests right now&quot; or &quot;No internet connection.&quot;</h3>
+<p>Wait a few minutes, check your connection, and try again.</p>
+<h3 class="block__h3">&quot;Open Whisper cannot decode this file&#39;s audio&quot;</h3>
+<p>The file uses a format the app can&#39;t read (Opus, AC-3, E-AC-3, DTS, or an AVI, WMV or ASF file). Export it as MP4 or M4A with AAC, or as MP3, FLAC or WAV, and try again.</p>
+<h3 class="block__h3">&quot;This video is longer than the 3-hour limit&quot;</h3>
+<p>Videos and files over 3 hours don&#39;t fit safely in memory. Cut the recording into parts under 3 hours.</p>
+<h3 class="block__h3">&quot;Open Whisper transcribes one video at a time&quot;</h3>
+<p>Wait for the current job or cancel it. <strong>Copy</strong> is also refused while you dictate: wait for the dictation to finish and click it again.</p>
+<h3 class="block__h3">The video comes out in the language you used before</h3>
+<p>If you changed <strong>Language</strong> in Settings and a video still comes out in the old one, quit Open Whisper and open it again.</p>
+<h3 class="block__h3">Quitting asks about a video</h3>
+<p><strong>A video transcription is still running. Quitting now will lose it.</strong> Click <strong>Keep running</strong> to let it finish, or <strong>Quit anyway</strong> to lose it.</p>
+</div></section>
+<section class="block__section" aria-labelledby="command-line"><div class="block__text">
+<h2 class="block__h2" id="command-line"><a class="anchor" href="#command-line">Command line</a></h2>
+<h3 class="block__h3">&quot;open-whisper&quot; is not found</h3>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p>If you installed with Homebrew, the command is already on your PATH. If you installed from the <code>.dmg</code>, link it once:</p>
+<pre class="terminal terminal--doc" data-lang="sh"><code><span class="prompt" aria-hidden="true">&gt;</span> ln -s &quot;/Applications/Open Whisper.app/Contents/MacOS/open-whisper&quot; /opt/homebrew/bin/open-whisper</code></pre>
+<p>On an Intel Mac, use <code>/usr/local/bin/open-whisper</code> as the last part.</p></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><ol class="cues"><li>Open a new terminal window: windows that were open during the installation don&#39;t see the command yet.</li><li>If it still isn&#39;t found, your PATH was too long for the installer to add it. Run <code>open-whisper.com</code> by its full path, in the folder where Open Whisper is installed.</li></ol>
+<p>Running <code>open-whisper</code> with no arguments stops with a usage error on purpose: the app itself starts from the Start menu.</p></div></div></div>
+<h3 class="block__h3">Exit status 2</h3>
+<p>The command was mistyped: an unknown option or value, a missing input, two inputs, or an input given without <code>transcribe</code>. Run <code>open-whisper --help</code> and check the command.</p>
+<h3 class="block__h3">Exit status 4</h3>
+<p>The model isn&#39;t downloaded, and the command never downloads anything. Add <code>--model small-q5_1</code> to use the bundled one, or download the model in the app first.</p>
+<h3 class="block__h3">Exit status 7</h3>
+<p>The video has no usable captions. Run it again with <code>--on-device</code> to transcribe the audio on your computer.</p>
+<p>Every exit status, with what to do, is in the <a class="link" href="../command-reference/">Command reference</a>.</p>
+</div></section>
+<section class="block__section" aria-labelledby="still-stuck"><div class="block__text">
+<h2 class="block__h2" id="still-stuck"><a class="anchor" href="#still-stuck">Still stuck?</a></h2>
+<p>If your problem isn&#39;t here, or a fix didn&#39;t work, tell us. <a class="link" href="../report/">Reporting a problem</a> explains where and what to include.</p>
+</div></section>
+  </article>
+  <nav class="block__foot" aria-label="Previous and next blocks"><a class="key key--step key--prev" href="../privacy/" rel="prev"><span class="key__text"><span class="key__sub engrave">Previous · 10</span><span class="key__main">Privacy</span></span></a><a class="key key--step key--next" href="../faq/" rel="next"><span class="key__text"><span class="key__sub engrave">Next · A1</span><span class="key__main">Frequently asked questions</span></span></a></nav>
+</main>
+</div>
+<footer class="footplate">
+  <div class="footplate__inner">
+    <p class="footplate__free">Open Whisper is free. <span class="footplate__privacy">This site sets no cookies and measures nothing.</span></p>
+    <ul class="footplate__links">
+      <li><a class="link" href="../../">Open Whisper home</a></li>
+      <li><a class="link" href="../../terms.txt">Terms of use</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/releases">All releases</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/issues">Report a problem</a></li>
+    </ul>
+    <p class="signature"><span class="signature__intro">made by</span> <a class="signature__mark" href="https://entringer.dev">entringer.dev</a></p>
+  </div>
+</footer>
+<script type="application/json" id="docs-data">{"result":"1 result","results":"{n} results","noResults":"Nothing found for “{q}”."}</script>
+<script type="module" src="../../assets/docs.js?v=fc6854744e"></script>
+</body>
+</html>

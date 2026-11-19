@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="pt-BR" data-os="other">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Relatar um problema · Ajuda do Open Whisper</title>
+<meta name="description" content="Onde relatar um problema ou sugerir uma ideia, o que torna um relato resolvível e o que acontece depois que você envia.">
+<link rel="canonical" href="https://openwhisper.entringer.dev/pt/docs/report/">
+<link rel="alternate" hreflang="en" href="https://openwhisper.entringer.dev/docs/report/">
+<link rel="alternate" hreflang="pt-BR" href="https://openwhisper.entringer.dev/pt/docs/report/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Relatar um problema · Ajuda do Open Whisper">
+<meta property="og:description" content="Onde relatar um problema ou sugerir uma ideia, o que torna um relato resolvível e o que acontece depois que você envia.">
+<meta property="og:url" content="https://openwhisper.entringer.dev/pt/docs/report/">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Open Whisper">
+<meta property="og:image" content="https://openwhisper.entringer.dev/assets/og-pt.jpg">
+<meta name="theme-color" content="#191314">
+<link rel="icon" type="image/png" sizes="64x64" href="../../../assets/favicon-64.png">
+<link rel="apple-touch-icon" href="../../../assets/icon-180.png">
+<link rel="preload" href="../../../assets/fonts/barlow-semi-condensed-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../../assets/site.css?v=fc6854744e">
+<link rel="stylesheet" href="../../../assets/docs.css?v=fc6854744e">
+<script>
+  // Before the first paint, so the keycaps, the windows and the platform order are the visitor's.
+  (function () {
+    var ua = navigator.userAgent, d = document.documentElement;
+    var touch = matchMedia("(pointer: coarse)").matches && !matchMedia("(pointer: fine)").matches;
+    d.classList.add("js");
+    d.dataset.os = /Windows NT/.test(ua) ? "windows" : /Macintosh|Mac OS X/.test(ua) && !touch ? "mac" : touch ? "touch" : "other";
+  })();
+</script>
+</head>
+<body class="docs-body">
+<a class="skip" href="#plate">Ir para a página</a>
+<header class="nameplate nameplate--docs">
+  <a class="brand" href="../../" aria-label="Open Whisper">
+    <img class="brand__icon" src="../../../assets/icon-64.png" width="32" height="32" alt="">
+    <span class="engrave brand__name">Open Whisper</span>
+  </a>
+  <a class="engrave brand__docs" href="../">Ajuda</a>
+  <form class="search" role="search" action="../" data-index="../../../assets/search-pt.json">
+    <label class="sr-only" for="search">Buscar na ajuda</label>
+    <span class="search__well">
+      <svg class="glyph" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M12.6 12.6L17 17"/></svg>
+      <input id="search" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="Buscar na ajuda" aria-describedby="search-hint" aria-controls="results">
+      <kbd class="cap cap--inline search__key" aria-hidden="true">/</kbd>
+    </span>
+    <span class="sr-only" id="search-hint">Digite para buscar; aperte / em qualquer lugar para voltar aqui.</span>
+    <div class="results" id="results" hidden><p class="results__count" id="results-count" aria-live="polite"></p><ol class="results__list"></ol></div>
+  </form>
+  <nav class="nameplate__end" aria-label="Site">
+    <span class="latches" role="group" aria-label="Idioma">
+      <a class="latch" href="../../../docs/report/" hreflang="en" lang="en"><i class="led" aria-hidden="true"></i>EN</a><a class="latch is-on" href="../../../pt/docs/report/" hreflang="pt-BR" lang="pt-BR" aria-current="page"><i class="led" aria-hidden="true"></i>PT</a>
+    </span>
+  </nav>
+</header>
+<div class="docs">
+<nav class="rundown" id="rundown" aria-label="Roteiro">
+  <details class="rundown__fold" open>
+    <summary class="rundown__head"><svg class="glyph rundown__chev" viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5L13 10l-5.5 5.5"/></svg><span class="engrave">Roteiro</span><span class="engrave engrave--dim rundown__count">11 blocos · min</span></summary>
+    <ol class="rundown__list"><li><a class="cue" href="../install/" data-slug="install"><span class="cue__no">01</span><span class="cue__title">Instalar</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../first-run/" data-slug="first-run"><span class="cue__no">02</span><span class="cue__title">Primeira execução</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../dictate/" data-slug="dictate"><span class="cue__no">03</span><span class="cue__title">Ditar</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../paste/" data-slug="paste"><span class="cue__no">04</span><span class="cue__title">Onde o texto vai parar</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../menu/" data-slug="menu"><span class="cue__no">05</span><span class="cue__title">O ícone e o menu</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../settings/" data-slug="settings"><span class="cue__no">06</span><span class="cue__title">Ajustes</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../models/" data-slug="models"><span class="cue__no">07</span><span class="cue__title">Modelos</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../video/" data-slug="video"><span class="cue__no">08</span><span class="cue__title">Vídeo e arquivos</span><span class="cue__time">8<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../command-line/" data-slug="command-line"><span class="cue__no">09</span><span class="cue__title">Linha de comando</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../privacy/" data-slug="privacy"><span class="cue__no">10</span><span class="cue__title">Privacidade</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../troubleshooting/" data-slug="troubleshooting"><span class="cue__no">11</span><span class="cue__title">Solução de problemas</span><span class="cue__time">9<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+    <p class="rundown__head rundown__head--sub"><span class="engrave">Anexos</span></p>
+    <ol class="rundown__list rundown__list--appendix"><li><a class="cue" href="../faq/" data-slug="faq"><span class="cue__no">A1</span><span class="cue__title">Perguntas frequentes</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../shortcuts/" data-slug="shortcuts"><span class="cue__no">A2</span><span class="cue__title">Atalhos e teclas</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../command-reference/" data-slug="command-reference"><span class="cue__no">A3</span><span class="cue__title">Referência do comando</span><span class="cue__time">7<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../data-and-uninstall/" data-slug="data-and-uninstall"><span class="cue__no">A4</span><span class="cue__title">Dados e desinstalação</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../limits/" data-slug="limits"><span class="cue__no">A5</span><span class="cue__title">O que ele não faz</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue is-on" href="../report/" data-slug="report" aria-current="page"><span class="cue__no">A6</span><span class="cue__title">Relatar um problema</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../about/" data-slug="about"><span class="cue__no">A7</span><span class="cue__title">Sobre e termos</span><span class="cue__time">2<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+  </details>
+</nav>
+<main class="plate" id="plate" tabindex="-1">
+  <header class="block__head">
+    <h1 class="block__title"><span class="readout block__no"><span class="sr-only">Anexo </span>A6</span> <span class="block__name">Relatar um problema</span></h1>
+    <p class="engrave engrave--dim block__time">Leitura · 3 min</p>
+    <p class="block__summary">Onde relatar um problema ou sugerir uma ideia, o que torna um relato resolvível e o que acontece depois que você envia.</p>
+    <nav class="toc" aria-label="Neste bloco"><p class="engrave toc__head">Neste bloco</p><ol><li><a href="#onde-relatar">Onde relatar</a></li><li><a href="#o-que-faz-um-bom-relato">O que faz um bom relato</a></li><li><a href="#deixe-o-texto-privado-de-fora">Deixe o texto privado de fora</a></li><li><a href="#o-que-esperar">O que esperar</a></li><li><a href="#o-que-as-etiquetas-querem-dizer">O que as etiquetas querem dizer</a></li></ol></nav>
+  </header>
+  <article class="block" data-slug="report">
+<p>Algo não funciona, ou você tem uma ideia? Conte em público, na página de issues do projeto. Esta página diz o que incluir, o que deixar de fora e o que esperar.</p>
+<section class="block__section" aria-labelledby="onde-relatar"><div class="block__text">
+<h2 class="block__h2" id="onde-relatar"><a class="anchor" href="#onde-relatar">Onde relatar</a></h2>
+<ol class="cues"><li>Olhe antes a <a class="link" href="../troubleshooting/">Solução de problemas</a>: a solução pode já estar lá.</li><li>Confira <a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/issues" rel="noopener">o que já foi relatado</a>. Se o seu problema está lá, acrescente o que você vê.</li><li>Se não estiver, <a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/issues/new/choose" rel="noopener">abra uma issue nova</a>. É preciso ter uma conta no GitHub.</li></ol>
+<p>Escreva no idioma que preferir. A resposta vem no idioma em que a issue foi escrita.</p>
+</div></section>
+<section class="block__section" aria-labelledby="o-que-faz-um-bom-relato"><div class="block__text">
+<h2 class="block__h2" id="o-que-faz-um-bom-relato"><a class="anchor" href="#o-que-faz-um-bom-relato">O que faz um bom relato</a></h2>
+<ul class="list"><li><strong>O que você esperava, e o que aconteceu no lugar.</strong> &quot;O texto foi para a área de transferência em vez de entrar no documento&quot; tem solução. &quot;Não funciona&quot; não tem.</li><li><strong>O app em que você estava ditando.</strong> A colagem se comporta diferente num navegador, num editor de código e num app de conversa, e esse costuma ser o detalhe decisivo.</li><li><strong>Os passos</strong>, em ordem, do toque no atalho até o que você viu.</li><li><strong>Se acontece sempre</strong>, ou só às vezes.</li><li><strong>O seu sistema e a versão dele</strong>: macOS 14, 15…, ou Windows 10 ou 11.</li><li><strong>A versão e o build do app.</strong> Abra <strong>Sobre o Open Whisper</strong> no menu e copie a linha <strong>Versão … (build …)</strong>: dá para selecioná-la.</li><li><strong>O seu modo e o seu atalho</strong>, se o problema for na gravação: Pressionar para falar ou Alternar.</li><li><strong>Para a linha de comando</strong>: o comando que você rodou, o código de saída e a última linha que ele mostrou.</li></ul>
+<aside class="callout callout--note"><p class="callout__legend engrave">Nota</p><div class="callout__body"><p>O Open Whisper não grava arquivo de log. Descreva o que você viu, e as palavras exatas do aviso, se houve um.</p></div></aside>
+</div></section>
+<section class="block__section" aria-labelledby="deixe-o-texto-privado-de-fora"><div class="block__text">
+<h2 class="block__h2" id="deixe-o-texto-privado-de-fora"><a class="anchor" href="#deixe-o-texto-privado-de-fora">Deixe o texto privado de fora</a></h2>
+<aside class="callout callout--warn"><p class="callout__legend engrave"><i class="led led--fault is-on" aria-hidden="true"></i>Atenção</p><div class="callout__body"><p>As issues são públicas: qualquer pessoa pode ler. Não cole o que você ditou se for algo privado, e confira se as capturas de tela também não mostram. O conteúdo de uma transcrição nunca é necessário para resolver um problema com a transcrição.</p></div></aside>
+<p>Se o problema está nas próprias palavras (um nome sempre escrito errado, um idioma trocado), invente uma frase que mostre isso e dite essa frase.</p>
+</div></section>
+<section class="block__section" aria-labelledby="o-que-esperar"><div class="block__text">
+<h2 class="block__h2" id="o-que-esperar"><a class="anchor" href="#o-que-esperar">O que esperar</a></h2>
+<ul class="list"><li>Toda issue é lida e respondida.</li><li>Uma recusa sempre vem com um motivo concreto. &quot;Fora do escopo&quot;, sozinho, não é resposta.</li><li>Nenhuma data é prometida, nunca. &quot;Aceito e na fila&quot; é o máximo.</li><li>Quando algo que você relatou sai, você é avisado na sua issue.</li><li>Se uma correção não se sustentar, reabra a issue.</li></ul>
+</div></section>
+<section class="block__section" aria-labelledby="o-que-as-etiquetas-querem-dizer"><div class="block__text">
+<h2 class="block__h2" id="o-que-as-etiquetas-querem-dizer"><a class="anchor" href="#o-que-as-etiquetas-querem-dizer">O que as etiquetas querem dizer</a></h2>
+<p>Cada issue recebe etiquetas que dizem em que pé ela está.</p>
+<div class="table"><table><thead><tr><th scope="col">Etiqueta</th><th scope="col">Quer dizer</th></tr></thead><tbody><tr><th scope="row"><code>triage: pending</code></th><td data-label="Quer dizer">Recebida, ainda não analisada</td></tr><tr><th scope="row"><code>triage: accepted</code></th><td data-label="Quer dizer">É real, e está na fila</td></tr><tr><th scope="row"><code>triage: needs-info</code></th><td data-label="Quer dizer">Esperando alguma informação sua</td></tr><tr><th scope="row"><code>triage: under-review</code></th><td data-label="Quer dizer">Precisa de uma decisão de produto antes de uma resposta</td></tr><tr><th scope="row"><code>triage: duplicate</code></th><td data-label="Quer dizer">Já relatada: o link aponta para a original</td></tr><tr><th scope="row"><code>triage: out-of-scope</code></th><td data-label="Quer dizer">Recusada, com um motivo concreto nos comentários</td></tr><tr><th scope="row"><code>status: queued</code></th><td data-label="Quer dizer">Aceita e esperando a vez</td></tr><tr><th scope="row"><code>status: in-progress</code></th><td data-label="Quer dizer">Em andamento</td></tr><tr><th scope="row"><code>status: awaiting-release</code></th><td data-label="Quer dizer">Corrigida, esperando uma versão que a traga</td></tr><tr><th scope="row"><code>status: shipped</code></th><td data-label="Quer dizer">Disponível numa versão publicada</td></tr><tr><th scope="row"><code>status: closed-unresolved</code></th><td data-label="Quer dizer">Fechada sem correção, com o motivo explicado</td></tr></tbody></table></div>
+<p>Uma ideia que esbarra em algo que o Open Whisper deliberadamente não faz é avaliada, não fechada de cara: veja <a class="link" href="../limits/">O que o Open Whisper não faz</a>.</p>
+</div></section>
+  </article>
+  <nav class="block__foot" aria-label="Bloco anterior e próximo"><a class="key key--step key--prev" href="../limits/" rel="prev"><span class="key__text"><span class="key__sub engrave">Anterior · A5</span><span class="key__main">O que o Open Whisper não faz</span></span></a><a class="key key--step key--next" href="../about/" rel="next"><span class="key__text"><span class="key__sub engrave">Próximo · A7</span><span class="key__main">Sobre, versões e termos</span></span></a></nav>
+</main>
+</div>
+<footer class="footplate">
+  <div class="footplate__inner">
+    <p class="footplate__free">O Open Whisper é gratuito. <span class="footplate__privacy">Este site não usa cookies e não mede nada.</span></p>
+    <ul class="footplate__links">
+      <li><a class="link" href="../../">Página do Open Whisper</a></li>
+      <li><a class="link" href="../../../terms.txt">Termos de uso</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/releases">Todos os releases</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/issues">Relatar um problema</a></li>
+    </ul>
+    <p class="signature"><span class="signature__intro">feito por</span> <a class="signature__mark" href="https://entringer.dev">entringer.dev</a></p>
+  </div>
+</footer>
+<script type="application/json" id="docs-data">{"result":"1 resultado","results":"{n} resultados","noResults":"Nada encontrado para “{q}”."}</script>
+<script type="module" src="../../../assets/docs.js?v=fc6854744e"></script>
+</body>
+</html>

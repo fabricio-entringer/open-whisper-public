@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en" data-os="other">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Command reference · Open Whisper Help</title>
+<meta name="description" content="The complete open-whisper transcribe command: every option, the formats, the two streams, the JSON fields and every exit status.">
+<link rel="canonical" href="https://openwhisper.entringer.dev/docs/command-reference/">
+<link rel="alternate" hreflang="en" href="https://openwhisper.entringer.dev/docs/command-reference/">
+<link rel="alternate" hreflang="pt-BR" href="https://openwhisper.entringer.dev/pt/docs/command-reference/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Command reference · Open Whisper Help">
+<meta property="og:description" content="The complete open-whisper transcribe command: every option, the formats, the two streams, the JSON fields and every exit status.">
+<meta property="og:url" content="https://openwhisper.entringer.dev/docs/command-reference/">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Open Whisper">
+<meta property="og:image" content="https://openwhisper.entringer.dev/assets/og-en.jpg">
+<meta name="theme-color" content="#191314">
+<link rel="icon" type="image/png" sizes="64x64" href="../../assets/favicon-64.png">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<link rel="preload" href="../../assets/fonts/barlow-semi-condensed-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=fc6854744e">
+<link rel="stylesheet" href="../../assets/docs.css?v=fc6854744e">
+<script>
+  // Before the first paint, so the keycaps, the windows and the platform order are the visitor's.
+  (function () {
+    var ua = navigator.userAgent, d = document.documentElement;
+    var touch = matchMedia("(pointer: coarse)").matches && !matchMedia("(pointer: fine)").matches;
+    d.classList.add("js");
+    d.dataset.os = /Windows NT/.test(ua) ? "windows" : /Macintosh|Mac OS X/.test(ua) && !touch ? "mac" : touch ? "touch" : "other";
+  })();
+</script>
+</head>
+<body class="docs-body">
+<a class="skip" href="#plate">Skip to the page</a>
+<header class="nameplate nameplate--docs">
+  <a class="brand" href="../../" aria-label="Open Whisper">
+    <img class="brand__icon" src="../../assets/icon-64.png" width="32" height="32" alt="">
+    <span class="engrave brand__name">Open Whisper</span>
+  </a>
+  <a class="engrave brand__docs" href="../">Docs</a>
+  <form class="search" role="search" action="../" data-index="../../assets/search-en.json">
+    <label class="sr-only" for="search">Search the help</label>
+    <span class="search__well">
+      <svg class="glyph" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M12.6 12.6L17 17"/></svg>
+      <input id="search" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search the help" aria-describedby="search-hint" aria-controls="results">
+      <kbd class="cap cap--inline search__key" aria-hidden="true">/</kbd>
+    </span>
+    <span class="sr-only" id="search-hint">Type to search; press / anywhere to come back here.</span>
+    <div class="results" id="results" hidden><p class="results__count" id="results-count" aria-live="polite"></p><ol class="results__list"></ol></div>
+  </form>
+  <nav class="nameplate__end" aria-label="Site">
+    <span class="latches" role="group" aria-label="Language">
+      <a class="latch is-on" href="../../docs/command-reference/" hreflang="en" lang="en" aria-current="page"><i class="led" aria-hidden="true"></i>EN</a><a class="latch" href="../../pt/docs/command-reference/" hreflang="pt-BR" lang="pt-BR"><i class="led" aria-hidden="true"></i>PT</a>
+    </span>
+  </nav>
+</header>
+<div class="docs">
+<nav class="rundown" id="rundown" aria-label="Rundown">
+  <details class="rundown__fold" open>
+    <summary class="rundown__head"><svg class="glyph rundown__chev" viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5L13 10l-5.5 5.5"/></svg><span class="engrave">Rundown</span><span class="engrave engrave--dim rundown__count">11 blocks · min</span></summary>
+    <ol class="rundown__list"><li><a class="cue" href="../install/" data-slug="install"><span class="cue__no">01</span><span class="cue__title">Install</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../first-run/" data-slug="first-run"><span class="cue__no">02</span><span class="cue__title">First run</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../dictate/" data-slug="dictate"><span class="cue__no">03</span><span class="cue__title">Dictate</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../paste/" data-slug="paste"><span class="cue__no">04</span><span class="cue__title">Where the text lands</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../menu/" data-slug="menu"><span class="cue__no">05</span><span class="cue__title">The icon and its menu</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../settings/" data-slug="settings"><span class="cue__no">06</span><span class="cue__title">Settings</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../models/" data-slug="models"><span class="cue__no">07</span><span class="cue__title">Models</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../video/" data-slug="video"><span class="cue__no">08</span><span class="cue__title">Video and files</span><span class="cue__time">8<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../command-line/" data-slug="command-line"><span class="cue__no">09</span><span class="cue__title">Command line</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../privacy/" data-slug="privacy"><span class="cue__no">10</span><span class="cue__title">Privacy</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../troubleshooting/" data-slug="troubleshooting"><span class="cue__no">11</span><span class="cue__title">Troubleshooting</span><span class="cue__time">9<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+    <p class="rundown__head rundown__head--sub"><span class="engrave">Appendices</span></p>
+    <ol class="rundown__list rundown__list--appendix"><li><a class="cue" href="../faq/" data-slug="faq"><span class="cue__no">A1</span><span class="cue__title">FAQ</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../shortcuts/" data-slug="shortcuts"><span class="cue__no">A2</span><span class="cue__title">Shortcuts and keys</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue is-on" href="../command-reference/" data-slug="command-reference" aria-current="page"><span class="cue__no">A3</span><span class="cue__title">Command reference</span><span class="cue__time">7<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../data-and-uninstall/" data-slug="data-and-uninstall"><span class="cue__no">A4</span><span class="cue__title">Data and uninstalling</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../limits/" data-slug="limits"><span class="cue__no">A5</span><span class="cue__title">What it doesn&#39;t do</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../report/" data-slug="report"><span class="cue__no">A6</span><span class="cue__title">Reporting a problem</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../about/" data-slug="about"><span class="cue__no">A7</span><span class="cue__title">About and terms</span><span class="cue__time">2<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+  </details>
+</nav>
+<main class="plate" id="plate" tabindex="-1">
+  <header class="block__head">
+    <h1 class="block__title"><span class="readout block__no"><span class="sr-only">Appendix </span>A3</span> <span class="block__name">Command reference</span></h1>
+    <p class="engrave engrave--dim block__time">Reading time · 7 min</p>
+    <p class="block__summary">The complete open-whisper transcribe command: every option, the formats, the two streams, the JSON fields and every exit status.</p>
+    <nav class="toc" aria-label="In this block"><p class="engrave toc__head">In this block</p><ol><li><a href="#synopsis">Synopsis</a></li><li><a href="#options">Options</a></li><li><a href="#output-formats">Output formats</a></li><li><a href="#the-two-streams">The two streams</a></li><li><a href="#the-json-envelope">The JSON envelope</a></li><li><a href="#exit-statuses">Exit statuses</a></li><li><a href="#guarantees">Guarantees</a></li></ol></nav>
+  </header>
+  <article class="block" data-slug="command-reference">
+<p>This is the full reference for the <code>open-whisper</code> command. To get started with it, and to put it on your PATH, see <a class="link" href="../command-line/">Command line</a>. Options, streams, the JSON fields and the exit statuses are stable: new ones may be added, existing ones are never renamed or renumbered.</p>
+<section class="block__section" aria-labelledby="synopsis"><div class="block__text">
+<h2 class="block__h2" id="synopsis"><a class="anchor" href="#synopsis">Synopsis</a></h2>
+<pre class="terminal terminal--doc" data-lang="sh"><code>open-whisper transcribe &lt;INPUT&gt; [--format txt|srt|vtt|json] [--on-device] [--words] [--prompt &lt;text&gt;]
+                        [--numbers written|spoken] [--model &lt;id&gt;] [--quality fast|balanced|accurate]
+                        [--lang &lt;code&gt;|auto]
+open-whisper --help | -h
+open-whisper --version</code></pre>
+<ul class="list"><li><code>&lt;INPUT&gt;</code> is one media file or one video link per call. A path that exists is a file; anything else must be a link to a single YouTube video. Put quotes around a path with spaces.</li><li>Options may come before or after the input, as <code>--option value</code> or <code>--option=value</code>. <code>--</code> ends the options.</li><li><code>--version</code> prints <code>open-whisper</code> and the version, such as <code>open-whisper 0.1.0</code>.</li><li>The command reads the preferences you set in the app and never changes them.</li></ul>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p>With no arguments, <code>open-whisper</code> starts the menu-bar app instead.</p></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><p>With no arguments, <code>open-whisper</code> stops with a usage error (status 2): the app itself starts from the Start menu. The command works in Command Prompt and PowerShell.</p></div></div></div>
+</div></section>
+<section class="block__section" aria-labelledby="options"><div class="block__text">
+<h2 class="block__h2" id="options"><a class="anchor" href="#options">Options</a></h2>
+<div class="table"><table><thead><tr><th scope="col">Option</th><th scope="col">Values</th><th scope="col">Default</th><th scope="col">What it does</th></tr></thead><tbody><tr><th scope="row"><code>--format</code></th><td data-label="Values"><code>txt</code>, <code>srt</code>, <code>vtt</code>, <code>json</code></td><td data-label="Default"><code>txt</code></td><td data-label="What it does">The output format (see below).</td></tr><tr><th scope="row"><code>--on-device</code></th><td data-label="Values">none</td><td data-label="Default">off</td><td data-label="What it does">For a link: skip the captions and transcribe the audio on this computer. This flag is your consent, never assumed. A file is always transcribed on this computer.</td></tr><tr><th scope="row"><code>--words</code></th><td data-label="Values">none</td><td data-label="Default">off</td><td data-label="What it does">With <code>--format json</code> only: each segment gets a list of words with their times. Captions carry no word times.</td></tr><tr><th scope="row"><code>--prompt</code></th><td data-label="Values">text</td><td data-label="Default">none</td><td data-label="What it does">A vocabulary hint (names, jargon) for this call. For a link it replaces the hint taken from the title and channel. An empty value means no hint.</td></tr><tr><th scope="row"><code>--numbers</code></th><td data-label="Values"><code>written</code>, <code>spoken</code></td><td data-label="Default"><code>written</code></td><td data-label="What it does"><code>spoken</code> writes numbers in words, as said, with no figures. Roman numerals are letters and may stay. Applies only to what is transcribed on this computer, not to captions.</td></tr><tr><th scope="row"><code>--model</code></th><td data-label="Values"><code>small-q5_1</code>, <code>base</code>, <code>medium-q5_0</code>, <code>large-v3-turbo-q5_0</code></td><td data-label="Default">the video model set in the app</td><td data-label="What it does">The model for this call. It must already be downloaded: the command never downloads (status 4).</td></tr><tr><th scope="row"><code>--quality</code></th><td data-label="Values"><code>fast</code>, <code>balanced</code>, <code>accurate</code></td><td data-label="Default">the video speed set in the app</td><td data-label="What it does">The speed for this call.</td></tr><tr><th scope="row"><code>--lang</code></th><td data-label="Values"><code>pt</code>, <code>en</code>, <code>es</code>, <code>fr</code>, <code>de</code>, <code>it</code>, <code>nl</code>, <code>ru</code>, <code>zh</code>, <code>ja</code>, <code>ko</code>, <code>ar</code>, <code>hi</code>, <code>pl</code>, <code>tr</code>, <code>uk</code>, or <code>auto</code></td><td data-label="Default">the Language set in the app</td><td data-label="What it does">The language for this call. An unknown code is status 2. Pinning the language usually gives better results than <code>auto</code>.</td></tr></tbody></table></div>
+<p><code>small-q5_1</code> is the bundled model. The others are downloaded once in the app: see <a class="link" href="../models/">Models</a>.</p>
+</div></section>
+<section class="block__section" aria-labelledby="output-formats"><div class="block__text">
+<h2 class="block__h2" id="output-formats"><a class="anchor" href="#output-formats">Output formats</a></h2>
+<div class="table"><table><thead><tr><th scope="col">Format</th><th scope="col">What you get</th></tr></thead><tbody><tr><th scope="row"><code>txt</code></th><td data-label="What you get">Plain text, with a header (title, channel, publication date, duration, link or file, language, source) and a paragraph break wherever speech pauses for more than 2 seconds.</td></tr><tr><th scope="row"><code>srt</code></th><td data-label="What you get">Subtitles (SRT), with no header.</td></tr><tr><th scope="row"><code>vtt</code></th><td data-label="What you get">Subtitles (WebVTT), with the header as a NOTE block.</td></tr><tr><th scope="row"><code>json</code></th><td data-label="What you get">One JSON document with the transcript, its segments and how it was made (see below).</td></tr></tbody></table></div>
+<p><code>txt</code>, <code>srt</code> and <code>vtt</code> are identical, byte for byte, to what <strong>Copy</strong> and <strong>Save</strong> give in the video window.</p>
+</div></section>
+<section class="block__section" aria-labelledby="the-two-streams"><div class="block__text">
+<h2 class="block__h2" id="the-two-streams"><a class="anchor" href="#the-two-streams">The two streams</a></h2>
+<ul class="list"><li><strong>Standard output</strong> carries only the result, in UTF-8 with <code>\n</code> line endings. It is written in full, then the command exits with status 0. On any failure it is empty, so a script never mistakes a message for a transcript.</li><li><strong>Standard error</strong> carries everything else, for people: a line before any network use (links only), progress, and one line explaining a failure. These lines may change; don&#39;t parse them.</li><li>Standard input is ignored.</li></ul>
+<p>Some standard error lines you may see:</p>
+<pre class="terminal terminal--doc" data-lang="sh"><code>open-whisper: fetching the video from the network — the transcription itself stays on this machine
+open-whisper: captions found (manual, pt) — using them; pass --on-device to transcribe the audio instead
+open-whisper: transcribing on-device with small-q5_1 (accurate)
+open-whisper: no speech detected
+open-whisper: interrupted; nothing was delivered</code></pre>
+</div></section>
+<section class="block__section" aria-labelledby="the-json-envelope"><div class="block__text">
+<h2 class="block__h2" id="the-json-envelope"><a class="anchor" href="#the-json-envelope">The JSON envelope</a></h2>
+<p>With <code>--format json</code>, standard output holds one JSON document. Fields are added over time but never removed or renamed, so ignore fields you don&#39;t know.</p>
+<div class="table"><table><thead><tr><th scope="col">Field</th><th scope="col">What it holds</th></tr></thead><tbody><tr><th scope="row"><code>app</code></th><td data-label="What it holds"><code>name</code> and <code>version</code>.</td></tr><tr><th scope="row"><code>input</code></th><td data-label="What it holds"><code>kind</code> (<code>file</code> or <code>url</code>), <code>reference</code> (the path or link), <code>title</code>, <code>duration_secs</code>, and for a file <code>audio</code> (sample rate, channels, track, container, codec).</td></tr><tr><th scope="row"><code>settings.model</code></th><td data-label="What it holds">The model <code>id</code>, and <code>origin</code>: <code>preferences</code> or <code>override</code> (you passed <code>--model</code>).</td></tr><tr><th scope="row"><code>settings.quality</code></th><td data-label="What it holds"><code>value</code> and <code>origin</code>.</td></tr><tr><th scope="row"><code>settings.language</code></th><td data-label="What it holds"><code>requested</code>, <code>origin</code>, and <code>detected</code> (the language heard).</td></tr><tr><th scope="row"><code>settings.prompt</code></th><td data-label="What it holds"><code>value</code> and <code>origin</code>: <code>override</code>, <code>video_metadata</code> or <code>none</code>.</td></tr><tr><th scope="row"><code>settings.numbers</code></th><td data-label="What it holds"><code>value</code>, and <code>applied</code>: <code>true</code> when transcribed on this computer, <code>false</code> for captions.</td></tr><tr><th scope="row"><code>transcript.provenance</code></th><td data-label="What it holds"><code>on_device</code>, <code>manual_captions</code> or <code>automatic_captions</code>.</td></tr><tr><th scope="row"><code>transcript.language</code></th><td data-label="What it holds">The transcript&#39;s language.</td></tr><tr><th scope="row"><code>transcript.repetition_flagged</code></th><td data-label="What it holds"><code>true</code> when excessively repeated passages were trimmed.</td></tr><tr><th scope="row"><code>transcript.segments</code></th><td data-label="What it holds">Each with <code>start_ms</code>, <code>end_ms</code>, <code>text</code>; <code>words</code> with <code>--words</code>; <code>suspect: true</code> on a line that looks like a channel sign-off.</td></tr><tr><th scope="row"><code>transcript.text</code></th><td data-label="What it holds">The whole text.</td></tr><tr><th scope="row"><code>transcript.empty_reason</code></th><td data-label="What it holds"><code>no_speech</code>, only when no segment is left. The status is still 0.</td></tr><tr><th scope="row"><code>transcript.suppressed</code></th><td data-label="What it holds">Segments set aside as not speech, each with <code>start_ms</code>, <code>end_ms</code>, <code>text</code> and <code>reason</code> (<code>silence</code>, <code>subtitle_credit</code> or <code>no_speech</code>). Present only when there are some.</td></tr><tr><th scope="row"><code>transcript.word_timestamps</code></th><td data-label="What it holds">With <code>--words</code>: whether word times are available. For captions, <code>available: false</code> with <code>reason: captions</code>.</td></tr></tbody></table></div>
+<p>Each item in <code>words</code> has <code>start_ms</code>, <code>end_ms</code>, <code>text</code> and <code>probability</code>. The words, in order, are the segment&#39;s text split on spaces. Each lasts at least 40 ms, words never overlap and they stay inside their segment. <code>probability</code> goes from 0 to 1 and is relative, not a calibrated score.</p>
+</div></section>
+<section class="block__section" aria-labelledby="exit-statuses"><div class="block__text">
+<h2 class="block__h2" id="exit-statuses"><a class="anchor" href="#exit-statuses">Exit statuses</a></h2>
+<div class="table"><table><thead><tr><th scope="col">Status</th><th scope="col">Meaning</th><th scope="col">What to do</th></tr></thead><tbody><tr><th scope="row">0</th><td data-label="Meaning">The transcript is on standard output. Also when no speech was found (see <code>empty_reason</code>).</td><td data-label="What to do">Read standard output.</td></tr><tr><th scope="row">1</th><td data-label="Meaning">Internal error.</td><td data-label="What to do"><a class="link" href="../report/">Report it</a> with the standard error line.</td></tr><tr><th scope="row">2</th><td data-label="Meaning">Usage error: unknown option or value, missing or extra input, unknown <code>--lang</code> or <code>--model</code>, an input without <code>transcribe</code>, a link that isn&#39;t a single YouTube video.</td><td data-label="What to do">Fix the command. <code>open-whisper --help</code> shows the usage.</td></tr><tr><th scope="row">3</th><td data-label="Meaning">yt-dlp is missing or too old (links only).</td><td data-label="What to do">Install or update yt-dlp: see <a class="link" href="../troubleshooting/#video">Troubleshooting</a>.</td></tr><tr><th scope="row">4</th><td data-label="Meaning">The model isn&#39;t downloaded.</td><td data-label="What to do">Use <code>--model small-q5_1</code>, or download the model in the app.</td></tr><tr><th scope="row">5</th><td data-label="Meaning">Unsupported format. The message names the codec or container.</td><td data-label="What to do">Export as MP4 or M4A with AAC, or as MP3, FLAC or WAV.</td></tr><tr><th scope="row">6</th><td data-label="Meaning">The file can&#39;t be read: no file there, a folder, no permission, empty or truncated, no audio track, or longer than 3 hours.</td><td data-label="What to do">Fix the input.</td></tr><tr><th scope="row">7</th><td data-label="Meaning">The link has no usable captions and you didn&#39;t pass <code>--on-device</code>.</td><td data-label="What to do">Run again with <code>--on-device</code>.</td></tr><tr><th scope="row">8</th><td data-label="Meaning">Video error: unavailable, private or removed, age-restricted, not available in your region, a live stream, rate-limited, no network, a decoding or transcription failure, an unrecognised failure, or another video already running.</td><td data-label="What to do">Rate limits and network errors are worth retrying later.</td></tr><tr><th scope="row">9</th><td data-label="Meaning">The transcript was ready, but standard output closed before receiving it.</td><td data-label="What to do">Run again.</td></tr><tr><th scope="row">130</th><td data-label="Meaning">Interrupted (<span class="caps caps--inline"><kbd class="cap cap--inline">Ctrl</kbd><kbd class="cap cap--inline">C</kbd></span>). The command stops within 2 seconds and delivers nothing.</td><td data-label="What to do">Nothing to do.</td></tr></tbody></table></div>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p>Read the status in Terminal with <code>echo $?</code>.</p></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><p>Read the status with <code>echo %ERRORLEVEL%</code> in Command Prompt, or <code>$LASTEXITCODE</code> in PowerShell.</p></div></div></div>
+</div></section>
+<section class="block__section" aria-labelledby="guarantees"><div class="block__text">
+<h2 class="block__h2" id="guarantees"><a class="anchor" href="#guarantees">Guarantees</a></h2>
+<ul class="list"><li>The command never writes a file, whatever happens. Redirect standard output to save the result.</li><li>The input file is read where it is. Its size and modification date don&#39;t change.</li><li>A file from your computer makes no network request at all. A link uses the network only to fetch the video.</li><li>It never changes your preferences, and dictation keeps working while it runs.</li><li>One input per call. There are no folders, wildcards or playlists: loop over files in your own script.</li><li>It doesn&#39;t read subtitle tracks inside a file, choose an audio track, stream partial output, translate or summarise.</li></ul>
+<p>On a Mac with Apple Silicon, the bundled model transcribes roughly 20 to 25 times faster than real time, so an hour of audio takes about 3 minutes, plus a second or two to load the model. On Windows the speed depends on the processor. In a script, allow at least a tenth of the recording&#39;s length plus 60 seconds before timing out.</p>
+<pre class="terminal terminal--doc" data-lang="sh"><code><span class="prompt" aria-hidden="true">&gt;</span> open-whisper transcribe &quot;lecture.mov&quot; --format srt &gt; lecture.srt
+<span class="prompt" aria-hidden="true">&gt;</span> open-whisper transcribe &quot;https://youtu.be/VIDEO_ID&quot; --on-device --format json &gt; video.json</code></pre>
+</div></section>
+  </article>
+  <nav class="block__foot" aria-label="Previous and next blocks"><a class="key key--step key--prev" href="../shortcuts/" rel="prev"><span class="key__text"><span class="key__sub engrave">Previous · A2</span><span class="key__main">Shortcuts and keys</span></span></a><a class="key key--step key--next" href="../data-and-uninstall/" rel="next"><span class="key__text"><span class="key__sub engrave">Next · A4</span><span class="key__main">Data and uninstalling</span></span></a></nav>
+</main>
+</div>
+<footer class="footplate">
+  <div class="footplate__inner">
+    <p class="footplate__free">Open Whisper is free. <span class="footplate__privacy">This site sets no cookies and measures nothing.</span></p>
+    <ul class="footplate__links">
+      <li><a class="link" href="../../">Open Whisper home</a></li>
+      <li><a class="link" href="../../terms.txt">Terms of use</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/releases">All releases</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/issues">Report a problem</a></li>
+    </ul>
+    <p class="signature"><span class="signature__intro">made by</span> <a class="signature__mark" href="https://entringer.dev">entringer.dev</a></p>
+  </div>
+</footer>
+<script type="application/json" id="docs-data">{"result":"1 result","results":"{n} results","noResults":"Nothing found for “{q}”."}</script>
+<script type="module" src="../../assets/docs.js?v=fc6854744e"></script>
+</body>
+</html>

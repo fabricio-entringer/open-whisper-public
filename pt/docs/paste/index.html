@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="pt-BR" data-os="other">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Onde o texto vai parar · Ajuda do Open Whisper</title>
+<meta name="description" content="Como o texto chega ao cursor, quando ele fica na área de transferência e como recuperar o último ditado.">
+<link rel="canonical" href="https://openwhisper.entringer.dev/pt/docs/paste/">
+<link rel="alternate" hreflang="en" href="https://openwhisper.entringer.dev/docs/paste/">
+<link rel="alternate" hreflang="pt-BR" href="https://openwhisper.entringer.dev/pt/docs/paste/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Onde o texto vai parar · Ajuda do Open Whisper">
+<meta property="og:description" content="Como o texto chega ao cursor, quando ele fica na área de transferência e como recuperar o último ditado.">
+<meta property="og:url" content="https://openwhisper.entringer.dev/pt/docs/paste/">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Open Whisper">
+<meta property="og:image" content="https://openwhisper.entringer.dev/assets/og-pt.jpg">
+<meta name="theme-color" content="#191314">
+<link rel="icon" type="image/png" sizes="64x64" href="../../../assets/favicon-64.png">
+<link rel="apple-touch-icon" href="../../../assets/icon-180.png">
+<link rel="preload" href="../../../assets/fonts/barlow-semi-condensed-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../../assets/site.css?v=fc6854744e">
+<link rel="stylesheet" href="../../../assets/docs.css?v=fc6854744e">
+<script>
+  // Before the first paint, so the keycaps, the windows and the platform order are the visitor's.
+  (function () {
+    var ua = navigator.userAgent, d = document.documentElement;
+    var touch = matchMedia("(pointer: coarse)").matches && !matchMedia("(pointer: fine)").matches;
+    d.classList.add("js");
+    d.dataset.os = /Windows NT/.test(ua) ? "windows" : /Macintosh|Mac OS X/.test(ua) && !touch ? "mac" : touch ? "touch" : "other";
+  })();
+</script>
+</head>
+<body class="docs-body">
+<a class="skip" href="#plate">Ir para a página</a>
+<header class="nameplate nameplate--docs">
+  <a class="brand" href="../../" aria-label="Open Whisper">
+    <img class="brand__icon" src="../../../assets/icon-64.png" width="32" height="32" alt="">
+    <span class="engrave brand__name">Open Whisper</span>
+  </a>
+  <a class="engrave brand__docs" href="../">Ajuda</a>
+  <form class="search" role="search" action="../" data-index="../../../assets/search-pt.json">
+    <label class="sr-only" for="search">Buscar na ajuda</label>
+    <span class="search__well">
+      <svg class="glyph" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M12.6 12.6L17 17"/></svg>
+      <input id="search" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="Buscar na ajuda" aria-describedby="search-hint" aria-controls="results">
+      <kbd class="cap cap--inline search__key" aria-hidden="true">/</kbd>
+    </span>
+    <span class="sr-only" id="search-hint">Digite para buscar; aperte / em qualquer lugar para voltar aqui.</span>
+    <div class="results" id="results" hidden><p class="results__count" id="results-count" aria-live="polite"></p><ol class="results__list"></ol></div>
+  </form>
+  <nav class="nameplate__end" aria-label="Site">
+    <span class="latches" role="group" aria-label="Idioma">
+      <a class="latch" href="../../../docs/paste/" hreflang="en" lang="en"><i class="led" aria-hidden="true"></i>EN</a><a class="latch is-on" href="../../../pt/docs/paste/" hreflang="pt-BR" lang="pt-BR" aria-current="page"><i class="led" aria-hidden="true"></i>PT</a>
+    </span>
+  </nav>
+</header>
+<div class="docs">
+<nav class="rundown" id="rundown" aria-label="Roteiro">
+  <details class="rundown__fold" open>
+    <summary class="rundown__head"><svg class="glyph rundown__chev" viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5L13 10l-5.5 5.5"/></svg><span class="engrave">Roteiro</span><span class="engrave engrave--dim rundown__count">11 blocos · min</span></summary>
+    <ol class="rundown__list"><li><a class="cue" href="../install/" data-slug="install"><span class="cue__no">01</span><span class="cue__title">Instalar</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../first-run/" data-slug="first-run"><span class="cue__no">02</span><span class="cue__title">Primeira execução</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../dictate/" data-slug="dictate"><span class="cue__no">03</span><span class="cue__title">Ditar</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue is-on" href="../paste/" data-slug="paste" aria-current="page"><span class="cue__no">04</span><span class="cue__title">Onde o texto vai parar</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../menu/" data-slug="menu"><span class="cue__no">05</span><span class="cue__title">O ícone e o menu</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../settings/" data-slug="settings"><span class="cue__no">06</span><span class="cue__title">Ajustes</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../models/" data-slug="models"><span class="cue__no">07</span><span class="cue__title">Modelos</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../video/" data-slug="video"><span class="cue__no">08</span><span class="cue__title">Vídeo e arquivos</span><span class="cue__time">8<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../command-line/" data-slug="command-line"><span class="cue__no">09</span><span class="cue__title">Linha de comando</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../privacy/" data-slug="privacy"><span class="cue__no">10</span><span class="cue__title">Privacidade</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../troubleshooting/" data-slug="troubleshooting"><span class="cue__no">11</span><span class="cue__title">Solução de problemas</span><span class="cue__time">9<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+    <p class="rundown__head rundown__head--sub"><span class="engrave">Anexos</span></p>
+    <ol class="rundown__list rundown__list--appendix"><li><a class="cue" href="../faq/" data-slug="faq"><span class="cue__no">A1</span><span class="cue__title">Perguntas frequentes</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../shortcuts/" data-slug="shortcuts"><span class="cue__no">A2</span><span class="cue__title">Atalhos e teclas</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../command-reference/" data-slug="command-reference"><span class="cue__no">A3</span><span class="cue__title">Referência do comando</span><span class="cue__time">7<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../data-and-uninstall/" data-slug="data-and-uninstall"><span class="cue__no">A4</span><span class="cue__title">Dados e desinstalação</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../limits/" data-slug="limits"><span class="cue__no">A5</span><span class="cue__title">O que ele não faz</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../report/" data-slug="report"><span class="cue__no">A6</span><span class="cue__title">Relatar um problema</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../about/" data-slug="about"><span class="cue__no">A7</span><span class="cue__title">Sobre e termos</span><span class="cue__time">2<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+  </details>
+</nav>
+<main class="plate" id="plate" tabindex="-1">
+  <header class="block__head">
+    <h1 class="block__title"><span class="readout block__no"><span class="sr-only">Bloco </span>04</span> <span class="block__name">Onde o texto vai parar</span></h1>
+    <p class="engrave engrave--dim block__time">Leitura · 5 min</p>
+    <p class="block__summary">Como o texto chega ao cursor, quando ele fica na área de transferência e como recuperar o último ditado.</p>
+    <nav class="toc" aria-label="Neste bloco"><p class="engrave toc__head">Neste bloco</p><ol><li><a href="#colado-no-cursor">Colado no cursor</a></li><li><a href="#a-sua-area-de-transferencia-volta-ao-que-era">A sua área de transferência volta ao que era</a></li><li><a href="#quando-o-texto-fica-na-area-de-transferencia">Quando o texto fica na área de transferência</a></li><li><a href="#ligar-a-colagem-automatica-no-mac">Ligar a colagem automática no Mac</a></li><li><a href="#apps-que-nao-dizem-o-que-esta-com-o-foco">Apps que não dizem o que está com o foco</a></li><li><a href="#copiar-ou-repetir-o-ultimo-ditado">Copiar ou repetir o último ditado</a></li><li><a href="#windows-historico-e-sincronizacao-da-area-de-transferencia">Windows: histórico e sincronização da área de transferência</a></li></ol></nav>
+  </header>
+  <article class="block" data-slug="paste">
+<p>O Open Whisper foi feito para nunca perder uma palavra: o texto é colado no cursor ou, quando isso não dá certo, fica na área de transferência, com uma notificação. E o último ditado sempre pode ser copiado de novo pelo menu. Esta página explica o que acontece em cada caso, e por quê.</p>
+<section class="block__section" aria-labelledby="colado-no-cursor"><div class="block__text">
+<h2 class="block__h2" id="colado-no-cursor"><a class="anchor" href="#colado-no-cursor">Colado no cursor</a></h2>
+<p>Quando a transcrição fica pronta, o Open Whisper coloca o texto na área de transferência e envia o atalho de colar para o app que está na frente, como se você tivesse apertado. Por isso funciona em qualquer lugar onde colar normalmente funciona.</p>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p>A colagem é <span class="caps caps--inline"><kbd class="cap cap--inline">⌘</kbd><kbd class="cap cap--inline">V</kbd></span>. Para enviá-la a outros apps é preciso a permissão de Acessibilidade, que a configuração pede (veja <a class="link" href="../first-run/">Primeira execução</a>). Antes de colar, o Open Whisper também pergunta ao macOS que tipo de elemento está com o foco, se é um campo de texto ou não, para não colar no vazio. Ele olha o tipo do elemento, não o que tem dentro, e nunca lê a sua tela nem o que você digita.</p></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><p>A colagem é <span class="caps caps--inline"><kbd class="cap cap--inline">Ctrl</kbd><kbd class="cap cap--inline">V</kbd></span>. O Windows não exige permissão para isso. Antes de colar, o Open Whisper pergunta ao Windows que tipo de elemento está com o foco, se é um campo de texto ou não, para não colar no vazio. Ele olha o tipo do elemento, não o que tem dentro.</p></div></div></div>
+<p>Fique no campo até o texto chegar.</p>
+</div></section>
+<section class="block__section" aria-labelledby="a-sua-area-de-transferencia-volta-ao-que-era"><div class="block__text">
+<h2 class="block__h2" id="a-sua-area-de-transferencia-volta-ao-que-era"><a class="anchor" href="#a-sua-area-de-transferencia-volta-ao-que-era">A sua área de transferência volta ao que era</a></h2>
+<p>Depois de uma colagem que deu certo, o Open Whisper espera meio segundo e devolve o que você tinha copiado antes, desde que a área de transferência ainda esteja com a transcrição. Se você copiou outra coisa nesse meio segundo, ela fica como está.</p>
+<ul class="list"><li>Só texto é devolvido. Se você tinha copiado uma imagem ou um conteúdo formatado, não conte com ele de volta.</li><li>Quando o texto fica na área de transferência (próxima seção), ele substitui o que você tinha copiado.</li></ul>
+</div></section>
+<section class="block__section" aria-labelledby="quando-o-texto-fica-na-area-de-transferencia"><div class="block__text">
+<h2 class="block__h2" id="quando-o-texto-fica-na-area-de-transferencia"><a class="anchor" href="#quando-o-texto-fica-na-area-de-transferencia">Quando o texto fica na área de transferência</a></h2>
+<p>O Open Whisper não cola quando consegue perceber que a colagem falharia ou cairia no vazio. Ele deixa o texto na área de transferência e mostra uma notificação:</p>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p><strong>Copiado para a área de transferência — cole com ⌘V.</strong></p>
+<p>Isso acontece quando:</p>
+<ul class="list"><li>a permissão de Acessibilidade está desligada;</li><li>um campo de senha está com o foco (a Entrada Segura do macOS está ligada);</li><li>nada que aceite texto está com o foco: a Mesa, uma janela do Finder, uma página da web que você só está lendo;</li><li>não deu para enviar a colagem, ou ela não passou em até 2 segundos.</li></ul></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><p><strong>Copiado para a área de transferência — cole com Ctrl+V.</strong></p>
+<p>Isso acontece quando:</p>
+<ul class="list"><li>a janela da frente está rodando como administrador, ou o Open Whisper não consegue saber se está: o Windows não deixa um app enviar teclas para uma janela com mais privilégios;</li><li>um campo de senha está com o foco;</li><li>o elemento com o foco não aceita texto;</li><li>não deu para enviar a colagem, ou ela não passou em até 2 segundos.</li></ul></div></div></div>
+<p>A notificação é a mesma, seja qual for o motivo. Clique onde você quer o texto e cole, ou use <strong>Repetir Última Transcrição</strong> (veja abaixo).</p>
+<aside class="callout callout--note"><p class="callout__legend engrave">Nota</p><div class="callout__body"><p>Se as notificações do Open Whisper estiverem desligadas no sistema, você não vai ver esse aviso. O texto está na área de transferência do mesmo jeito.</p></div></aside>
+</div></section>
+<section class="block__section block__section--screen" aria-labelledby="ligar-a-colagem-automatica-no-mac"><div class="block__text">
+<h2 class="block__h2" id="ligar-a-colagem-automatica-no-mac"><a class="anchor" href="#ligar-a-colagem-automatica-no-mac">Ligar a colagem automática no Mac</a></h2>
+<p>Se você pulou a etapa Colagem na configuração, todo ditado fica esperando na área de transferência. Os <a class="link" href="../settings/">Ajustes</a> avisam isso embaixo do atalho: <strong>Colagem automática: desligada — o atalho funciona, e o texto vai para a área de transferência para você colar com ⌘V.</strong></p>
+<ol class="cues"><li>Aperte <strong>Ativar…</strong> nos Ajustes, ou escolha <strong>Ativar colagem automática…</strong> no menu.</li><li>Em Ajustes do Sistema → Privacidade e Segurança → Acessibilidade, ative o Open Whisper.</li><li>Se o texto continuar indo para a área de transferência, feche o Open Whisper e abra de novo: o macOS pode aplicar a permissão só ao app aberto depois.</li></ol>
+<p>Com ela ligada, os Ajustes mostram <strong>Colagem automática: ligada — o texto é colado onde está o cursor.</strong></p>
+<p>No Windows não há nada para ligar: a colagem automática não precisa de permissão.</p>
+<aside class="callout callout--fix"><p class="callout__legend engrave"><i class="led led--fault is-on" aria-hidden="true"></i>Se a chave nos Ajustes do Sistema desliga sozinha</p><div class="callout__body"><p>Veja <a class="link" href="../troubleshooting/">Solução de problemas</a>.</p></div></aside>
+</div><figure class="shot"><span class="shot__screen"><span class="appwin" style="--w: 460"><span class="wbar wbar--mac" data-for="mac other touch" aria-hidden="true"><span class="wbar__lights"><i></i><i></i><i></i></span><span class="wbar__title">Open Whisper</span></span><span class="wbar wbar--win" data-for="windows" aria-hidden="true"><span class="wbar__title">Open Whisper</span><span class="wbar__caption"><svg viewBox="0 0 30 10"><path d="M1 5h8M12.5 1.5h7v7h-7zM23.5 1.5l7 7m0-7l-7 7"/></svg></span></span><img data-for="mac other touch" data-scheme="light" src="../../../assets/shots/settings-pt-mac-light-1x.webp" srcset="../../../assets/shots/settings-pt-mac-light-1x.webp 460w, ../../../assets/shots/settings-pt-mac-light.webp 920w" sizes="(max-width: 760px) 92vw, 420px" width="460" height="367" loading="lazy" decoding="async" alt="A janela de Ajustes: atalho, modo, idioma da transcrição e a seção Avançado."><img data-for="mac other touch" data-scheme="dark" src="../../../assets/shots/settings-pt-mac-dark-1x.webp" srcset="../../../assets/shots/settings-pt-mac-dark-1x.webp 460w, ../../../assets/shots/settings-pt-mac-dark.webp 920w" sizes="(max-width: 760px) 92vw, 420px" width="460" height="367" loading="lazy" decoding="async" alt="A janela de Ajustes: atalho, modo, idioma da transcrição e a seção Avançado."><img data-for="windows" data-scheme="light" src="../../../assets/shots/settings-pt-windows-light-1x.webp" srcset="../../../assets/shots/settings-pt-windows-light-1x.webp 460w, ../../../assets/shots/settings-pt-windows-light.webp 920w" sizes="(max-width: 760px) 92vw, 420px" width="460" height="367" loading="lazy" decoding="async" alt="A janela de Ajustes: atalho, modo, idioma da transcrição e a seção Avançado."><img data-for="windows" data-scheme="dark" src="../../../assets/shots/settings-pt-windows-dark-1x.webp" srcset="../../../assets/shots/settings-pt-windows-dark-1x.webp 460w, ../../../assets/shots/settings-pt-windows-dark.webp 920w" sizes="(max-width: 760px) 92vw, 420px" width="460" height="367" loading="lazy" decoding="async" alt="A janela de Ajustes: atalho, modo, idioma da transcrição e a seção Avançado."></span></span><figcaption class="engrave shot__caption">Ajustes</figcaption></figure></section>
+<section class="block__section" aria-labelledby="apps-que-nao-dizem-o-que-esta-com-o-foco"><div class="block__text">
+<h2 class="block__h2" id="apps-que-nao-dizem-o-que-esta-com-o-foco"><a class="anchor" href="#apps-que-nao-dizem-o-que-esta-com-o-foco">Apps que não dizem o que está com o foco</a></h2>
+<p>Alguns apps não contam ao Open Whisper o que está com o foco. No Mac, são o Chrome, o VS Code, o Slack, o Discord e outros apps feitos sobre o Chromium. O Open Whisper cola neles mesmo assim; do contrário, deixaria de funcionar ali.</p>
+<p>Se nenhum campo de texto estava com o foco num desses apps, a colagem cai no vazio e a área de transferência volta ao que era: o texto não está nem no cursor nem na área de transferência. Recupere com <strong>Copiar Última Transcrição</strong> (veja abaixo).</p>
+</div></section>
+<section class="block__section" aria-labelledby="copiar-ou-repetir-o-ultimo-ditado"><div class="block__text">
+<h2 class="block__h2" id="copiar-ou-repetir-o-ultimo-ditado"><a class="anchor" href="#copiar-ou-repetir-o-ultimo-ditado">Copiar ou repetir o último ditado</a></h2>
+<p>Dois itens do menu trazem o último ditado de volta:</p>
+<div class="table"><table><thead><tr><th scope="col">Item</th><th scope="col">O que faz</th></tr></thead><tbody><tr><th scope="row"><strong>Copiar Última Transcrição</strong></th><td data-label="O que faz">Coloca o texto do último ditado na área de transferência. Fica disponível assim que um ditado gera texto desde que o Open Whisper abriu.</td></tr><tr><th scope="row"><strong>Repetir Última Transcrição</strong></th><td data-label="O que faz">Entrega o mesmo texto de novo: colado no cursor, ou deixado na área de transferência pelas mesmas regras. Não transcreve de novo. Fica disponível quando há um último texto e o Open Whisper não está gravando nem transcrevendo.</td></tr></tbody></table></div>
+<p>O Open Whisper guarda só o último ditado, e só na memória. Ao fechar o app ele é esquecido, e não existe histórico. Mais sobre o menu em <a class="link" href="../menu/">O ícone e o menu</a>.</p>
+</div></section>
+<section class="block__section" aria-labelledby="windows-historico-e-sincronizacao-da-area-de-transferencia"><div class="block__text">
+<h2 class="block__h2" id="windows-historico-e-sincronizacao-da-area-de-transferencia"><a class="anchor" href="#windows-historico-e-sincronizacao-da-area-de-transferencia">Windows: histórico e sincronização da área de transferência</a></h2>
+<p>Sempre que o Open Whisper coloca texto ditado na área de transferência, ele marca esse texto para ficar fora do histórico da área de transferência (<span class="caps caps--inline"><kbd class="cap cap--inline">Win</kbd><kbd class="cap cap--inline">V</kbd></span>), fora da sincronização entre os seus dispositivos e fora de apps que monitoram a área de transferência. Isso inclui as vezes em que o texto fica esperando por você: cole com <span class="caps caps--inline"><kbd class="cap cap--inline">Ctrl</kbd><kbd class="cap cap--inline">V</kbd></span>, ele não vai aparecer no <span class="caps caps--inline"><kbd class="cap cap--inline">Win</kbd><kbd class="cap cap--inline">V</kbd></span>. Assim, o que você dita fica neste PC. Veja <a class="link" href="../privacy/">Privacidade</a>.</p>
+</div></section>
+  </article>
+  <nav class="block__foot" aria-label="Bloco anterior e próximo"><a class="key key--step key--prev" href="../dictate/" rel="prev"><span class="key__text"><span class="key__sub engrave">Anterior · 03</span><span class="key__main">Ditar</span></span></a><a class="key key--step key--next" href="../menu/" rel="next"><span class="key__text"><span class="key__sub engrave">Próximo · 05</span><span class="key__main">O ícone e o menu</span></span></a></nav>
+</main>
+</div>
+<footer class="footplate">
+  <div class="footplate__inner">
+    <p class="footplate__free">O Open Whisper é gratuito. <span class="footplate__privacy">Este site não usa cookies e não mede nada.</span></p>
+    <ul class="footplate__links">
+      <li><a class="link" href="../../">Página do Open Whisper</a></li>
+      <li><a class="link" href="../../../terms.txt">Termos de uso</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/releases">Todos os releases</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/issues">Relatar um problema</a></li>
+    </ul>
+    <p class="signature"><span class="signature__intro">feito por</span> <a class="signature__mark" href="https://entringer.dev">entringer.dev</a></p>
+  </div>
+</footer>
+<script type="application/json" id="docs-data">{"result":"1 resultado","results":"{n} resultados","noResults":"Nada encontrado para “{q}”."}</script>
+<script type="module" src="../../../assets/docs.js?v=fc6854744e"></script>
+</body>
+</html>

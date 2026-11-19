@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en" data-os="other">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Command line · Open Whisper Help</title>
+<meta name="description" content="Transcribe a file or a video from the terminal with open-whisper transcribe, in text, subtitles or JSON.">
+<link rel="canonical" href="https://openwhisper.entringer.dev/docs/command-line/">
+<link rel="alternate" hreflang="en" href="https://openwhisper.entringer.dev/docs/command-line/">
+<link rel="alternate" hreflang="pt-BR" href="https://openwhisper.entringer.dev/pt/docs/command-line/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Command line · Open Whisper Help">
+<meta property="og:description" content="Transcribe a file or a video from the terminal with open-whisper transcribe, in text, subtitles or JSON.">
+<meta property="og:url" content="https://openwhisper.entringer.dev/docs/command-line/">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Open Whisper">
+<meta property="og:image" content="https://openwhisper.entringer.dev/assets/og-en.jpg">
+<meta name="theme-color" content="#191314">
+<link rel="icon" type="image/png" sizes="64x64" href="../../assets/favicon-64.png">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<link rel="preload" href="../../assets/fonts/barlow-semi-condensed-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=fc6854744e">
+<link rel="stylesheet" href="../../assets/docs.css?v=fc6854744e">
+<script>
+  // Before the first paint, so the keycaps, the windows and the platform order are the visitor's.
+  (function () {
+    var ua = navigator.userAgent, d = document.documentElement;
+    var touch = matchMedia("(pointer: coarse)").matches && !matchMedia("(pointer: fine)").matches;
+    d.classList.add("js");
+    d.dataset.os = /Windows NT/.test(ua) ? "windows" : /Macintosh|Mac OS X/.test(ua) && !touch ? "mac" : touch ? "touch" : "other";
+  })();
+</script>
+</head>
+<body class="docs-body">
+<a class="skip" href="#plate">Skip to the page</a>
+<header class="nameplate nameplate--docs">
+  <a class="brand" href="../../" aria-label="Open Whisper">
+    <img class="brand__icon" src="../../assets/icon-64.png" width="32" height="32" alt="">
+    <span class="engrave brand__name">Open Whisper</span>
+  </a>
+  <a class="engrave brand__docs" href="../">Docs</a>
+  <form class="search" role="search" action="../" data-index="../../assets/search-en.json">
+    <label class="sr-only" for="search">Search the help</label>
+    <span class="search__well">
+      <svg class="glyph" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M12.6 12.6L17 17"/></svg>
+      <input id="search" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search the help" aria-describedby="search-hint" aria-controls="results">
+      <kbd class="cap cap--inline search__key" aria-hidden="true">/</kbd>
+    </span>
+    <span class="sr-only" id="search-hint">Type to search; press / anywhere to come back here.</span>
+    <div class="results" id="results" hidden><p class="results__count" id="results-count" aria-live="polite"></p><ol class="results__list"></ol></div>
+  </form>
+  <nav class="nameplate__end" aria-label="Site">
+    <span class="latches" role="group" aria-label="Language">
+      <a class="latch is-on" href="../../docs/command-line/" hreflang="en" lang="en" aria-current="page"><i class="led" aria-hidden="true"></i>EN</a><a class="latch" href="../../pt/docs/command-line/" hreflang="pt-BR" lang="pt-BR"><i class="led" aria-hidden="true"></i>PT</a>
+    </span>
+  </nav>
+</header>
+<div class="docs">
+<nav class="rundown" id="rundown" aria-label="Rundown">
+  <details class="rundown__fold" open>
+    <summary class="rundown__head"><svg class="glyph rundown__chev" viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5L13 10l-5.5 5.5"/></svg><span class="engrave">Rundown</span><span class="engrave engrave--dim rundown__count">11 blocks · min</span></summary>
+    <ol class="rundown__list"><li><a class="cue" href="../install/" data-slug="install"><span class="cue__no">01</span><span class="cue__title">Install</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../first-run/" data-slug="first-run"><span class="cue__no">02</span><span class="cue__title">First run</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../dictate/" data-slug="dictate"><span class="cue__no">03</span><span class="cue__title">Dictate</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../paste/" data-slug="paste"><span class="cue__no">04</span><span class="cue__title">Where the text lands</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../menu/" data-slug="menu"><span class="cue__no">05</span><span class="cue__title">The icon and its menu</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../settings/" data-slug="settings"><span class="cue__no">06</span><span class="cue__title">Settings</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../models/" data-slug="models"><span class="cue__no">07</span><span class="cue__title">Models</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../video/" data-slug="video"><span class="cue__no">08</span><span class="cue__title">Video and files</span><span class="cue__time">8<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue is-on" href="../command-line/" data-slug="command-line" aria-current="page"><span class="cue__no">09</span><span class="cue__title">Command line</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../privacy/" data-slug="privacy"><span class="cue__no">10</span><span class="cue__title">Privacy</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../troubleshooting/" data-slug="troubleshooting"><span class="cue__no">11</span><span class="cue__title">Troubleshooting</span><span class="cue__time">9<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+    <p class="rundown__head rundown__head--sub"><span class="engrave">Appendices</span></p>
+    <ol class="rundown__list rundown__list--appendix"><li><a class="cue" href="../faq/" data-slug="faq"><span class="cue__no">A1</span><span class="cue__title">FAQ</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../shortcuts/" data-slug="shortcuts"><span class="cue__no">A2</span><span class="cue__title">Shortcuts and keys</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../command-reference/" data-slug="command-reference"><span class="cue__no">A3</span><span class="cue__title">Command reference</span><span class="cue__time">7<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../data-and-uninstall/" data-slug="data-and-uninstall"><span class="cue__no">A4</span><span class="cue__title">Data and uninstalling</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../limits/" data-slug="limits"><span class="cue__no">A5</span><span class="cue__title">What it doesn&#39;t do</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../report/" data-slug="report"><span class="cue__no">A6</span><span class="cue__title">Reporting a problem</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../about/" data-slug="about"><span class="cue__no">A7</span><span class="cue__title">About and terms</span><span class="cue__time">2<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+  </details>
+</nav>
+<main class="plate" id="plate" tabindex="-1">
+  <header class="block__head">
+    <h1 class="block__title"><span class="readout block__no"><span class="sr-only">Block </span>09</span> <span class="block__name">Command line</span></h1>
+    <p class="engrave engrave--dim block__time">Reading time · 6 min</p>
+    <p class="block__summary">Transcribe a file or a video from the terminal with open-whisper transcribe, in text, subtitles or JSON.</p>
+    <nav class="toc" aria-label="In this block"><p class="engrave toc__head">In this block</p><ol><li><a href="#what-it-is-for">What it is for</a></li><li><a href="#getting-the-command">Getting the command</a></li><li><a href="#recipes">Recipes</a></li><li><a href="#what-comes-out-where">What comes out where</a></li><li><a href="#the-network">The network</a></li><li><a href="#timing-and-stopping">Timing and stopping</a></li></ol></nav>
+  </header>
+  <article class="block" data-slug="command-line">
+<p><code>open-whisper transcribe</code> does what the video window does, from a terminal: you give it a file or a YouTube link, and it prints the transcript. Use it in scripts, or when you transcribe often and prefer typing. This page shows the everyday uses; <a class="link" href="../command-reference/">Command reference</a> has every option and exit status.</p>
+<section class="block__section" aria-labelledby="what-it-is-for"><div class="block__text">
+<h2 class="block__h2" id="what-it-is-for"><a class="anchor" href="#what-it-is-for">What it is for</a></h2>
+<ul class="list"><li>Turning a recording into text or subtitles without opening a window.</li><li>Feeding a transcript to another program, in JSON with the time of each sentence and, if you ask, of each word.</li><li>Running the same transcription again with the same options.</li></ul>
+<p>The command is part of the app: there is nothing else to install. It reads your settings (the video window&#39;s <strong>Speed</strong> and <strong>Model</strong>, and the <strong>Language</strong>) as its defaults, and never changes them. It never writes a file, and dictation keeps working while it runs.</p>
+</div></section>
+<section class="block__section" aria-labelledby="getting-the-command"><div class="block__text">
+<h2 class="block__h2" id="getting-the-command"><a class="anchor" href="#getting-the-command">Getting the command</a></h2>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p>If you installed with Homebrew, <code>open-whisper</code> is already on the PATH. If you installed from the <code>.dmg</code>, link it once. On a Mac with Apple Silicon:</p>
+<pre class="terminal terminal--doc" data-lang="sh"><code><span class="prompt" aria-hidden="true">&gt;</span> ln -s &quot;/Applications/Open Whisper.app/Contents/MacOS/open-whisper&quot; /opt/homebrew/bin/open-whisper</code></pre>
+<p>On an Intel Mac, link it into <code>/usr/local/bin/open-whisper</code> instead. Check it in Terminal:</p>
+<pre class="terminal terminal--doc" data-lang="sh"><code><span class="prompt" aria-hidden="true">&gt;</span> open-whisper --version</code></pre>
+<p>It prints <code>open-whisper</code> followed by the version. With no arguments, <code>open-whisper</code> starts the menu-bar app instead.</p></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><p>The installer adds Open Whisper&#39;s folder to your user PATH. Open a <strong>new</strong> Command Prompt or PowerShell window after installing (one that was already open does not see the change), then check it:</p>
+<pre class="terminal terminal--doc" data-lang="sh"><code><span class="prompt" aria-hidden="true">&gt;</span> open-whisper --version</code></pre>
+<p>It prints <code>open-whisper</code> followed by the version. <code>open-whisper</code> runs <code>open-whisper.com</code>, the console version of the app, so the terminal waits for it and shows its output. With no arguments it stops with a usage error: the app itself starts from the Start menu.</p>
+<p>If your PATH was already very long, the installer leaves it alone. Run the command by its full path then: <code>open-whisper.com</code> in the folder where Open Whisper was installed, usually <code>%LOCALAPPDATA%\Open Whisper</code>.</p></div></div></div>
+<p>Put a path with spaces in quotes. A relative path is read from the folder the terminal is in.</p>
+</div></section>
+<section class="block__section" aria-labelledby="recipes"><div class="block__text">
+<h2 class="block__h2" id="recipes"><a class="anchor" href="#recipes">Recipes</a></h2>
+<h3 class="block__h3">1. A file to text</h3>
+<pre class="terminal terminal--doc" data-lang="sh"><code><span class="prompt" aria-hidden="true">&gt;</span> open-whisper transcribe lecture.mov &gt; lecture.txt</code></pre>
+<p>The text is the same as the video window&#39;s <strong>Copy</strong> with <strong>Text</strong>: a short header, then the transcript. Any file the video window accepts works here too; see <a class="link" href="../video/">Video and files</a>.</p>
+<h3 class="block__h3">2. Subtitles</h3>
+<pre class="terminal terminal--doc" data-lang="sh"><code><span class="prompt" aria-hidden="true">&gt;</span> open-whisper transcribe lecture.mov --format srt &gt; lecture.srt
+<span class="prompt" aria-hidden="true">&gt;</span> open-whisper transcribe lecture.mov --format vtt &gt; lecture.vtt</code></pre>
+<p>The files are the same ones the window&#39;s <strong>Save</strong> writes.</p>
+<h3 class="block__h3">3. JSON for another program</h3>
+<pre class="terminal terminal--doc" data-lang="sh"><code><span class="prompt" aria-hidden="true">&gt;</span> open-whisper transcribe lecture.mov --format json &gt; lecture.json</code></pre>
+<p>The full text is in <code>transcript.text</code>, each sentence with its start and end in <code>transcript.segments</code>, and the settings used in <code>settings</code>. New fields may appear over time; existing ones keep their names.</p>
+<h3 class="block__h3">4. The time of each word</h3>
+<pre class="terminal terminal--doc" data-lang="sh"><code><span class="prompt" aria-hidden="true">&gt;</span> open-whisper transcribe lecture.mov --format json --words &gt; lecture.json</code></pre>
+<p>Each segment gains a <code>words</code> list, with each word&#39;s start, end and a confidence from 0 to 1. Use it to cut pauses or false starts inside a sentence. It only works with <code>--format json</code>, and only for a transcription made on this device: captions have no word times.</p>
+<h3 class="block__h3">5. Numbers as they were said</h3>
+<pre class="terminal terminal--doc" data-lang="sh"><code><span class="prompt" aria-hidden="true">&gt;</span> open-whisper transcribe narration.wav --numbers spoken --format json &gt; narration.json</code></pre>
+<p>By default the engine writes numbers as figures (&quot;310&quot;). With <code>--numbers spoken</code> it writes them in words, as spoken, and no figure appears anywhere. Useful for checking a narration against its script. A Roman numeral is made of letters and may stay as it is, and next to a number the engine sometimes slips in a short extra word. It only applies on this device, not to captions.</p>
+<h3 class="block__h3">6. Names it gets wrong</h3>
+<pre class="terminal terminal--doc" data-lang="sh"><code><span class="prompt" aria-hidden="true">&gt;</span> open-whisper transcribe lecture.mov --prompt &quot;Fabricio, Entringer, DevOps&quot; &gt; lecture.txt</code></pre>
+<p><code>--prompt</code> gives the engine the spellings of names and jargon, for this call only. List the words; do not write a sentence. A file&#39;s name never influences its transcript, so this is the only way to hint a file.</p>
+<h3 class="block__h3">7. Pinning the language</h3>
+<pre class="terminal terminal--doc" data-lang="sh"><code><span class="prompt" aria-hidden="true">&gt;</span> open-whisper transcribe lecture.mov --lang en &gt; lecture.txt</code></pre>
+<p>Pinning the language spoken in the recording is more accurate than auto-detect. <code>--lang auto</code> detects it. The codes are those of the 16 languages in <a class="link" href="../settings/">Settings</a>: <code>pt</code>, <code>en</code>, <code>es</code>, <code>fr</code>, <code>de</code>, <code>it</code>, <code>nl</code>, <code>ru</code>, <code>zh</code>, <code>ja</code>, <code>ko</code>, <code>ar</code>, <code>hi</code>, <code>pl</code>, <code>tr</code>, <code>uk</code>. Any other code is a usage error.</p>
+<h3 class="block__h3">8. A YouTube link</h3>
+<pre class="terminal terminal--doc" data-lang="sh"><code><span class="prompt" aria-hidden="true">&gt;</span> open-whisper transcribe &quot;https://www.youtube.com/watch?v=VIDEO_ID&quot; &gt; video.txt
+<span class="prompt" aria-hidden="true">&gt;</span> open-whisper transcribe &quot;https://www.youtube.com/watch?v=VIDEO_ID&quot; --on-device &gt; video.txt</code></pre>
+<p>Put the link in quotes. Without <code>--on-device</code>, the command uses the video&#39;s captions when there are usable ones, which takes seconds. With <code>--on-device</code>, it downloads the audio and transcribes it on the computer; that flag is your consent, like the choice in the window. A video with no usable captions and no <code>--on-device</code> stops with exit status 7. Links need yt-dlp, as in the <a class="link" href="../video/">video window</a>.</p>
+<h3 class="block__h3">9. A different model or speed</h3>
+<pre class="terminal terminal--doc" data-lang="sh"><code><span class="prompt" aria-hidden="true">&gt;</span> open-whisper transcribe lecture.mov --model medium-q5_0 --quality accurate &gt; lecture.txt</code></pre>
+<p>The model must already be on the computer: the command never downloads one, and stops with exit status 4 if it is missing. Download it in Settings or in the video window (<a class="link" href="../models/">Models</a>). <code>--model small-q5_1</code>, the bundled model, always works.</p>
+</div></section>
+<section class="block__section" aria-labelledby="what-comes-out-where"><div class="block__text">
+<h2 class="block__h2" id="what-comes-out-where"><a class="anchor" href="#what-comes-out-where">What comes out where</a></h2>
+<ul class="list"><li><strong>The result goes to standard output</strong>, and nothing else: complete, then the command ends with status 0. On any failure it stays empty, so a half transcript never reaches your file.</li><li><strong>Everything else goes to standard error</strong>: progress lines that start with <code>open-whisper:</code>, the one-line reason when it fails, and the engine&#39;s own messages. Its wording may change, and it is safe to discard.</li></ul>
+<p>Read the output only when the status is 0. To see the status of the last command:</p>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><pre class="terminal terminal--doc" data-lang="sh"><code><span class="prompt" aria-hidden="true">&gt;</span> echo $?</code></pre></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><p>In Command Prompt, <code>echo %ERRORLEVEL%</code>. In PowerShell, <code>$LASTEXITCODE</code>.</p></div></div></div>
+<p>Each status has its own meaning (4 is a missing model, 5 an unsupported format, 7 a video that needs <code>--on-device</code>…). The whole table, with what to do for each, is in <a class="link" href="../command-reference/">Command reference</a>.</p>
+</div></section>
+<section class="block__section" aria-labelledby="the-network"><div class="block__text">
+<h2 class="block__h2" id="the-network"><a class="anchor" href="#the-network">The network</a></h2>
+<ul class="list"><li><strong>A file on your computer uses no network at all.</strong></li><li>A YouTube link uses the network only to fetch the video. Before it fetches anything, the command says so on standard error: <code>open-whisper: fetching the video from the network — the transcription itself stays on this machine</code>.</li></ul>
+</div></section>
+<section class="block__section" aria-labelledby="timing-and-stopping"><div class="block__text">
+<h2 class="block__h2" id="timing-and-stopping"><a class="anchor" href="#timing-and-stopping">Timing and stopping</a></h2>
+<p>On a Mac with Apple Silicon and the bundled model, an hour of audio takes about three minutes; the first call also spends a second or two loading the model. A link with usable captions returns in seconds.</p>
+<p>To stop, press <span class="caps caps--inline"><kbd class="cap cap--inline">Ctrl</kbd><kbd class="cap cap--inline">C</kbd></span>. The command ends within about two seconds, with status 130, and delivers nothing.</p>
+<aside class="callout callout--note"><p class="callout__legend engrave">Note</p><div class="callout__body"><p>The command does one input per call: no folders, no lists, no playlists. To transcribe many files, run it once per file, in a loop of your shell.</p></div></aside>
+</div></section>
+  </article>
+  <nav class="block__foot" aria-label="Previous and next blocks"><a class="key key--step key--prev" href="../video/" rel="prev"><span class="key__text"><span class="key__sub engrave">Previous · 08</span><span class="key__main">Video and files</span></span></a><a class="key key--step key--next" href="../privacy/" rel="next"><span class="key__text"><span class="key__sub engrave">Next · 10</span><span class="key__main">Privacy</span></span></a></nav>
+</main>
+</div>
+<footer class="footplate">
+  <div class="footplate__inner">
+    <p class="footplate__free">Open Whisper is free. <span class="footplate__privacy">This site sets no cookies and measures nothing.</span></p>
+    <ul class="footplate__links">
+      <li><a class="link" href="../../">Open Whisper home</a></li>
+      <li><a class="link" href="../../terms.txt">Terms of use</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/releases">All releases</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/issues">Report a problem</a></li>
+    </ul>
+    <p class="signature"><span class="signature__intro">made by</span> <a class="signature__mark" href="https://entringer.dev">entringer.dev</a></p>
+  </div>
+</footer>
+<script type="application/json" id="docs-data">{"result":"1 result","results":"{n} results","noResults":"Nothing found for “{q}”."}</script>
+<script type="module" src="../../assets/docs.js?v=fc6854744e"></script>
+</body>
+</html>

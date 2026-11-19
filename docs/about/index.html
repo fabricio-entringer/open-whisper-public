@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en" data-os="other">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About, versions and terms · Open Whisper Help</title>
+<meta name="description" content="The About window, how to read the version and build, the terms of use, the third-party notices and where releases are published.">
+<link rel="canonical" href="https://openwhisper.entringer.dev/docs/about/">
+<link rel="alternate" hreflang="en" href="https://openwhisper.entringer.dev/docs/about/">
+<link rel="alternate" hreflang="pt-BR" href="https://openwhisper.entringer.dev/pt/docs/about/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="About, versions and terms · Open Whisper Help">
+<meta property="og:description" content="The About window, how to read the version and build, the terms of use, the third-party notices and where releases are published.">
+<meta property="og:url" content="https://openwhisper.entringer.dev/docs/about/">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Open Whisper">
+<meta property="og:image" content="https://openwhisper.entringer.dev/assets/og-en.jpg">
+<meta name="theme-color" content="#191314">
+<link rel="icon" type="image/png" sizes="64x64" href="../../assets/favicon-64.png">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<link rel="preload" href="../../assets/fonts/barlow-semi-condensed-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=fc6854744e">
+<link rel="stylesheet" href="../../assets/docs.css?v=fc6854744e">
+<script>
+  // Before the first paint, so the keycaps, the windows and the platform order are the visitor's.
+  (function () {
+    var ua = navigator.userAgent, d = document.documentElement;
+    var touch = matchMedia("(pointer: coarse)").matches && !matchMedia("(pointer: fine)").matches;
+    d.classList.add("js");
+    d.dataset.os = /Windows NT/.test(ua) ? "windows" : /Macintosh|Mac OS X/.test(ua) && !touch ? "mac" : touch ? "touch" : "other";
+  })();
+</script>
+</head>
+<body class="docs-body">
+<a class="skip" href="#plate">Skip to the page</a>
+<header class="nameplate nameplate--docs">
+  <a class="brand" href="../../" aria-label="Open Whisper">
+    <img class="brand__icon" src="../../assets/icon-64.png" width="32" height="32" alt="">
+    <span class="engrave brand__name">Open Whisper</span>
+  </a>
+  <a class="engrave brand__docs" href="../">Docs</a>
+  <form class="search" role="search" action="../" data-index="../../assets/search-en.json">
+    <label class="sr-only" for="search">Search the help</label>
+    <span class="search__well">
+      <svg class="glyph" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M12.6 12.6L17 17"/></svg>
+      <input id="search" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search the help" aria-describedby="search-hint" aria-controls="results">
+      <kbd class="cap cap--inline search__key" aria-hidden="true">/</kbd>
+    </span>
+    <span class="sr-only" id="search-hint">Type to search; press / anywhere to come back here.</span>
+    <div class="results" id="results" hidden><p class="results__count" id="results-count" aria-live="polite"></p><ol class="results__list"></ol></div>
+  </form>
+  <nav class="nameplate__end" aria-label="Site">
+    <span class="latches" role="group" aria-label="Language">
+      <a class="latch is-on" href="../../docs/about/" hreflang="en" lang="en" aria-current="page"><i class="led" aria-hidden="true"></i>EN</a><a class="latch" href="../../pt/docs/about/" hreflang="pt-BR" lang="pt-BR"><i class="led" aria-hidden="true"></i>PT</a>
+    </span>
+  </nav>
+</header>
+<div class="docs">
+<nav class="rundown" id="rundown" aria-label="Rundown">
+  <details class="rundown__fold" open>
+    <summary class="rundown__head"><svg class="glyph rundown__chev" viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5L13 10l-5.5 5.5"/></svg><span class="engrave">Rundown</span><span class="engrave engrave--dim rundown__count">11 blocks · min</span></summary>
+    <ol class="rundown__list"><li><a class="cue" href="../install/" data-slug="install"><span class="cue__no">01</span><span class="cue__title">Install</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../first-run/" data-slug="first-run"><span class="cue__no">02</span><span class="cue__title">First run</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../dictate/" data-slug="dictate"><span class="cue__no">03</span><span class="cue__title">Dictate</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../paste/" data-slug="paste"><span class="cue__no">04</span><span class="cue__title">Where the text lands</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../menu/" data-slug="menu"><span class="cue__no">05</span><span class="cue__title">The icon and its menu</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../settings/" data-slug="settings"><span class="cue__no">06</span><span class="cue__title">Settings</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../models/" data-slug="models"><span class="cue__no">07</span><span class="cue__title">Models</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../video/" data-slug="video"><span class="cue__no">08</span><span class="cue__title">Video and files</span><span class="cue__time">8<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../command-line/" data-slug="command-line"><span class="cue__no">09</span><span class="cue__title">Command line</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../privacy/" data-slug="privacy"><span class="cue__no">10</span><span class="cue__title">Privacy</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../troubleshooting/" data-slug="troubleshooting"><span class="cue__no">11</span><span class="cue__title">Troubleshooting</span><span class="cue__time">9<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+    <p class="rundown__head rundown__head--sub"><span class="engrave">Appendices</span></p>
+    <ol class="rundown__list rundown__list--appendix"><li><a class="cue" href="../faq/" data-slug="faq"><span class="cue__no">A1</span><span class="cue__title">FAQ</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../shortcuts/" data-slug="shortcuts"><span class="cue__no">A2</span><span class="cue__title">Shortcuts and keys</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../command-reference/" data-slug="command-reference"><span class="cue__no">A3</span><span class="cue__title">Command reference</span><span class="cue__time">7<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../data-and-uninstall/" data-slug="data-and-uninstall"><span class="cue__no">A4</span><span class="cue__title">Data and uninstalling</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../limits/" data-slug="limits"><span class="cue__no">A5</span><span class="cue__title">What it doesn&#39;t do</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../report/" data-slug="report"><span class="cue__no">A6</span><span class="cue__title">Reporting a problem</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue is-on" href="../about/" data-slug="about" aria-current="page"><span class="cue__no">A7</span><span class="cue__title">About and terms</span><span class="cue__time">2<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+  </details>
+</nav>
+<main class="plate" id="plate" tabindex="-1">
+  <header class="block__head">
+    <h1 class="block__title"><span class="readout block__no"><span class="sr-only">Appendix </span>A7</span> <span class="block__name">About, versions and terms</span></h1>
+    <p class="engrave engrave--dim block__time">Reading time · 2 min</p>
+    <p class="block__summary">The About window, how to read the version and build, the terms of use, the third-party notices and where releases are published.</p>
+    <nav class="toc" aria-label="In this block"><p class="engrave toc__head">In this block</p><ol><li><a href="#the-about-window">The About window</a></li><li><a href="#version-and-build">Version and build</a></li><li><a href="#terms-of-use">Terms of use</a></li><li><a href="#third-party-notices">Third-party notices</a></li><li><a href="#releases-and-their-notes">Releases and their notes</a></li></ol></nav>
+  </header>
+  <article class="block" data-slug="about">
+<p>The About window tells you which copy of Open Whisper you have. This page also says where the terms of use and the notices for the parts made by others are, and where new versions are published.</p>
+<section class="block__section block__section--screen" aria-labelledby="the-about-window"><div class="block__text">
+<h2 class="block__h2" id="the-about-window"><a class="anchor" href="#the-about-window">The About window</a></h2>
+<ol class="cues"><li>Open the menu: the icon in the menu bar on the Mac, in the notification area on Windows.</li><li>Choose <strong>About Open Whisper</strong>.</li><li>Close it with <span class="caps caps--inline"><kbd class="cap cap--inline">Esc</kbd></span>.</li></ol>
+<p>It shows:</p>
+<ul class="list"><li>The app&#39;s name and the line <strong>Version … (build …)</strong>.</li><li><strong>On-device voice transcription at your cursor.</strong></li><li><strong>100% local. No audio ever leaves your Mac.</strong> On Windows: <strong>100% local. No audio ever leaves your PC.</strong></li><li>A note that Open Whisper is not affiliated with, nor endorsed by, OpenAI, and is built on the Whisper model.</li><li>The link <strong>Made by entringer.dev</strong>, which opens that page in your browser.</li></ul>
+</div><figure class="shot"><span class="shot__screen"><span class="appwin" style="--w: 360"><span class="wbar wbar--mac" data-for="mac other touch" aria-hidden="true"><span class="wbar__lights"><i></i><i></i><i></i></span><span class="wbar__title">Open Whisper</span></span><span class="wbar wbar--win" data-for="windows" aria-hidden="true"><span class="wbar__title">Open Whisper</span><span class="wbar__caption"><svg viewBox="0 0 30 10"><path d="M1 5h8M12.5 1.5h7v7h-7zM23.5 1.5l7 7m0-7l-7 7"/></svg></span></span><img data-for="mac other touch" data-scheme="light" src="../../assets/shots/about-en-mac-light-1x.webp" srcset="../../assets/shots/about-en-mac-light-1x.webp 360w, ../../assets/shots/about-en-mac-light.webp 720w" sizes="(max-width: 760px) 92vw, 420px" width="360" height="411" loading="lazy" decoding="async" alt="The About window: the version and where it comes from."><img data-for="mac other touch" data-scheme="dark" src="../../assets/shots/about-en-mac-dark-1x.webp" srcset="../../assets/shots/about-en-mac-dark-1x.webp 360w, ../../assets/shots/about-en-mac-dark.webp 720w" sizes="(max-width: 760px) 92vw, 420px" width="360" height="411" loading="lazy" decoding="async" alt="The About window: the version and where it comes from."><img data-for="windows" data-scheme="light" src="../../assets/shots/about-en-windows-light-1x.webp" srcset="../../assets/shots/about-en-windows-light-1x.webp 360w, ../../assets/shots/about-en-windows-light.webp 720w" sizes="(max-width: 760px) 92vw, 420px" width="360" height="411" loading="lazy" decoding="async" alt="The About window: the version and where it comes from."><img data-for="windows" data-scheme="dark" src="../../assets/shots/about-en-windows-dark-1x.webp" srcset="../../assets/shots/about-en-windows-dark-1x.webp 360w, ../../assets/shots/about-en-windows-dark.webp 720w" sizes="(max-width: 760px) 92vw, 420px" width="360" height="411" loading="lazy" decoding="async" alt="The About window: the version and where it comes from."></span></span><figcaption class="engrave shot__caption">About</figcaption></figure></section>
+<section class="block__section" aria-labelledby="version-and-build"><div class="block__text">
+<h2 class="block__h2" id="version-and-build"><a class="anchor" href="#version-and-build">Version and build</a></h2>
+<p>The version, such as <code>0.1.0</code>, names the release. The build number tells apart copies made for the same version.</p>
+<p>You can select the line and copy it. Paste it into any <a class="link" href="../report/">problem report</a>. From the command line, <code>open-whisper --version</code> prints the version too.</p>
+</div></section>
+<section class="block__section" aria-labelledby="terms-of-use"><div class="block__text">
+<h2 class="block__h2" id="terms-of-use"><a class="anchor" href="#terms-of-use">Terms of use</a></h2>
+<p>Open Whisper is free: to install and use, for personal or professional work, on as many computers as you like, with no account. The full terms, in Portuguese and English, are at <a class="link" href="https://openwhisper.entringer.dev/terms.txt" rel="noopener">openwhisper.entringer.dev/terms.txt</a>.</p>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p>A copy ships inside the app, as <code>LICENSE.txt</code> in <code>Open Whisper.app/Contents/Resources/</code>.</p></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><p>The installer shows them before installing, and a copy is installed with the app as <code>LICENSE.txt</code>.</p></div></div></div>
+</div></section>
+<section class="block__section" aria-labelledby="third-party-notices"><div class="block__text">
+<h2 class="block__h2" id="third-party-notices"><a class="anchor" href="#third-party-notices">Third-party notices</a></h2>
+<p>Open Whisper includes work by others, such as the Whisper speech models, the whisper.cpp engine and the Barlow typeface. Their notices and licenses are at <a class="link" href="https://openwhisper.entringer.dev/third-party-notices.txt" rel="noopener">openwhisper.entringer.dev/third-party-notices.txt</a>, and a copy ships with the app as <code>THIRD-PARTY-NOTICES.txt</code>, next to <code>LICENSE.txt</code>.</p>
+</div></section>
+<section class="block__section" aria-labelledby="releases-and-their-notes"><div class="block__text">
+<h2 class="block__h2" id="releases-and-their-notes"><a class="anchor" href="#releases-and-their-notes">Releases and their notes</a></h2>
+<p>Every version is published on the <a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/releases" rel="noopener">Releases page</a>, with notes on what changed and the files to download, each with its checksum.</p>
+<p>Open Whisper doesn&#39;t check for updates by itself: it makes no network request you didn&#39;t ask for. To hear about new versions, follow the Releases page: on GitHub, <strong>Watch → Custom → Releases</strong>. Installing is covered in <a class="link" href="../install/">Install</a>.</p>
+</div></section>
+  </article>
+  <nav class="block__foot" aria-label="Previous and next blocks"><a class="key key--step key--prev" href="../report/" rel="prev"><span class="key__text"><span class="key__sub engrave">Previous · A6</span><span class="key__main">Reporting a problem</span></span></a><span></span></nav>
+</main>
+</div>
+<footer class="footplate">
+  <div class="footplate__inner">
+    <p class="footplate__free">Open Whisper is free. <span class="footplate__privacy">This site sets no cookies and measures nothing.</span></p>
+    <ul class="footplate__links">
+      <li><a class="link" href="../../">Open Whisper home</a></li>
+      <li><a class="link" href="../../terms.txt">Terms of use</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/releases">All releases</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/issues">Report a problem</a></li>
+    </ul>
+    <p class="signature"><span class="signature__intro">made by</span> <a class="signature__mark" href="https://entringer.dev">entringer.dev</a></p>
+  </div>
+</footer>
+<script type="application/json" id="docs-data">{"result":"1 result","results":"{n} results","noResults":"Nothing found for “{q}”."}</script>
+<script type="module" src="../../assets/docs.js?v=fc6854744e"></script>
+</body>
+</html>

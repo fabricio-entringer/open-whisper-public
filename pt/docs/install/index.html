@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="pt-BR" data-os="other">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Instalar · Ajuda do Open Whisper</title>
+<meta name="description" content="O que o computador precisa ter, e como baixar, conferir e instalar o Open Whisper no Windows e, quando sair, no Mac.">
+<link rel="canonical" href="https://openwhisper.entringer.dev/pt/docs/install/">
+<link rel="alternate" hreflang="en" href="https://openwhisper.entringer.dev/docs/install/">
+<link rel="alternate" hreflang="pt-BR" href="https://openwhisper.entringer.dev/pt/docs/install/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Instalar · Ajuda do Open Whisper">
+<meta property="og:description" content="O que o computador precisa ter, e como baixar, conferir e instalar o Open Whisper no Windows e, quando sair, no Mac.">
+<meta property="og:url" content="https://openwhisper.entringer.dev/pt/docs/install/">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Open Whisper">
+<meta property="og:image" content="https://openwhisper.entringer.dev/assets/og-pt.jpg">
+<meta name="theme-color" content="#191314">
+<link rel="icon" type="image/png" sizes="64x64" href="../../../assets/favicon-64.png">
+<link rel="apple-touch-icon" href="../../../assets/icon-180.png">
+<link rel="preload" href="../../../assets/fonts/barlow-semi-condensed-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../../assets/site.css?v=fc6854744e">
+<link rel="stylesheet" href="../../../assets/docs.css?v=fc6854744e">
+<script>
+  // Before the first paint, so the keycaps, the windows and the platform order are the visitor's.
+  (function () {
+    var ua = navigator.userAgent, d = document.documentElement;
+    var touch = matchMedia("(pointer: coarse)").matches && !matchMedia("(pointer: fine)").matches;
+    d.classList.add("js");
+    d.dataset.os = /Windows NT/.test(ua) ? "windows" : /Macintosh|Mac OS X/.test(ua) && !touch ? "mac" : touch ? "touch" : "other";
+  })();
+</script>
+</head>
+<body class="docs-body">
+<a class="skip" href="#plate">Ir para a página</a>
+<header class="nameplate nameplate--docs">
+  <a class="brand" href="../../" aria-label="Open Whisper">
+    <img class="brand__icon" src="../../../assets/icon-64.png" width="32" height="32" alt="">
+    <span class="engrave brand__name">Open Whisper</span>
+  </a>
+  <a class="engrave brand__docs" href="../">Ajuda</a>
+  <form class="search" role="search" action="../" data-index="../../../assets/search-pt.json">
+    <label class="sr-only" for="search">Buscar na ajuda</label>
+    <span class="search__well">
+      <svg class="glyph" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M12.6 12.6L17 17"/></svg>
+      <input id="search" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="Buscar na ajuda" aria-describedby="search-hint" aria-controls="results">
+      <kbd class="cap cap--inline search__key" aria-hidden="true">/</kbd>
+    </span>
+    <span class="sr-only" id="search-hint">Digite para buscar; aperte / em qualquer lugar para voltar aqui.</span>
+    <div class="results" id="results" hidden><p class="results__count" id="results-count" aria-live="polite"></p><ol class="results__list"></ol></div>
+  </form>
+  <nav class="nameplate__end" aria-label="Site">
+    <span class="latches" role="group" aria-label="Idioma">
+      <a class="latch" href="../../../docs/install/" hreflang="en" lang="en"><i class="led" aria-hidden="true"></i>EN</a><a class="latch is-on" href="../../../pt/docs/install/" hreflang="pt-BR" lang="pt-BR" aria-current="page"><i class="led" aria-hidden="true"></i>PT</a>
+    </span>
+  </nav>
+</header>
+<div class="docs">
+<nav class="rundown" id="rundown" aria-label="Roteiro">
+  <details class="rundown__fold" open>
+    <summary class="rundown__head"><svg class="glyph rundown__chev" viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5L13 10l-5.5 5.5"/></svg><span class="engrave">Roteiro</span><span class="engrave engrave--dim rundown__count">11 blocos · min</span></summary>
+    <ol class="rundown__list"><li><a class="cue is-on" href="../install/" data-slug="install" aria-current="page"><span class="cue__no">01</span><span class="cue__title">Instalar</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../first-run/" data-slug="first-run"><span class="cue__no">02</span><span class="cue__title">Primeira execução</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../dictate/" data-slug="dictate"><span class="cue__no">03</span><span class="cue__title">Ditar</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../paste/" data-slug="paste"><span class="cue__no">04</span><span class="cue__title">Onde o texto vai parar</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../menu/" data-slug="menu"><span class="cue__no">05</span><span class="cue__title">O ícone e o menu</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../settings/" data-slug="settings"><span class="cue__no">06</span><span class="cue__title">Ajustes</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../models/" data-slug="models"><span class="cue__no">07</span><span class="cue__title">Modelos</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../video/" data-slug="video"><span class="cue__no">08</span><span class="cue__title">Vídeo e arquivos</span><span class="cue__time">8<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../command-line/" data-slug="command-line"><span class="cue__no">09</span><span class="cue__title">Linha de comando</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../privacy/" data-slug="privacy"><span class="cue__no">10</span><span class="cue__title">Privacidade</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../troubleshooting/" data-slug="troubleshooting"><span class="cue__no">11</span><span class="cue__title">Solução de problemas</span><span class="cue__time">9<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+    <p class="rundown__head rundown__head--sub"><span class="engrave">Anexos</span></p>
+    <ol class="rundown__list rundown__list--appendix"><li><a class="cue" href="../faq/" data-slug="faq"><span class="cue__no">A1</span><span class="cue__title">Perguntas frequentes</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../shortcuts/" data-slug="shortcuts"><span class="cue__no">A2</span><span class="cue__title">Atalhos e teclas</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../command-reference/" data-slug="command-reference"><span class="cue__no">A3</span><span class="cue__title">Referência do comando</span><span class="cue__time">7<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../data-and-uninstall/" data-slug="data-and-uninstall"><span class="cue__no">A4</span><span class="cue__title">Dados e desinstalação</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../limits/" data-slug="limits"><span class="cue__no">A5</span><span class="cue__title">O que ele não faz</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../report/" data-slug="report"><span class="cue__no">A6</span><span class="cue__title">Relatar um problema</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../about/" data-slug="about"><span class="cue__no">A7</span><span class="cue__title">Sobre e termos</span><span class="cue__time">2<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+  </details>
+</nav>
+<main class="plate" id="plate" tabindex="-1">
+  <header class="block__head">
+    <h1 class="block__title"><span class="readout block__no"><span class="sr-only">Bloco </span>01</span> <span class="block__name">Instalar</span></h1>
+    <p class="engrave engrave--dim block__time">Leitura · 4 min</p>
+    <p class="block__summary">O que o computador precisa ter, e como baixar, conferir e instalar o Open Whisper no Windows e, quando sair, no Mac.</p>
+    <nav class="toc" aria-label="Neste bloco"><p class="engrave toc__head">Neste bloco</p><ol><li><a href="#onde-baixar">Onde baixar</a></li><li><a href="#o-que-o-computador-precisa-ter">O que o computador precisa ter</a></li><li><a href="#instalar-no-windows">Instalar no Windows</a></li><li><a href="#instalar-no-mac">Instalar no Mac</a></li><li><a href="#atualizar-para-uma-versao-nova">Atualizar para uma versão nova</a></li><li><a href="#desinstalar">Desinstalar</a></li></ol></nav>
+  </header>
+  <article class="block" data-slug="install">
+<p>O Open Whisper é grátis e não pede conta. Esta página diz o que o computador precisa ter, como baixar e conferir o instalador, como instalar e como passar para uma versão nova.</p>
+<section class="block__section" aria-labelledby="onde-baixar"><div class="block__text">
+<h2 class="block__h2" id="onde-baixar"><a class="anchor" href="#onde-baixar">Onde baixar</a></h2>
+<p>Toda versão sai na <a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/releases" rel="noopener">página de Releases</a>, com um arquivo <code>.sha256</code> ao lado de cada download para você conferir. O site, <a class="link" href="https://openwhisper.entringer.dev/" rel="noopener">openwhisper.entringer.dev</a>, aponta para os mesmos arquivos.</p>
+<aside class="callout callout--note"><p class="callout__legend engrave">Nota</p><div class="callout__body"><p>A primeira versão é para Windows. A versão para Mac sai assim que a Apple assinar e notarizar o app. Ela vai instalar pelo Homebrew ou por um <code>.dmg</code>, como está descrito abaixo.</p></div></aside>
+<div class="table"><table><thead><tr><th scope="col">Plataforma</th><th scope="col">Download</th><th scope="col">Arquivo de conferência</th></tr></thead><tbody><tr><th scope="row">Windows</th><td data-label="Download"><code>Open.Whisper_X.Y.Z_x64-setup.exe</code></td><td data-label="Arquivo de conferência"><code>Open.Whisper_X.Y.Z_x64-setup.exe.sha256</code></td></tr><tr><th scope="row">Mac</th><td data-label="Download">Ainda não: sai depois que a Apple assinar o app</td><td data-label="Arquivo de conferência">—</td></tr></tbody></table></div>
+<p><code>X.Y.Z</code> é o número da versão. Baixe o Open Whisper só dessa página ou, quando a versão para Mac sair, pelo Homebrew: são os canais oficiais.</p>
+</div></section>
+<section class="block__section" aria-labelledby="o-que-o-computador-precisa-ter"><div class="block__text">
+<h2 class="block__h2" id="o-que-o-computador-precisa-ter"><a class="anchor" href="#o-que-o-computador-precisa-ter">O que o computador precisa ter</a></h2>
+<div class="table"><table><thead><tr><th scope="col"></th><th scope="col">Windows</th><th scope="col">Mac</th></tr></thead><tbody><tr><th scope="row">Sistema</th><td data-label="Windows">Windows 10 (22H2) ou Windows 11, 64 bits</td><td data-label="Mac">macOS 14 Sonoma ou posterior</td></tr><tr><th scope="row">Processador</th><td data-label="Windows">Intel ou AMD com AVX2 (Intel de 2013 em diante, AMD de 2015 em diante)</td><td data-label="Mac">Apple Silicon ou Intel, um download só para os dois</td></tr><tr><th scope="row">Espaço em disco</th><td data-label="Windows">Menos de 300 MB</td><td data-label="Mac">Cerca de 200 MB</td></tr><tr><th scope="row">Internet</th><td data-label="Windows">Só durante a instalação, se faltar o WebView2</td><td data-label="Mac">Não precisa depois do download</td></tr><tr><th scope="row">Conta</th><td data-label="Windows">Nenhuma</td><td data-label="Mac">Nenhuma</td></tr></tbody></table></div>
+<p>Num PC com Windows e processador ARM, o Open Whisper roda por emulação, não de forma nativa. No Windows, a transcrição roda no processador; a placa de vídeo não é usada.</p>
+</div></section>
+<section class="block__section" aria-labelledby="instalar-no-windows"><div class="block__text">
+<h2 class="block__h2" id="instalar-no-windows"><a class="anchor" href="#instalar-no-windows">Instalar no Windows</a></h2>
+<ol class="cues"><li>Na página de Releases, baixe o <code>Open.Whisper_X.Y.Z_x64-setup.exe</code> e o arquivo <code>.sha256</code> que fica ao lado.</li><li>Confira o download (veja abaixo): é assim que você sabe que o arquivo é o mesmo que foi publicado.</li><li>Abra o instalador.</li><li>Se o Windows mostrar <strong>O Windows protegeu o computador</strong>, escolha <strong>Mais informações</strong> e depois <strong>Executar assim mesmo</strong>.</li><li>Siga o instalador. Ele instala só para o seu usuário e nunca pede senha de administrador. Ele escolhe sozinho entre português e inglês, e mostra os termos de uso.</li><li>Abra o <strong>Open Whisper</strong> pelo menu Iniciar, se ele ainda não estiver aberto. O ícone aparece na área de notificação, perto do relógio, e a janela de configuração abre: veja <a class="link" href="../first-run/">Primeira execução</a>.</li></ol>
+<h3 class="block__h3">Conferir o download</h3>
+<p>Abra o Prompt de Comando ou o PowerShell na pasta onde você salvou o instalador e rode:</p>
+<pre class="terminal terminal--doc" data-lang="sh"><code><span class="prompt" aria-hidden="true">&gt;</span> certutil -hashfile Open.Whisper_X.Y.Z_x64-setup.exe SHA256</code></pre>
+<p>Abra o arquivo <code>.sha256</code> no Bloco de Notas. A sequência longa de letras e números que o <code>certutil</code> mostra tem que ser igual à que está nesse arquivo. Se não for, apague o instalador e baixe de novo pela página de Releases.</p>
+<aside class="callout callout--note"><p class="callout__legend engrave">Por que o Windows avisa</p><div class="callout__body"><p>A primeira versão para Windows ainda não tem assinatura de código, e o SmartScreen avisa antes de rodar um instalador sem assinatura. Conferir o hash é o que garante que o arquivo é o publicado.</p></div></aside>
+<h3 class="block__h3">WebView2</h3>
+<p>As janelas do Open Whisper são desenhadas pelo Microsoft Edge WebView2. Se ele não estiver no seu PC, o instalador baixa e instala sozinho, sem perguntar. É o único momento em que a instalação precisa de internet.</p>
+<h3 class="block__h3">O comando <code>open-whisper</code></h3>
+<p>O instalador também coloca o comando <code>open-whisper</code> no PATH do seu usuário, para a <a class="link" href="../command-line/">linha de comando</a>. Depois de instalar, abra uma janela <strong>nova</strong> do Prompt de Comando ou do PowerShell: as que já estavam abertas não enxergam o comando.</p>
+<pre class="terminal terminal--doc" data-lang="sh"><code><span class="prompt" aria-hidden="true">&gt;</span> open-whisper --version
+open-whisper X.Y.Z</code></pre>
+<aside class="callout callout--fix"><p class="callout__legend engrave"><i class="led led--fault is-on" aria-hidden="true"></i>Se o comando não for encontrado</p><div class="callout__body"><p>Se o PATH do seu usuário já era muito longo, o instalador não mexe nele, para não estragá-lo. Rode o comando pelo caminho completo: <code>open-whisper.com</code>, na pasta onde o Open Whisper foi instalado.</p></div></aside>
+</div></section>
+<section class="block__section" aria-labelledby="instalar-no-mac"><div class="block__text">
+<h2 class="block__h2" id="instalar-no-mac"><a class="anchor" href="#instalar-no-mac">Instalar no Mac</a></h2>
+<h3 class="block__h3">Pelo Homebrew</h3>
+<pre class="terminal terminal--doc" data-lang="sh"><code><span class="prompt" aria-hidden="true">&gt;</span> brew install --cask fabricio-entringer/tap/open-whisper</code></pre>
+<p>Isso instala o <strong>Open Whisper</strong> em Aplicativos e coloca o comando <code>open-whisper</code> no PATH.</p>
+<h3 class="block__h3">Pelo .dmg</h3>
+<ol class="cues"><li>Na página de Releases, baixe o <code>Open.Whisper_X.Y.Z_universal.dmg</code> e o arquivo <code>.sha256</code> que fica ao lado, na mesma pasta.</li><li>Confira o download. No Terminal, nessa pasta, rode:<br><code>shasum -a 256 -c Open.Whisper_X.Y.Z_universal.dmg.sha256</code><br>A resposta tem que ser <code>OK</code>. Se não for, apague o <code>.dmg</code> e baixe de novo.</li><li>Abra o <code>.dmg</code> e arraste o <strong>Open Whisper</strong> para a pasta Aplicativos.</li><li>Abra o <strong>Open Whisper</strong> em Aplicativos. O ícone aparece na barra de menus e a janela de configuração abre: veja <a class="link" href="../first-run/">Primeira execução</a>.</li></ol>
+<aside class="callout callout--warn"><p class="callout__legend engrave"><i class="led led--fault is-on" aria-hidden="true"></i>Atenção</p><div class="callout__body"><p>Deixe o app direto em Aplicativos (ou na pasta Aplicativos dentro da sua pasta pessoal). Aberto do <code>.dmg</code>, de Downloads ou de uma subpasta, ele não consegue ligar o <strong>Abrir ao iniciar o Mac</strong>.</p></div></aside>
+<p>Instalado pelo <code>.dmg</code>, o comando <code>open-whisper</code> ainda não está no PATH: a página <a class="link" href="../command-line/">Linha de comando</a> mostra o link de uma linha que resolve isso.</p>
+<h3 class="block__h3">Assinado e notarizado</h3>
+<p>A versão para Mac é assinada com um Developer ID da Apple e notarizada pela Apple, então o macOS consegue confirmar quem fez o app e que ele não foi alterado. Ela não está na Mac App Store: colar em outros apps exige a permissão de Acessibilidade, e o sandbox da App Store não permite isso.</p>
+</div></section>
+<section class="block__section" aria-labelledby="atualizar-para-uma-versao-nova"><div class="block__text">
+<h2 class="block__h2" id="atualizar-para-uma-versao-nova"><a class="anchor" href="#atualizar-para-uma-versao-nova">Atualizar para uma versão nova</a></h2>
+<p>O Open Whisper não procura atualizações e nunca entra na internet para isso. As versões novas aparecem na página de Releases; dá para acompanhar pelo feed dela, <code>https://github.com/fabricio-entringer/open-whisper-public/releases.atom</code>.</p>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><ul class="list"><li><strong>Pelo Homebrew:</strong> rode <code>brew upgrade --cask open-whisper</code>.</li><li><strong>Pelo .dmg:</strong> feche o Open Whisper pelo menu, baixe e confira o <code>.dmg</code> novo e arraste o app para Aplicativos de novo, substituindo o antigo.</li></ul></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><ol class="cues"><li>Feche o Open Whisper pelo menu.</li><li>Baixe e confira o instalador novo.</li><li>Rode do mesmo jeito. Seus ajustes e os modelos baixados continuam lá.</li></ol></div></div></div>
+</div></section>
+<section class="block__section" aria-labelledby="desinstalar"><div class="block__text">
+<h2 class="block__h2" id="desinstalar"><a class="anchor" href="#desinstalar">Desinstalar</a></h2>
+<p>Como remover o Open Whisper, e quais arquivos ficam para trás, está em <a class="link" href="../data-and-uninstall/">Dados e desinstalação</a>.</p>
+</div></section>
+  </article>
+  <nav class="block__foot" aria-label="Bloco anterior e próximo"><span></span><a class="key key--step key--next" href="../first-run/" rel="next"><span class="key__text"><span class="key__sub engrave">Próximo · 02</span><span class="key__main">Primeira execução</span></span></a></nav>
+</main>
+</div>
+<footer class="footplate">
+  <div class="footplate__inner">
+    <p class="footplate__free">O Open Whisper é gratuito. <span class="footplate__privacy">Este site não usa cookies e não mede nada.</span></p>
+    <ul class="footplate__links">
+      <li><a class="link" href="../../">Página do Open Whisper</a></li>
+      <li><a class="link" href="../../../terms.txt">Termos de uso</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/releases">Todos os releases</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/issues">Relatar um problema</a></li>
+    </ul>
+    <p class="signature"><span class="signature__intro">feito por</span> <a class="signature__mark" href="https://entringer.dev">entringer.dev</a></p>
+  </div>
+</footer>
+<script type="application/json" id="docs-data">{"result":"1 resultado","results":"{n} resultados","noResults":"Nada encontrado para “{q}”."}</script>
+<script type="module" src="../../../assets/docs.js?v=fc6854744e"></script>
+</body>
+</html>

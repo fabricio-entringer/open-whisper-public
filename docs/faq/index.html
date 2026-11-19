@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en" data-os="other">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Frequently asked questions · Open Whisper Help</title>
+<meta name="description" content="Short answers to what people ask first: price, the internet, languages, Windows and Mac, the shortcut.">
+<link rel="canonical" href="https://openwhisper.entringer.dev/docs/faq/">
+<link rel="alternate" hreflang="en" href="https://openwhisper.entringer.dev/docs/faq/">
+<link rel="alternate" hreflang="pt-BR" href="https://openwhisper.entringer.dev/pt/docs/faq/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Frequently asked questions · Open Whisper Help">
+<meta property="og:description" content="Short answers to what people ask first: price, the internet, languages, Windows and Mac, the shortcut.">
+<meta property="og:url" content="https://openwhisper.entringer.dev/docs/faq/">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Open Whisper">
+<meta property="og:image" content="https://openwhisper.entringer.dev/assets/og-en.jpg">
+<meta name="theme-color" content="#191314">
+<link rel="icon" type="image/png" sizes="64x64" href="../../assets/favicon-64.png">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<link rel="preload" href="../../assets/fonts/barlow-semi-condensed-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=fc6854744e">
+<link rel="stylesheet" href="../../assets/docs.css?v=fc6854744e">
+<script>
+  // Before the first paint, so the keycaps, the windows and the platform order are the visitor's.
+  (function () {
+    var ua = navigator.userAgent, d = document.documentElement;
+    var touch = matchMedia("(pointer: coarse)").matches && !matchMedia("(pointer: fine)").matches;
+    d.classList.add("js");
+    d.dataset.os = /Windows NT/.test(ua) ? "windows" : /Macintosh|Mac OS X/.test(ua) && !touch ? "mac" : touch ? "touch" : "other";
+  })();
+</script>
+</head>
+<body class="docs-body">
+<a class="skip" href="#plate">Skip to the page</a>
+<header class="nameplate nameplate--docs">
+  <a class="brand" href="../../" aria-label="Open Whisper">
+    <img class="brand__icon" src="../../assets/icon-64.png" width="32" height="32" alt="">
+    <span class="engrave brand__name">Open Whisper</span>
+  </a>
+  <a class="engrave brand__docs" href="../">Docs</a>
+  <form class="search" role="search" action="../" data-index="../../assets/search-en.json">
+    <label class="sr-only" for="search">Search the help</label>
+    <span class="search__well">
+      <svg class="glyph" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M12.6 12.6L17 17"/></svg>
+      <input id="search" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search the help" aria-describedby="search-hint" aria-controls="results">
+      <kbd class="cap cap--inline search__key" aria-hidden="true">/</kbd>
+    </span>
+    <span class="sr-only" id="search-hint">Type to search; press / anywhere to come back here.</span>
+    <div class="results" id="results" hidden><p class="results__count" id="results-count" aria-live="polite"></p><ol class="results__list"></ol></div>
+  </form>
+  <nav class="nameplate__end" aria-label="Site">
+    <span class="latches" role="group" aria-label="Language">
+      <a class="latch is-on" href="../../docs/faq/" hreflang="en" lang="en" aria-current="page"><i class="led" aria-hidden="true"></i>EN</a><a class="latch" href="../../pt/docs/faq/" hreflang="pt-BR" lang="pt-BR"><i class="led" aria-hidden="true"></i>PT</a>
+    </span>
+  </nav>
+</header>
+<div class="docs">
+<nav class="rundown" id="rundown" aria-label="Rundown">
+  <details class="rundown__fold" open>
+    <summary class="rundown__head"><svg class="glyph rundown__chev" viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5L13 10l-5.5 5.5"/></svg><span class="engrave">Rundown</span><span class="engrave engrave--dim rundown__count">11 blocks · min</span></summary>
+    <ol class="rundown__list"><li><a class="cue" href="../install/" data-slug="install"><span class="cue__no">01</span><span class="cue__title">Install</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../first-run/" data-slug="first-run"><span class="cue__no">02</span><span class="cue__title">First run</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../dictate/" data-slug="dictate"><span class="cue__no">03</span><span class="cue__title">Dictate</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../paste/" data-slug="paste"><span class="cue__no">04</span><span class="cue__title">Where the text lands</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../menu/" data-slug="menu"><span class="cue__no">05</span><span class="cue__title">The icon and its menu</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../settings/" data-slug="settings"><span class="cue__no">06</span><span class="cue__title">Settings</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../models/" data-slug="models"><span class="cue__no">07</span><span class="cue__title">Models</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../video/" data-slug="video"><span class="cue__no">08</span><span class="cue__title">Video and files</span><span class="cue__time">8<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../command-line/" data-slug="command-line"><span class="cue__no">09</span><span class="cue__title">Command line</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../privacy/" data-slug="privacy"><span class="cue__no">10</span><span class="cue__title">Privacy</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../troubleshooting/" data-slug="troubleshooting"><span class="cue__no">11</span><span class="cue__title">Troubleshooting</span><span class="cue__time">9<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+    <p class="rundown__head rundown__head--sub"><span class="engrave">Appendices</span></p>
+    <ol class="rundown__list rundown__list--appendix"><li><a class="cue is-on" href="../faq/" data-slug="faq" aria-current="page"><span class="cue__no">A1</span><span class="cue__title">FAQ</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../shortcuts/" data-slug="shortcuts"><span class="cue__no">A2</span><span class="cue__title">Shortcuts and keys</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../command-reference/" data-slug="command-reference"><span class="cue__no">A3</span><span class="cue__title">Command reference</span><span class="cue__time">7<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../data-and-uninstall/" data-slug="data-and-uninstall"><span class="cue__no">A4</span><span class="cue__title">Data and uninstalling</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../limits/" data-slug="limits"><span class="cue__no">A5</span><span class="cue__title">What it doesn&#39;t do</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../report/" data-slug="report"><span class="cue__no">A6</span><span class="cue__title">Reporting a problem</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../about/" data-slug="about"><span class="cue__no">A7</span><span class="cue__title">About and terms</span><span class="cue__time">2<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+  </details>
+</nav>
+<main class="plate" id="plate" tabindex="-1">
+  <header class="block__head">
+    <h1 class="block__title"><span class="readout block__no"><span class="sr-only">Appendix </span>A1</span> <span class="block__name">Frequently asked questions</span></h1>
+    <p class="engrave engrave--dim block__time">Reading time · 3 min</p>
+    <p class="block__summary">Short answers to what people ask first: price, the internet, languages, Windows and Mac, the shortcut.</p>
+    <nav class="toc" aria-label="In this block"><p class="engrave toc__head">In this block</p><ol><li><a href="#price-and-account">Price and account</a></li><li><a href="#privacy-and-the-internet">Privacy and the internet</a></li><li><a href="#windows-and-mac">Windows and Mac</a></li><li><a href="#using-it">Using it</a></li></ol></nav>
+  </header>
+  <article class="block" data-slug="faq">
+<p>Short answers, each pointing to the page that covers the topic in full.</p>
+<section class="block__section" aria-labelledby="price-and-account"><div class="block__text">
+<h2 class="block__h2" id="price-and-account"><a class="anchor" href="#price-and-account">Price and account</a></h2>
+<h3 class="block__h3">Is it really free?</h3>
+<p>Yes. Open Whisper is free to install and use, for personal or professional work, on as many computers as you like. There is no subscription and no trial. The <a class="link" href="../about/">terms of use</a> say so in writing.</p>
+<h3 class="block__h3">Does it need an account?</h3>
+<p>No. There is no account, no sign-up and no API key. You install it and use it.</p>
+</div></section>
+<section class="block__section" aria-labelledby="privacy-and-the-internet"><div class="block__text">
+<h2 class="block__h2" id="privacy-and-the-internet"><a class="anchor" href="#privacy-and-the-internet">Privacy and the internet</a></h2>
+<h3 class="block__h3">Does my voice leave the computer?</h3>
+<p>No. The audio stays in memory while you dictate, is transcribed on your computer and is then discarded. It is never written to disk and never sent anywhere. You can check it with a network monitor: see <a class="link" href="../privacy/">Privacy</a>.</p>
+<h3 class="block__h3">Does it work offline?</h3>
+<p>Yes. Dictation never uses the internet. Only two optional things do: downloading a larger model, and transcribing a YouTube link. Transcribing a video file from your computer works offline too. See <a class="link" href="../privacy/">Privacy</a>.</p>
+</div></section>
+<section class="block__section" aria-labelledby="windows-and-mac"><div class="block__text">
+<h2 class="block__h2" id="windows-and-mac"><a class="anchor" href="#windows-and-mac">Windows and Mac</a></h2>
+<h3 class="block__h3">Why does Windows warn about the installer?</h3>
+<p>The first Windows installer isn&#39;t signed yet, so Windows shows <strong>Windows protected your PC</strong>. Check the file&#39;s hash, then click <strong>More info</strong> and <strong>Run anyway</strong>. The steps are in <a class="link" href="../install/">Install</a>.</p>
+<h3 class="block__h3">When is the Mac version coming?</h3>
+<p>The Mac version ships once Apple has signed and notarized it. It will install with Homebrew or a <code>.dmg</code>. There is no date: follow the <a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/releases" rel="noopener">Releases page</a> to hear when it&#39;s out.</p>
+</div></section>
+<section class="block__section" aria-labelledby="using-it"><div class="block__text">
+<h2 class="block__h2" id="using-it"><a class="anchor" href="#using-it">Using it</a></h2>
+<h3 class="block__h3">Which languages does it understand?</h3>
+<p>By default it detects the language you speak, each time you dictate, so you can switch languages between dictations. You can also pin one of 16 languages in <a class="link" href="../settings/">Settings</a> for better results. The app&#39;s own screens are in English or Portuguese, following your system&#39;s language.</p>
+<h3 class="block__h3">Can I change the shortcut?</h3>
+<p>Yes, during setup or in <a class="link" href="../settings/">Settings</a>. The default is <span class="caps caps--inline"><kbd class="cap cap--inline">⇧</kbd><kbd class="cap cap--inline">⌘</kbd><kbd class="cap cap--inline">Space</kbd></span> on the Mac and <span class="caps caps--inline"><kbd class="cap cap--inline">Ctrl</kbd><kbd class="cap cap--inline">Shift</kbd><kbd class="cap cap--inline">Space</kbd></span> on Windows. A shortcut needs a modifier, such as ⌘ or Ctrl. All keys are in <a class="link" href="../shortcuts/">Shortcuts and keys</a>.</p>
+<h3 class="block__h3">Does it work in any app?</h3>
+<p>It pastes wherever a normal paste works: browsers, editors, chat apps, documents. When it can&#39;t paste (a password field, or a window opened as administrator on Windows), the text stays on the clipboard and you paste it yourself. Nothing is lost. See <a class="link" href="../paste/">Where the text lands</a>.</p>
+<h3 class="block__h3">What doesn&#39;t it do?</h3>
+<p>It writes down what you say, where your cursor is. It doesn&#39;t rewrite your text with AI, record meetings, translate, or keep a history. The full list, with the reason for each, is in <a class="link" href="../limits/">What Open Whisper doesn&#39;t do</a>.</p>
+</div></section>
+  </article>
+  <nav class="block__foot" aria-label="Previous and next blocks"><a class="key key--step key--prev" href="../troubleshooting/" rel="prev"><span class="key__text"><span class="key__sub engrave">Previous · 11</span><span class="key__main">Troubleshooting</span></span></a><a class="key key--step key--next" href="../shortcuts/" rel="next"><span class="key__text"><span class="key__sub engrave">Next · A2</span><span class="key__main">Shortcuts and keys</span></span></a></nav>
+</main>
+</div>
+<footer class="footplate">
+  <div class="footplate__inner">
+    <p class="footplate__free">Open Whisper is free. <span class="footplate__privacy">This site sets no cookies and measures nothing.</span></p>
+    <ul class="footplate__links">
+      <li><a class="link" href="../../">Open Whisper home</a></li>
+      <li><a class="link" href="../../terms.txt">Terms of use</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/releases">All releases</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/issues">Report a problem</a></li>
+    </ul>
+    <p class="signature"><span class="signature__intro">made by</span> <a class="signature__mark" href="https://entringer.dev">entringer.dev</a></p>
+  </div>
+</footer>
+<script type="application/json" id="docs-data">{"result":"1 result","results":"{n} results","noResults":"Nothing found for “{q}”."}</script>
+<script type="module" src="../../assets/docs.js?v=fc6854744e"></script>
+</body>
+</html>

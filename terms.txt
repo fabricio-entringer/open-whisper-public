@@ -1,0 +1,103 @@
+Open Whisper — Termos de Uso / Terms of Use
+
+Copyright (c) 2026 Fabricio Entringer. Todos os direitos reservados. All rights reserved.
+
+O texto em português vem primeiro e o inglês em seguida. As duas versões dizem o mesmo; se
+divergirem, vale a versão em português.
+The Portuguese text comes first, then the English one. Both say the same; should they differ,
+the Portuguese version prevails.
+
+================================================================================================
+PORTUGUÊS
+================================================================================================
+
+1. O que você pode fazer
+   O Open Whisper é gratuito. Você pode instalá-lo e usá-lo, para fins pessoais ou profissionais,
+   em quantos computadores quiser, sem pagar nada e sem criar conta.
+
+2. O que você não pode fazer
+   O código do Open Whisper não é aberto. Sem autorização por escrito, você não pode:
+   a) vender, alugar ou cobrar de qualquer forma pelo Open Whisper;
+   b) distribuir cópias dele, modificadas ou não, fora dos canais oficiais;
+   c) modificá-lo, descompilá-lo ou fazer engenharia reversa dele, exceto na medida em que a lei
+      aplicável permitir isso apesar desta restrição.
+   Os canais oficiais são as páginas de download indicadas pelo autor e o Homebrew.
+
+3. Componentes de terceiros
+   O Open Whisper inclui software, modelos e fontes de terceiros, cada um sob a própria licença
+   (por exemplo, whisper.cpp e os modelos Whisper, sob a licença MIT, e a fonte Barlow, sob a SIL
+   Open Font License). Essas licenças estão no arquivo THIRD-PARTY-NOTICES, que acompanha o
+   aplicativo. Nada nestes termos limita os direitos que essas licenças dão a você sobre esses
+   componentes.
+
+4. Seus dados e o conteúdo que você transcreve
+   A transcrição acontece no seu computador: o áudio e o texto não são enviados ao autor nem a
+   terceiros. A transcrição de vídeo por link usa a internet só para buscar o vídeo, com uma
+   ferramenta que você mesmo instala (yt-dlp). Você é responsável por ter o direito de acessar e
+   transcrever o conteúdo que fornece ao aplicativo.
+
+5. Sem garantia
+   O Open Whisper é fornecido "no estado em que se encontra", sem garantia de qualquer tipo,
+   expressa ou implícita, incluindo garantias de comercialização, adequação a um fim específico
+   e não violação. A transcrição automática pode conter erros; confira o texto antes de depender
+   dele.
+
+6. Limitação de responsabilidade
+   Na máxima extensão permitida pela lei aplicável, o autor não responde por danos diretos,
+   indiretos, incidentais ou consequentes, nem por perda de dados, lucros ou oportunidades,
+   decorrentes do uso ou da impossibilidade de uso do Open Whisper.
+
+7. Mudanças e encerramento
+   O autor pode mudar estes termos em versões futuras do aplicativo; a versão que acompanha cada
+   cópia vale para ela. Se você descumprir estes termos, a permissão de uso termina.
+
+8. Marca
+   O Open Whisper não é afiliado à OpenAI nem endossado por ela. "Whisper" é o nome do modelo de
+   reconhecimento de fala que a OpenAI publicou sob a licença MIT.
+
+================================================================================================
+ENGLISH
+================================================================================================
+
+1. What you may do
+   Open Whisper is free. You may install and use it, for personal or professional purposes, on as
+   many computers as you like, without paying anything and without creating an account.
+
+2. What you may not do
+   Open Whisper's source code is not open. Without written permission, you may not:
+   a) sell, rent or charge in any way for Open Whisper;
+   b) distribute copies of it, modified or not, outside the official channels;
+   c) modify, decompile or reverse engineer it, except to the extent that applicable law permits
+      this despite this restriction.
+   The official channels are the download pages named by the author, and Homebrew.
+
+3. Third-party components
+   Open Whisper includes third-party software, models and fonts, each under its own license (for
+   example, whisper.cpp and the Whisper models under the MIT License, and the Barlow font under
+   the SIL Open Font License). Those licenses are in the THIRD-PARTY-NOTICES file that comes with
+   the app. Nothing in these terms limits the rights those licenses give you over those
+   components.
+
+4. Your data and the content you transcribe
+   Transcription happens on your computer: audio and text are not sent to the author or to anyone
+   else. Transcribing a video from a link uses the internet only to fetch the video, with a tool
+   you install yourself (yt-dlp). You are responsible for having the right to access and
+   transcribe the content you give the app.
+
+5. No warranty
+   Open Whisper is provided "as is", without warranty of any kind, express or implied, including
+   warranties of merchantability, fitness for a particular purpose and non-infringement. Automatic
+   transcription may contain errors; check the text before relying on it.
+
+6. Limitation of liability
+   To the maximum extent permitted by applicable law, the author is not liable for any direct,
+   indirect, incidental or consequential damages, nor for loss of data, profits or opportunities,
+   arising from the use of, or inability to use, Open Whisper.
+
+7. Changes and termination
+   The author may change these terms in future versions of the app; the version that comes with
+   each copy applies to it. If you breach these terms, your permission to use the app ends.
+
+8. Trademark
+   Open Whisper is not affiliated with, nor endorsed by, OpenAI. "Whisper" is the name of the
+   speech recognition model OpenAI published under the MIT License.

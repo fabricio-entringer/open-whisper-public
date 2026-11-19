@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en" data-os="other">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reporting a problem · Open Whisper Help</title>
+<meta name="description" content="Where to report a problem or suggest an idea, what makes a report solvable, and what happens after you send it.">
+<link rel="canonical" href="https://openwhisper.entringer.dev/docs/report/">
+<link rel="alternate" hreflang="en" href="https://openwhisper.entringer.dev/docs/report/">
+<link rel="alternate" hreflang="pt-BR" href="https://openwhisper.entringer.dev/pt/docs/report/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Reporting a problem · Open Whisper Help">
+<meta property="og:description" content="Where to report a problem or suggest an idea, what makes a report solvable, and what happens after you send it.">
+<meta property="og:url" content="https://openwhisper.entringer.dev/docs/report/">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Open Whisper">
+<meta property="og:image" content="https://openwhisper.entringer.dev/assets/og-en.jpg">
+<meta name="theme-color" content="#191314">
+<link rel="icon" type="image/png" sizes="64x64" href="../../assets/favicon-64.png">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<link rel="preload" href="../../assets/fonts/barlow-semi-condensed-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=fc6854744e">
+<link rel="stylesheet" href="../../assets/docs.css?v=fc6854744e">
+<script>
+  // Before the first paint, so the keycaps, the windows and the platform order are the visitor's.
+  (function () {
+    var ua = navigator.userAgent, d = document.documentElement;
+    var touch = matchMedia("(pointer: coarse)").matches && !matchMedia("(pointer: fine)").matches;
+    d.classList.add("js");
+    d.dataset.os = /Windows NT/.test(ua) ? "windows" : /Macintosh|Mac OS X/.test(ua) && !touch ? "mac" : touch ? "touch" : "other";
+  })();
+</script>
+</head>
+<body class="docs-body">
+<a class="skip" href="#plate">Skip to the page</a>
+<header class="nameplate nameplate--docs">
+  <a class="brand" href="../../" aria-label="Open Whisper">
+    <img class="brand__icon" src="../../assets/icon-64.png" width="32" height="32" alt="">
+    <span class="engrave brand__name">Open Whisper</span>
+  </a>
+  <a class="engrave brand__docs" href="../">Docs</a>
+  <form class="search" role="search" action="../" data-index="../../assets/search-en.json">
+    <label class="sr-only" for="search">Search the help</label>
+    <span class="search__well">
+      <svg class="glyph" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M12.6 12.6L17 17"/></svg>
+      <input id="search" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search the help" aria-describedby="search-hint" aria-controls="results">
+      <kbd class="cap cap--inline search__key" aria-hidden="true">/</kbd>
+    </span>
+    <span class="sr-only" id="search-hint">Type to search; press / anywhere to come back here.</span>
+    <div class="results" id="results" hidden><p class="results__count" id="results-count" aria-live="polite"></p><ol class="results__list"></ol></div>
+  </form>
+  <nav class="nameplate__end" aria-label="Site">
+    <span class="latches" role="group" aria-label="Language">
+      <a class="latch is-on" href="../../docs/report/" hreflang="en" lang="en" aria-current="page"><i class="led" aria-hidden="true"></i>EN</a><a class="latch" href="../../pt/docs/report/" hreflang="pt-BR" lang="pt-BR"><i class="led" aria-hidden="true"></i>PT</a>
+    </span>
+  </nav>
+</header>
+<div class="docs">
+<nav class="rundown" id="rundown" aria-label="Rundown">
+  <details class="rundown__fold" open>
+    <summary class="rundown__head"><svg class="glyph rundown__chev" viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5L13 10l-5.5 5.5"/></svg><span class="engrave">Rundown</span><span class="engrave engrave--dim rundown__count">11 blocks · min</span></summary>
+    <ol class="rundown__list"><li><a class="cue" href="../install/" data-slug="install"><span class="cue__no">01</span><span class="cue__title">Install</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../first-run/" data-slug="first-run"><span class="cue__no">02</span><span class="cue__title">First run</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../dictate/" data-slug="dictate"><span class="cue__no">03</span><span class="cue__title">Dictate</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../paste/" data-slug="paste"><span class="cue__no">04</span><span class="cue__title">Where the text lands</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../menu/" data-slug="menu"><span class="cue__no">05</span><span class="cue__title">The icon and its menu</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../settings/" data-slug="settings"><span class="cue__no">06</span><span class="cue__title">Settings</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../models/" data-slug="models"><span class="cue__no">07</span><span class="cue__title">Models</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../video/" data-slug="video"><span class="cue__no">08</span><span class="cue__title">Video and files</span><span class="cue__time">8<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../command-line/" data-slug="command-line"><span class="cue__no">09</span><span class="cue__title">Command line</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../privacy/" data-slug="privacy"><span class="cue__no">10</span><span class="cue__title">Privacy</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../troubleshooting/" data-slug="troubleshooting"><span class="cue__no">11</span><span class="cue__title">Troubleshooting</span><span class="cue__time">9<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+    <p class="rundown__head rundown__head--sub"><span class="engrave">Appendices</span></p>
+    <ol class="rundown__list rundown__list--appendix"><li><a class="cue" href="../faq/" data-slug="faq"><span class="cue__no">A1</span><span class="cue__title">FAQ</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../shortcuts/" data-slug="shortcuts"><span class="cue__no">A2</span><span class="cue__title">Shortcuts and keys</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../command-reference/" data-slug="command-reference"><span class="cue__no">A3</span><span class="cue__title">Command reference</span><span class="cue__time">7<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../data-and-uninstall/" data-slug="data-and-uninstall"><span class="cue__no">A4</span><span class="cue__title">Data and uninstalling</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../limits/" data-slug="limits"><span class="cue__no">A5</span><span class="cue__title">What it doesn&#39;t do</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue is-on" href="../report/" data-slug="report" aria-current="page"><span class="cue__no">A6</span><span class="cue__title">Reporting a problem</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../about/" data-slug="about"><span class="cue__no">A7</span><span class="cue__title">About and terms</span><span class="cue__time">2<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+  </details>
+</nav>
+<main class="plate" id="plate" tabindex="-1">
+  <header class="block__head">
+    <h1 class="block__title"><span class="readout block__no"><span class="sr-only">Appendix </span>A6</span> <span class="block__name">Reporting a problem</span></h1>
+    <p class="engrave engrave--dim block__time">Reading time · 3 min</p>
+    <p class="block__summary">Where to report a problem or suggest an idea, what makes a report solvable, and what happens after you send it.</p>
+    <nav class="toc" aria-label="In this block"><p class="engrave toc__head">In this block</p><ol><li><a href="#where-to-report">Where to report</a></li><li><a href="#what-makes-a-good-report">What makes a good report</a></li><li><a href="#keep-private-text-out">Keep private text out</a></li><li><a href="#what-to-expect">What to expect</a></li><li><a href="#what-the-labels-mean">What the labels mean</a></li></ol></nav>
+  </header>
+  <article class="block" data-slug="report">
+<p>Something not working, or an idea to suggest? Tell us in public, on the project&#39;s issue page. This page says what to include, what to leave out, and what to expect.</p>
+<section class="block__section" aria-labelledby="where-to-report"><div class="block__text">
+<h2 class="block__h2" id="where-to-report"><a class="anchor" href="#where-to-report">Where to report</a></h2>
+<ol class="cues"><li>First look at <a class="link" href="../troubleshooting/">Troubleshooting</a>: the fix may already be there.</li><li>Check <a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/issues" rel="noopener">what has already been reported</a>. If your problem is there, add what you see to it.</li><li>Otherwise, <a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/issues/new/choose" rel="noopener">open a new issue</a>. You need a GitHub account.</li></ol>
+<p>Write in the language you prefer. The answer comes in the language the issue was written in.</p>
+</div></section>
+<section class="block__section" aria-labelledby="what-makes-a-good-report"><div class="block__text">
+<h2 class="block__h2" id="what-makes-a-good-report"><a class="anchor" href="#what-makes-a-good-report">What makes a good report</a></h2>
+<ul class="list"><li><strong>What you expected, and what happened instead.</strong> &quot;The text went to the clipboard instead of into the document&quot; can be solved. &quot;It doesn&#39;t work&quot; can&#39;t.</li><li><strong>The app you were dictating into.</strong> Pasting behaves differently in a browser, a code editor and a chat app, and this is usually the deciding detail.</li><li><strong>The steps</strong>, in order, from the shortcut press to what you saw.</li><li><strong>Whether it happens every time</strong>, or only sometimes.</li><li><strong>Your system and its version</strong>: macOS 14, 15…, or Windows 10 or 11.</li><li><strong>The app version and build.</strong> Open <strong>About Open Whisper</strong> from the menu and copy the line <strong>Version … (build …)</strong>: you can select it.</li><li><strong>Your mode and shortcut</strong>, if the problem is about recording: Hold to Talk or Toggle.</li><li><strong>For the command line</strong>: the command you ran, the exit status, and the last line it printed.</li></ul>
+<aside class="callout callout--note"><p class="callout__legend engrave">Note</p><div class="callout__body"><p>Open Whisper writes no log file. Describe what you saw, and the notice&#39;s exact words if there was one.</p></div></aside>
+</div></section>
+<section class="block__section" aria-labelledby="keep-private-text-out"><div class="block__text">
+<h2 class="block__h2" id="keep-private-text-out"><a class="anchor" href="#keep-private-text-out">Keep private text out</a></h2>
+<aside class="callout callout--warn"><p class="callout__legend engrave"><i class="led led--fault is-on" aria-hidden="true"></i>Caution</p><div class="callout__body"><p>Issues are public: anyone can read them. Don&#39;t paste what you dictated if it&#39;s private, and check that screenshots don&#39;t show it either. The content of a transcription is never needed to fix a problem with the transcription.</p></div></aside>
+<p>If the problem is about the words themselves (a name always misspelled, a language mixed up), make up a sentence that shows it, and dictate that.</p>
+</div></section>
+<section class="block__section" aria-labelledby="what-to-expect"><div class="block__text">
+<h2 class="block__h2" id="what-to-expect"><a class="anchor" href="#what-to-expect">What to expect</a></h2>
+<ul class="list"><li>Every issue is read and answered.</li><li>A refusal always comes with a concrete reason. &quot;Out of scope&quot; on its own is not an answer.</li><li>No date is ever promised. &quot;Accepted and queued&quot; is as far as it goes.</li><li>When something you reported ships, you&#39;re told on your issue.</li><li>If a fix doesn&#39;t hold, reopen the issue.</li></ul>
+</div></section>
+<section class="block__section" aria-labelledby="what-the-labels-mean"><div class="block__text">
+<h2 class="block__h2" id="what-the-labels-mean"><a class="anchor" href="#what-the-labels-mean">What the labels mean</a></h2>
+<p>Each issue gets labels that say where it stands.</p>
+<div class="table"><table><thead><tr><th scope="col">Label</th><th scope="col">Means</th></tr></thead><tbody><tr><th scope="row"><code>triage: pending</code></th><td data-label="Means">Received, not looked at yet</td></tr><tr><th scope="row"><code>triage: accepted</code></th><td data-label="Means">Real, and it&#39;s in the queue</td></tr><tr><th scope="row"><code>triage: needs-info</code></th><td data-label="Means">Waiting on something from you</td></tr><tr><th scope="row"><code>triage: under-review</code></th><td data-label="Means">Needs a product decision before an answer is possible</td></tr><tr><th scope="row"><code>triage: duplicate</code></th><td data-label="Means">Already reported: the link points to the original</td></tr><tr><th scope="row"><code>triage: out-of-scope</code></th><td data-label="Means">Declined, with a concrete reason in the comments</td></tr><tr><th scope="row"><code>status: queued</code></th><td data-label="Means">Accepted and waiting its turn</td></tr><tr><th scope="row"><code>status: in-progress</code></th><td data-label="Means">Being worked on</td></tr><tr><th scope="row"><code>status: awaiting-release</code></th><td data-label="Means">Fixed, waiting for a version to ship it</td></tr><tr><th scope="row"><code>status: shipped</code></th><td data-label="Means">Available in a released version</td></tr><tr><th scope="row"><code>status: closed-unresolved</code></th><td data-label="Means">Closed without a fix, with the reason stated</td></tr></tbody></table></div>
+<p>An idea that touches something Open Whisper deliberately doesn&#39;t do is weighed, not closed on sight: see <a class="link" href="../limits/">What Open Whisper doesn&#39;t do</a>.</p>
+</div></section>
+  </article>
+  <nav class="block__foot" aria-label="Previous and next blocks"><a class="key key--step key--prev" href="../limits/" rel="prev"><span class="key__text"><span class="key__sub engrave">Previous · A5</span><span class="key__main">What Open Whisper doesn&#39;t do</span></span></a><a class="key key--step key--next" href="../about/" rel="next"><span class="key__text"><span class="key__sub engrave">Next · A7</span><span class="key__main">About, versions and terms</span></span></a></nav>
+</main>
+</div>
+<footer class="footplate">
+  <div class="footplate__inner">
+    <p class="footplate__free">Open Whisper is free. <span class="footplate__privacy">This site sets no cookies and measures nothing.</span></p>
+    <ul class="footplate__links">
+      <li><a class="link" href="../../">Open Whisper home</a></li>
+      <li><a class="link" href="../../terms.txt">Terms of use</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/releases">All releases</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/issues">Report a problem</a></li>
+    </ul>
+    <p class="signature"><span class="signature__intro">made by</span> <a class="signature__mark" href="https://entringer.dev">entringer.dev</a></p>
+  </div>
+</footer>
+<script type="application/json" id="docs-data">{"result":"1 result","results":"{n} results","noResults":"Nothing found for “{q}”."}</script>
+<script type="module" src="../../assets/docs.js?v=fc6854744e"></script>
+</body>
+</html>

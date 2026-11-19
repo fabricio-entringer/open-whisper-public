@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en" data-os="other">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where the text lands · Open Whisper Help</title>
+<meta name="description" content="How the text reaches the cursor, when it waits on the clipboard instead, and how to get your last dictation back.">
+<link rel="canonical" href="https://openwhisper.entringer.dev/docs/paste/">
+<link rel="alternate" hreflang="en" href="https://openwhisper.entringer.dev/docs/paste/">
+<link rel="alternate" hreflang="pt-BR" href="https://openwhisper.entringer.dev/pt/docs/paste/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Where the text lands · Open Whisper Help">
+<meta property="og:description" content="How the text reaches the cursor, when it waits on the clipboard instead, and how to get your last dictation back.">
+<meta property="og:url" content="https://openwhisper.entringer.dev/docs/paste/">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Open Whisper">
+<meta property="og:image" content="https://openwhisper.entringer.dev/assets/og-en.jpg">
+<meta name="theme-color" content="#191314">
+<link rel="icon" type="image/png" sizes="64x64" href="../../assets/favicon-64.png">
+<link rel="apple-touch-icon" href="../../assets/icon-180.png">
+<link rel="preload" href="../../assets/fonts/barlow-semi-condensed-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css?v=fc6854744e">
+<link rel="stylesheet" href="../../assets/docs.css?v=fc6854744e">
+<script>
+  // Before the first paint, so the keycaps, the windows and the platform order are the visitor's.
+  (function () {
+    var ua = navigator.userAgent, d = document.documentElement;
+    var touch = matchMedia("(pointer: coarse)").matches && !matchMedia("(pointer: fine)").matches;
+    d.classList.add("js");
+    d.dataset.os = /Windows NT/.test(ua) ? "windows" : /Macintosh|Mac OS X/.test(ua) && !touch ? "mac" : touch ? "touch" : "other";
+  })();
+</script>
+</head>
+<body class="docs-body">
+<a class="skip" href="#plate">Skip to the page</a>
+<header class="nameplate nameplate--docs">
+  <a class="brand" href="../../" aria-label="Open Whisper">
+    <img class="brand__icon" src="../../assets/icon-64.png" width="32" height="32" alt="">
+    <span class="engrave brand__name">Open Whisper</span>
+  </a>
+  <a class="engrave brand__docs" href="../">Docs</a>
+  <form class="search" role="search" action="../" data-index="../../assets/search-en.json">
+    <label class="sr-only" for="search">Search the help</label>
+    <span class="search__well">
+      <svg class="glyph" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M12.6 12.6L17 17"/></svg>
+      <input id="search" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search the help" aria-describedby="search-hint" aria-controls="results">
+      <kbd class="cap cap--inline search__key" aria-hidden="true">/</kbd>
+    </span>
+    <span class="sr-only" id="search-hint">Type to search; press / anywhere to come back here.</span>
+    <div class="results" id="results" hidden><p class="results__count" id="results-count" aria-live="polite"></p><ol class="results__list"></ol></div>
+  </form>
+  <nav class="nameplate__end" aria-label="Site">
+    <span class="latches" role="group" aria-label="Language">
+      <a class="latch is-on" href="../../docs/paste/" hreflang="en" lang="en" aria-current="page"><i class="led" aria-hidden="true"></i>EN</a><a class="latch" href="../../pt/docs/paste/" hreflang="pt-BR" lang="pt-BR"><i class="led" aria-hidden="true"></i>PT</a>
+    </span>
+  </nav>
+</header>
+<div class="docs">
+<nav class="rundown" id="rundown" aria-label="Rundown">
+  <details class="rundown__fold" open>
+    <summary class="rundown__head"><svg class="glyph rundown__chev" viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5L13 10l-5.5 5.5"/></svg><span class="engrave">Rundown</span><span class="engrave engrave--dim rundown__count">11 blocks · min</span></summary>
+    <ol class="rundown__list"><li><a class="cue" href="../install/" data-slug="install"><span class="cue__no">01</span><span class="cue__title">Install</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../first-run/" data-slug="first-run"><span class="cue__no">02</span><span class="cue__title">First run</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../dictate/" data-slug="dictate"><span class="cue__no">03</span><span class="cue__title">Dictate</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue is-on" href="../paste/" data-slug="paste" aria-current="page"><span class="cue__no">04</span><span class="cue__title">Where the text lands</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../menu/" data-slug="menu"><span class="cue__no">05</span><span class="cue__title">The icon and its menu</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../settings/" data-slug="settings"><span class="cue__no">06</span><span class="cue__title">Settings</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../models/" data-slug="models"><span class="cue__no">07</span><span class="cue__title">Models</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../video/" data-slug="video"><span class="cue__no">08</span><span class="cue__title">Video and files</span><span class="cue__time">8<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../command-line/" data-slug="command-line"><span class="cue__no">09</span><span class="cue__title">Command line</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../privacy/" data-slug="privacy"><span class="cue__no">10</span><span class="cue__title">Privacy</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../troubleshooting/" data-slug="troubleshooting"><span class="cue__no">11</span><span class="cue__title">Troubleshooting</span><span class="cue__time">9<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+    <p class="rundown__head rundown__head--sub"><span class="engrave">Appendices</span></p>
+    <ol class="rundown__list rundown__list--appendix"><li><a class="cue" href="../faq/" data-slug="faq"><span class="cue__no">A1</span><span class="cue__title">FAQ</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../shortcuts/" data-slug="shortcuts"><span class="cue__no">A2</span><span class="cue__title">Shortcuts and keys</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../command-reference/" data-slug="command-reference"><span class="cue__no">A3</span><span class="cue__title">Command reference</span><span class="cue__time">7<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../data-and-uninstall/" data-slug="data-and-uninstall"><span class="cue__no">A4</span><span class="cue__title">Data and uninstalling</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../limits/" data-slug="limits"><span class="cue__no">A5</span><span class="cue__title">What it doesn&#39;t do</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../report/" data-slug="report"><span class="cue__no">A6</span><span class="cue__title">Reporting a problem</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../about/" data-slug="about"><span class="cue__no">A7</span><span class="cue__title">About and terms</span><span class="cue__time">2<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+  </details>
+</nav>
+<main class="plate" id="plate" tabindex="-1">
+  <header class="block__head">
+    <h1 class="block__title"><span class="readout block__no"><span class="sr-only">Block </span>04</span> <span class="block__name">Where the text lands</span></h1>
+    <p class="engrave engrave--dim block__time">Reading time · 5 min</p>
+    <p class="block__summary">How the text reaches the cursor, when it waits on the clipboard instead, and how to get your last dictation back.</p>
+    <nav class="toc" aria-label="In this block"><p class="engrave toc__head">In this block</p><ol><li><a href="#pasted-at-the-cursor">Pasted at the cursor</a></li><li><a href="#your-clipboard-is-put-back">Your clipboard is put back</a></li><li><a href="#when-the-text-goes-to-the-clipboard-instead">When the text goes to the clipboard instead</a></li><li><a href="#turn-on-auto-paste-on-the-mac">Turn on auto-paste on the Mac</a></li><li><a href="#apps-that-do-not-say-what-has-the-focus">Apps that do not say what has the focus</a></li><li><a href="#copy-or-retry-the-last-dictation">Copy or retry the last dictation</a></li><li><a href="#windows-clipboard-history-and-sync">Windows: clipboard history and sync</a></li></ol></nav>
+  </header>
+  <article class="block" data-slug="paste">
+<p>Open Whisper is built never to lose a word: the text is pasted at the cursor or, when that cannot work, left on the clipboard with a notification. The last dictation can always be copied again from the menu. This page explains which happens, and why.</p>
+<section class="block__section" aria-labelledby="pasted-at-the-cursor"><div class="block__text">
+<h2 class="block__h2" id="pasted-at-the-cursor"><a class="anchor" href="#pasted-at-the-cursor">Pasted at the cursor</a></h2>
+<p>When the transcription is ready, Open Whisper puts the text on the clipboard and sends the paste shortcut to the app in front, as if you had pressed it. So it works wherever an ordinary paste works.</p>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p>The paste is <span class="caps caps--inline"><kbd class="cap cap--inline">⌘</kbd><kbd class="cap cap--inline">V</kbd></span>. Sending it to other apps needs the Accessibility permission, which setup asks for (see <a class="link" href="../first-run/">First run</a>). Before pasting, Open Whisper also asks macOS what kind of element has the focus, a text field or not, so it does not paste into nothing. It looks at the kind of element, not at what is in it, and it never reads your screen or what you type.</p></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><p>The paste is <span class="caps caps--inline"><kbd class="cap cap--inline">Ctrl</kbd><kbd class="cap cap--inline">V</kbd></span>. Windows needs no permission for it. Before pasting, Open Whisper asks Windows what kind of element has the focus, a text field or not, so it does not paste into nothing. It looks at the kind of element, not at what is in it.</p></div></div></div>
+<p>Stay in the field until the text lands.</p>
+</div></section>
+<section class="block__section" aria-labelledby="your-clipboard-is-put-back"><div class="block__text">
+<h2 class="block__h2" id="your-clipboard-is-put-back"><a class="anchor" href="#your-clipboard-is-put-back">Your clipboard is put back</a></h2>
+<p>After a paste that worked, Open Whisper waits half a second and puts back what you had copied before, as long as the clipboard still holds the transcription. If you copied something else in that half second, it is left alone.</p>
+<ul class="list"><li>Only text is put back. If you had copied an image or formatted content, do not count on getting it back.</li><li>When the text stays on the clipboard instead (next section), it replaces what you had copied.</li></ul>
+</div></section>
+<section class="block__section" aria-labelledby="when-the-text-goes-to-the-clipboard-instead"><div class="block__text">
+<h2 class="block__h2" id="when-the-text-goes-to-the-clipboard-instead"><a class="anchor" href="#when-the-text-goes-to-the-clipboard-instead">When the text goes to the clipboard instead</a></h2>
+<p>Open Whisper does not paste when it can tell the paste would fail or land nowhere. It leaves the text on the clipboard and shows a notification:</p>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><p><strong>Copied to clipboard — paste with ⌘V.</strong></p>
+<p>This happens when:</p>
+<ul class="list"><li>the Accessibility permission is off;</li><li>a password field has the focus (macOS&#39;s Secure Input is on);</li><li>nothing that takes text has the focus: the Desktop, a Finder window, a web page you are only reading;</li><li>the paste could not be sent, or did not go through within 2 seconds.</li></ul></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><p><strong>Copied to clipboard — paste with Ctrl+V.</strong></p>
+<p>This happens when:</p>
+<ul class="list"><li>the window in front runs as administrator, or Open Whisper cannot tell whether it does: Windows does not let an app send keys to a window with higher rights;</li><li>a password field has the focus;</li><li>the element with the focus does not take text;</li><li>the paste could not be sent, or did not go through within 2 seconds.</li></ul></div></div></div>
+<p>The notification is the same whatever the reason. Click where you want the text and paste it, or use <strong>Retry Last Transcription</strong> (below).</p>
+<aside class="callout callout--note"><p class="callout__legend engrave">Note</p><div class="callout__body"><p>If notifications from Open Whisper are turned off in the system, you will not see this one. The text is on the clipboard all the same.</p></div></aside>
+</div></section>
+<section class="block__section block__section--screen" aria-labelledby="turn-on-auto-paste-on-the-mac"><div class="block__text">
+<h2 class="block__h2" id="turn-on-auto-paste-on-the-mac"><a class="anchor" href="#turn-on-auto-paste-on-the-mac">Turn on auto-paste on the Mac</a></h2>
+<p>If you skipped the Paste step during setup, every dictation waits on the clipboard. <a class="link" href="../settings/">Settings</a> says so under the shortcut: <strong>Automatic paste: off — the shortcut works, and the text goes to the clipboard for you to paste with ⌘V.</strong></p>
+<ol class="cues"><li>Press <strong>Turn on…</strong> in Settings, or choose <strong>Enable auto-paste…</strong> in the menu.</li><li>In System Settings → Privacy &amp; Security → Accessibility, switch Open Whisper on.</li><li>If the text still goes to the clipboard, quit Open Whisper and open it again: macOS may apply the permission only to the app opened afterwards.</li></ol>
+<p>When it is on, Settings says <strong>Automatic paste: on — the text is pasted where the cursor is.</strong></p>
+<p>On Windows there is nothing to turn on: auto-paste needs no permission.</p>
+<aside class="callout callout--fix"><p class="callout__legend engrave"><i class="led led--fault is-on" aria-hidden="true"></i>If the switch in System Settings turns itself off</p><div class="callout__body"><p>See <a class="link" href="../troubleshooting/">Troubleshooting</a>.</p></div></aside>
+</div><figure class="shot"><span class="shot__screen"><span class="appwin" style="--w: 460"><span class="wbar wbar--mac" data-for="mac other touch" aria-hidden="true"><span class="wbar__lights"><i></i><i></i><i></i></span><span class="wbar__title">Open Whisper</span></span><span class="wbar wbar--win" data-for="windows" aria-hidden="true"><span class="wbar__title">Open Whisper</span><span class="wbar__caption"><svg viewBox="0 0 30 10"><path d="M1 5h8M12.5 1.5h7v7h-7zM23.5 1.5l7 7m0-7l-7 7"/></svg></span></span><img data-for="mac other touch" data-scheme="light" src="../../assets/shots/settings-en-mac-light-1x.webp" srcset="../../assets/shots/settings-en-mac-light-1x.webp 460w, ../../assets/shots/settings-en-mac-light.webp 920w" sizes="(max-width: 760px) 92vw, 420px" width="460" height="367" loading="lazy" decoding="async" alt="The Settings window: shortcut, mode, transcription language and the Advanced section."><img data-for="mac other touch" data-scheme="dark" src="../../assets/shots/settings-en-mac-dark-1x.webp" srcset="../../assets/shots/settings-en-mac-dark-1x.webp 460w, ../../assets/shots/settings-en-mac-dark.webp 920w" sizes="(max-width: 760px) 92vw, 420px" width="460" height="367" loading="lazy" decoding="async" alt="The Settings window: shortcut, mode, transcription language and the Advanced section."><img data-for="windows" data-scheme="light" src="../../assets/shots/settings-en-windows-light-1x.webp" srcset="../../assets/shots/settings-en-windows-light-1x.webp 460w, ../../assets/shots/settings-en-windows-light.webp 920w" sizes="(max-width: 760px) 92vw, 420px" width="460" height="367" loading="lazy" decoding="async" alt="The Settings window: shortcut, mode, transcription language and the Advanced section."><img data-for="windows" data-scheme="dark" src="../../assets/shots/settings-en-windows-dark-1x.webp" srcset="../../assets/shots/settings-en-windows-dark-1x.webp 460w, ../../assets/shots/settings-en-windows-dark.webp 920w" sizes="(max-width: 760px) 92vw, 420px" width="460" height="367" loading="lazy" decoding="async" alt="The Settings window: shortcut, mode, transcription language and the Advanced section."></span></span><figcaption class="engrave shot__caption">Settings</figcaption></figure></section>
+<section class="block__section" aria-labelledby="apps-that-do-not-say-what-has-the-focus"><div class="block__text">
+<h2 class="block__h2" id="apps-that-do-not-say-what-has-the-focus"><a class="anchor" href="#apps-that-do-not-say-what-has-the-focus">Apps that do not say what has the focus</a></h2>
+<p>Some apps do not tell Open Whisper what has the focus. On the Mac, those are Chrome, VS Code, Slack, Discord and other apps built on Chromium. Open Whisper pastes into them anyway, or it would stop working there.</p>
+<p>If no text field had the focus in such an app, the paste lands nowhere and your old clipboard is put back: the text is neither at the cursor nor on the clipboard. Get it with <strong>Copy Last Transcription</strong> (below).</p>
+</div></section>
+<section class="block__section" aria-labelledby="copy-or-retry-the-last-dictation"><div class="block__text">
+<h2 class="block__h2" id="copy-or-retry-the-last-dictation"><a class="anchor" href="#copy-or-retry-the-last-dictation">Copy or retry the last dictation</a></h2>
+<p>Two items in the menu bring the last dictation back:</p>
+<div class="table"><table><thead><tr><th scope="col">Item</th><th scope="col">What it does</th></tr></thead><tbody><tr><th scope="row"><strong>Copy Last Transcription</strong></th><td data-label="What it does">Puts the last dictation&#39;s text on the clipboard. Available once a dictation has produced text since Open Whisper started.</td></tr><tr><th scope="row"><strong>Retry Last Transcription</strong></th><td data-label="What it does">Delivers the same text again: pasted at the cursor, or left on the clipboard by the same rules. It does not transcribe again. Available when there is a last text and Open Whisper is not recording or transcribing.</td></tr></tbody></table></div>
+<p>Open Whisper keeps only the last dictation, only in memory. Quitting forgets it, and there is no history. More about the menu in <a class="link" href="../menu/">The icon and its menu</a>.</p>
+</div></section>
+<section class="block__section" aria-labelledby="windows-clipboard-history-and-sync"><div class="block__text">
+<h2 class="block__h2" id="windows-clipboard-history-and-sync"><a class="anchor" href="#windows-clipboard-history-and-sync">Windows: clipboard history and sync</a></h2>
+<p>Whenever Open Whisper puts dictated text on the clipboard, it marks it to stay out of clipboard history (<span class="caps caps--inline"><kbd class="cap cap--inline">Win</kbd><kbd class="cap cap--inline">V</kbd></span>), out of clipboard sync across your devices, and out of apps that monitor the clipboard. That includes the times the text waits on the clipboard for you: paste it with <span class="caps caps--inline"><kbd class="cap cap--inline">Ctrl</kbd><kbd class="cap cap--inline">V</kbd></span>, it will not be in <span class="caps caps--inline"><kbd class="cap cap--inline">Win</kbd><kbd class="cap cap--inline">V</kbd></span>. This keeps what you dictate on this PC. See <a class="link" href="../privacy/">Privacy</a>.</p>
+</div></section>
+  </article>
+  <nav class="block__foot" aria-label="Previous and next blocks"><a class="key key--step key--prev" href="../dictate/" rel="prev"><span class="key__text"><span class="key__sub engrave">Previous · 03</span><span class="key__main">Dictate</span></span></a><a class="key key--step key--next" href="../menu/" rel="next"><span class="key__text"><span class="key__sub engrave">Next · 05</span><span class="key__main">The icon and its menu</span></span></a></nav>
+</main>
+</div>
+<footer class="footplate">
+  <div class="footplate__inner">
+    <p class="footplate__free">Open Whisper is free. <span class="footplate__privacy">This site sets no cookies and measures nothing.</span></p>
+    <ul class="footplate__links">
+      <li><a class="link" href="../../">Open Whisper home</a></li>
+      <li><a class="link" href="../../terms.txt">Terms of use</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/releases">All releases</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/issues">Report a problem</a></li>
+    </ul>
+    <p class="signature"><span class="signature__intro">made by</span> <a class="signature__mark" href="https://entringer.dev">entringer.dev</a></p>
+  </div>
+</footer>
+<script type="application/json" id="docs-data">{"result":"1 result","results":"{n} results","noResults":"Nothing found for “{q}”."}</script>
+<script type="module" src="../../assets/docs.js?v=fc6854744e"></script>
+</body>
+</html>

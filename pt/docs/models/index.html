@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="pt-BR" data-os="other">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modelos · Ajuda do Open Whisper</title>
+<meta name="description" content="Os quatro modelos de fala, para que serve cada um, como funciona o download e onde ficam os arquivos.">
+<link rel="canonical" href="https://openwhisper.entringer.dev/pt/docs/models/">
+<link rel="alternate" hreflang="en" href="https://openwhisper.entringer.dev/docs/models/">
+<link rel="alternate" hreflang="pt-BR" href="https://openwhisper.entringer.dev/pt/docs/models/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Modelos · Ajuda do Open Whisper">
+<meta property="og:description" content="Os quatro modelos de fala, para que serve cada um, como funciona o download e onde ficam os arquivos.">
+<meta property="og:url" content="https://openwhisper.entringer.dev/pt/docs/models/">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Open Whisper">
+<meta property="og:image" content="https://openwhisper.entringer.dev/assets/og-pt.jpg">
+<meta name="theme-color" content="#191314">
+<link rel="icon" type="image/png" sizes="64x64" href="../../../assets/favicon-64.png">
+<link rel="apple-touch-icon" href="../../../assets/icon-180.png">
+<link rel="preload" href="../../../assets/fonts/barlow-semi-condensed-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../../assets/site.css?v=fc6854744e">
+<link rel="stylesheet" href="../../../assets/docs.css?v=fc6854744e">
+<script>
+  // Before the first paint, so the keycaps, the windows and the platform order are the visitor's.
+  (function () {
+    var ua = navigator.userAgent, d = document.documentElement;
+    var touch = matchMedia("(pointer: coarse)").matches && !matchMedia("(pointer: fine)").matches;
+    d.classList.add("js");
+    d.dataset.os = /Windows NT/.test(ua) ? "windows" : /Macintosh|Mac OS X/.test(ua) && !touch ? "mac" : touch ? "touch" : "other";
+  })();
+</script>
+</head>
+<body class="docs-body">
+<a class="skip" href="#plate">Ir para a página</a>
+<header class="nameplate nameplate--docs">
+  <a class="brand" href="../../" aria-label="Open Whisper">
+    <img class="brand__icon" src="../../../assets/icon-64.png" width="32" height="32" alt="">
+    <span class="engrave brand__name">Open Whisper</span>
+  </a>
+  <a class="engrave brand__docs" href="../">Ajuda</a>
+  <form class="search" role="search" action="../" data-index="../../../assets/search-pt.json">
+    <label class="sr-only" for="search">Buscar na ajuda</label>
+    <span class="search__well">
+      <svg class="glyph" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M12.6 12.6L17 17"/></svg>
+      <input id="search" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="Buscar na ajuda" aria-describedby="search-hint" aria-controls="results">
+      <kbd class="cap cap--inline search__key" aria-hidden="true">/</kbd>
+    </span>
+    <span class="sr-only" id="search-hint">Digite para buscar; aperte / em qualquer lugar para voltar aqui.</span>
+    <div class="results" id="results" hidden><p class="results__count" id="results-count" aria-live="polite"></p><ol class="results__list"></ol></div>
+  </form>
+  <nav class="nameplate__end" aria-label="Site">
+    <span class="latches" role="group" aria-label="Idioma">
+      <a class="latch" href="../../../docs/models/" hreflang="en" lang="en"><i class="led" aria-hidden="true"></i>EN</a><a class="latch is-on" href="../../../pt/docs/models/" hreflang="pt-BR" lang="pt-BR" aria-current="page"><i class="led" aria-hidden="true"></i>PT</a>
+    </span>
+  </nav>
+</header>
+<div class="docs">
+<nav class="rundown" id="rundown" aria-label="Roteiro">
+  <details class="rundown__fold" open>
+    <summary class="rundown__head"><svg class="glyph rundown__chev" viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5L13 10l-5.5 5.5"/></svg><span class="engrave">Roteiro</span><span class="engrave engrave--dim rundown__count">11 blocos · min</span></summary>
+    <ol class="rundown__list"><li><a class="cue" href="../install/" data-slug="install"><span class="cue__no">01</span><span class="cue__title">Instalar</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../first-run/" data-slug="first-run"><span class="cue__no">02</span><span class="cue__title">Primeira execução</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../dictate/" data-slug="dictate"><span class="cue__no">03</span><span class="cue__title">Ditar</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../paste/" data-slug="paste"><span class="cue__no">04</span><span class="cue__title">Onde o texto vai parar</span><span class="cue__time">5<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../menu/" data-slug="menu"><span class="cue__no">05</span><span class="cue__title">O ícone e o menu</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../settings/" data-slug="settings"><span class="cue__no">06</span><span class="cue__title">Ajustes</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue is-on" href="../models/" data-slug="models" aria-current="page"><span class="cue__no">07</span><span class="cue__title">Modelos</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../video/" data-slug="video"><span class="cue__no">08</span><span class="cue__title">Vídeo e arquivos</span><span class="cue__time">8<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../command-line/" data-slug="command-line"><span class="cue__no">09</span><span class="cue__title">Linha de comando</span><span class="cue__time">6<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../privacy/" data-slug="privacy"><span class="cue__no">10</span><span class="cue__title">Privacidade</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../troubleshooting/" data-slug="troubleshooting"><span class="cue__no">11</span><span class="cue__title">Solução de problemas</span><span class="cue__time">9<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+    <p class="rundown__head rundown__head--sub"><span class="engrave">Anexos</span></p>
+    <ol class="rundown__list rundown__list--appendix"><li><a class="cue" href="../faq/" data-slug="faq"><span class="cue__no">A1</span><span class="cue__title">Perguntas frequentes</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../shortcuts/" data-slug="shortcuts"><span class="cue__no">A2</span><span class="cue__title">Atalhos e teclas</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../command-reference/" data-slug="command-reference"><span class="cue__no">A3</span><span class="cue__title">Referência do comando</span><span class="cue__time">7<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../data-and-uninstall/" data-slug="data-and-uninstall"><span class="cue__no">A4</span><span class="cue__title">Dados e desinstalação</span><span class="cue__time">4<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../limits/" data-slug="limits"><span class="cue__no">A5</span><span class="cue__title">O que ele não faz</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../report/" data-slug="report"><span class="cue__no">A6</span><span class="cue__title">Relatar um problema</span><span class="cue__time">3<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li><li><a class="cue" href="../about/" data-slug="about"><span class="cue__no">A7</span><span class="cue__title">Sobre e termos</span><span class="cue__time">2<span class="sr-only"> min</span></span><i class="led" aria-hidden="true"></i></a></li></ol>
+  </details>
+</nav>
+<main class="plate" id="plate" tabindex="-1">
+  <header class="block__head">
+    <h1 class="block__title"><span class="readout block__no"><span class="sr-only">Bloco </span>07</span> <span class="block__name">Modelos</span></h1>
+    <p class="engrave engrave--dim block__time">Leitura · 4 min</p>
+    <p class="block__summary">Os quatro modelos de fala, para que serve cada um, como funciona o download e onde ficam os arquivos.</p>
+    <nav class="toc" aria-label="Neste bloco"><p class="engrave toc__head">Neste bloco</p><ol><li><a href="#o-que-e-um-modelo">O que é um modelo</a></li><li><a href="#os-quatro-modelos">Os quatro modelos</a></li><li><a href="#escolher-um-modelo">Escolher um modelo</a></li><li><a href="#baixar-um-modelo">Baixar um modelo</a></li><li><a href="#onde-ficam-os-modelos">Onde ficam os modelos</a></li><li><a href="#o-que-nao-da-para-fazer">O que não dá para fazer</a></li></ol></nav>
+  </header>
+  <article class="block" data-slug="models">
+<p>O modelo é a parte do Open Whisper que transforma fala em texto. Um já vem com o app, e outros três podem ser baixados. Esta página diz para que serve cada um, como obtê-los e o que não dá para fazer com eles.</p>
+<section class="block__section" aria-labelledby="o-que-e-um-modelo"><div class="block__text">
+<h2 class="block__h2" id="o-que-e-um-modelo"><a class="anchor" href="#o-que-e-um-modelo">O que é um modelo</a></h2>
+<p>Um modelo de fala é um arquivo grande que aprendeu a reconhecer a fala. O Open Whisper roda esse arquivo no seu computador: o áudio entra no modelo, o texto sai, e nada é enviado para lugar nenhum. Os modelos são versões do Whisper preparadas para rodar num computador comum.</p>
+<ul class="list"><li>Um modelo maior costuma errar menos, e ocupa mais disco e mais tempo.</li><li>Os quatro modelos são multilíngues: cada um entende todos os idiomas de <strong>Idioma</strong>, e também a detecção automática.</li><li>O ditado e o vídeo têm cada um a sua escolha de modelo. Dá para deixar um rápido no ditado e um mais cuidadoso no vídeo.</li><li>Junto com o modelo, o app traz um pequeno detector de voz, que separa fala de ruído. Ele não é uma opção que você escolhe.</li></ul>
+</div></section>
+<section class="block__section" aria-labelledby="os-quatro-modelos"><div class="block__text">
+<h2 class="block__h2" id="os-quatro-modelos"><a class="anchor" href="#os-quatro-modelos">Os quatro modelos</a></h2>
+<div class="table"><table><thead><tr><th scope="col">Nome no app</th><th scope="col">Id</th><th scope="col">Tamanho</th><th scope="col">De onde vem</th></tr></thead><tbody><tr><th scope="row"><strong>Padrão</strong></th><td data-label="Id"><code>small-q5_1</code></td><td data-label="Tamanho">cerca de 181 MB</td><td data-label="De onde vem">embutido no app</td></tr><tr><th scope="row"><strong>Leve</strong></th><td data-label="Id"><code>base</code></td><td data-label="Tamanho">141 MB</td><td data-label="De onde vem">download</td></tr><tr><th scope="row"><strong>Grande</strong></th><td data-label="Id"><code>medium-q5_0</code></td><td data-label="Tamanho">514 MB</td><td data-label="De onde vem">download</td></tr><tr><th scope="row"><strong>Mais preciso</strong></th><td data-label="Id"><code>large-v3-turbo-q5_0</code></td><td data-label="Tamanho">547 MB</td><td data-label="De onde vem">download</td></tr></tbody></table></div>
+<ul class="list"><li><strong>Padrão</strong> é o modelo com que o app começa, no ditado e no vídeo. Ele já está no computador e está sempre disponível.</li><li><strong>Leve</strong> é menor e mais rápido que o Padrão, e erra mais.</li><li><strong>Grande</strong> e <strong>Mais preciso</strong> erram menos e são mais lentos. Foram pensados para vídeo, quando ninguém está esperando o texto no cursor.</li></ul>
+<p>Os ids são os nomes que a <a class="link" href="../command-line/">linha de comando</a> usa em <code>--model</code>.</p>
+</div></section>
+<section class="block__section block__section--screen" aria-labelledby="escolher-um-modelo"><div class="block__text">
+<h2 class="block__h2" id="escolher-um-modelo"><a class="anchor" href="#escolher-um-modelo">Escolher um modelo</a></h2>
+<h3 class="block__h3">Para o ditado</h3>
+<ol class="cues"><li>Abra <strong>Ajustes…</strong> no menu do Open Whisper.</li><li>Clique em <strong>Avançado</strong>.</li><li>Em <strong>Modelo</strong>, escolha um. Se ele ainda não está no computador, o download começa.</li></ol>
+<p>O próximo ditado já usa o modelo novo, sem reiniciar. Se um modelo não carregar, o app continua com o que estava usando.</p>
+<p>Fique com o <strong>Padrão</strong>, a não ser que tenha um motivo para trocar. Um ditado deve ser colado em poucos segundos, e os dois modelos maiores podem fazer você esperar. Se os seus ditados parecem lentos, experimente o <strong>Leve</strong>.</p>
+<div class="platforms"><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><p>No Windows, a transcrição roda no processador, sem aceleração pela placa de vídeo. O tamanho do modelo pesa no tempo de espera.</p></div></div></div>
+<h3 class="block__h3">Para o vídeo</h3>
+<p>Na janela de vídeo, abra <strong>Qualidade</strong> e escolha um <strong>Modelo</strong> ali. Essa escolha é separada da do ditado. Ao lado de cada modelo, a janela diz se ele está <strong>já embutido</strong>, se é um <strong>download único de …</strong> ou se está <strong>…, já baixado</strong> e, para os dois menores, a taxa de erro medida em português. A janela resume assim: <strong>Modelos maiores erram menos — sobretudo em palavras em inglês faladas no meio do português. Em troca, ocupam disco e demoram mais.</strong> Veja <a class="link" href="../video/">Vídeo e arquivos</a>.</p>
+</div><figure class="shot"><span class="shot__screen"><span class="appwin" style="--w: 460"><span class="wbar wbar--mac" data-for="mac other touch" aria-hidden="true"><span class="wbar__lights"><i></i><i></i><i></i></span><span class="wbar__title">Open Whisper</span></span><span class="wbar wbar--win" data-for="windows" aria-hidden="true"><span class="wbar__title">Open Whisper</span><span class="wbar__caption"><svg viewBox="0 0 30 10"><path d="M1 5h8M12.5 1.5h7v7h-7zM23.5 1.5l7 7m0-7l-7 7"/></svg></span></span><img data-for="mac other touch" data-scheme="light" src="../../../assets/shots/settings-advanced-pt-mac-light-1x.webp" srcset="../../../assets/shots/settings-advanced-pt-mac-light-1x.webp 460w, ../../../assets/shots/settings-advanced-pt-mac-light.webp 920w" sizes="(max-width: 760px) 92vw, 420px" width="460" height="565" loading="lazy" decoding="async" alt="Os Ajustes com a seção Avançado aberta: modelo, gravação máxima e abrir ao iniciar."><img data-for="mac other touch" data-scheme="dark" src="../../../assets/shots/settings-advanced-pt-mac-dark-1x.webp" srcset="../../../assets/shots/settings-advanced-pt-mac-dark-1x.webp 460w, ../../../assets/shots/settings-advanced-pt-mac-dark.webp 920w" sizes="(max-width: 760px) 92vw, 420px" width="460" height="565" loading="lazy" decoding="async" alt="Os Ajustes com a seção Avançado aberta: modelo, gravação máxima e abrir ao iniciar."><img data-for="windows" data-scheme="light" src="../../../assets/shots/settings-advanced-pt-windows-light-1x.webp" srcset="../../../assets/shots/settings-advanced-pt-windows-light-1x.webp 460w, ../../../assets/shots/settings-advanced-pt-windows-light.webp 920w" sizes="(max-width: 760px) 92vw, 420px" width="460" height="580" loading="lazy" decoding="async" alt="Os Ajustes com a seção Avançado aberta: modelo, gravação máxima e abrir ao iniciar."><img data-for="windows" data-scheme="dark" src="../../../assets/shots/settings-advanced-pt-windows-dark-1x.webp" srcset="../../../assets/shots/settings-advanced-pt-windows-dark-1x.webp 460w, ../../../assets/shots/settings-advanced-pt-windows-dark.webp 920w" sizes="(max-width: 760px) 92vw, 420px" width="460" height="580" loading="lazy" decoding="async" alt="Os Ajustes com a seção Avançado aberta: modelo, gravação máxima e abrir ao iniciar."></span></span><figcaption class="engrave shot__caption">Ajustes · Avançado</figcaption></figure></section>
+<section class="block__section" aria-labelledby="baixar-um-modelo"><div class="block__text">
+<h2 class="block__h2" id="baixar-um-modelo"><a class="anchor" href="#baixar-um-modelo">Baixar um modelo</a></h2>
+<p>Escolher um modelo que não está no computador, nos ajustes ou na janela de vídeo, faz o download dele. Cada modelo é baixado uma única vez; depois ele fica no computador, para o ditado, o vídeo e a linha de comando.</p>
+<ul class="list"><li>O arquivo vem do Hugging Face, de <code>https://huggingface.co/ggerganov/whisper.cpp</code>. Essa é uma das poucas vezes em que o Open Whisper usa a rede, e só acontece quando você escolhe um modelo. Nunca durante um ditado. A lista completa está em <a class="link" href="../privacy/">Privacidade</a>.</li><li>Quando o download termina, o app confere o arquivo pela impressão digital SHA-256 conhecida. Um arquivo danificado ou incompleto não é usado.</li><li>Um download não começa enquanto um ditado está em andamento. Espere o ditado terminar.</li></ul>
+<aside class="callout callout--fix"><p class="callout__legend engrave"><i class="led led--fault is-on" aria-hidden="true"></i>Se o download falhar</p><div class="callout__body"><p>Os ajustes dizem <strong>Falha no download. O modelo atual continua em uso.</strong> A janela de vídeo diz <strong>Não foi possível baixar o modelo. O anterior continua em uso.</strong> Nada mudou. Confira a conexão com a internet e escolha o modelo de novo.</p></div></aside>
+</div></section>
+<section class="block__section" aria-labelledby="onde-ficam-os-modelos"><div class="block__text">
+<h2 class="block__h2" id="onde-ficam-os-modelos"><a class="anchor" href="#onde-ficam-os-modelos">Onde ficam os modelos</a></h2>
+<div class="platforms"><div class="platform" data-platform="mac"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Mac</p><div class="platform__body"><ul class="list"><li>Modelos baixados: <code>~/Library/Application Support/open-whisper/models/</code> (<code>base.bin</code>, <code>medium-q5_0.bin</code>, <code>large-v3-turbo-q5_0.bin</code>).</li><li>O modelo embutido fica dentro do app: <code>Open Whisper.app/Contents/Resources/models/</code>.</li></ul></div></div><div class="platform" data-platform="windows"><p class="platform__legend engrave"><i class="led" aria-hidden="true"></i>Windows</p><div class="platform__body"><ul class="list"><li>Modelos baixados: <code>%LOCALAPPDATA%\open-whisper\models\</code> (<code>base.bin</code>, <code>medium-q5_0.bin</code>, <code>large-v3-turbo-q5_0.bin</code>). Essa pasta fica fora do perfil móvel (roaming).</li><li>O modelo embutido fica na pasta <code>models</code>, onde o Open Whisper foi instalado.</li></ul></div></div></div>
+</div></section>
+<section class="block__section" aria-labelledby="o-que-nao-da-para-fazer"><div class="block__text">
+<h2 class="block__h2" id="o-que-nao-da-para-fazer"><a class="anchor" href="#o-que-nao-da-para-fazer">O que não dá para fazer</a></h2>
+<ul class="list"><li>Não existe botão para remover um modelo baixado. Para liberar o espaço, primeiro escolha outro modelo nos ajustes e na janela de vídeo, depois apague o arquivo da pasta acima.</li><li>São só estes quatro modelos. Não dá para acrescentar outro arquivo de modelo nem usar um serviço de transcrição na internet.</li><li>A <a class="link" href="../command-line/">linha de comando</a> nunca baixa um modelo. Ela usa só os que já estão no computador e termina com o código de saída 4 quando o modelo falta.</li></ul>
+<aside class="callout callout--fix"><p class="callout__legend engrave"><i class="led led--fault is-on" aria-hidden="true"></i>Se o app diz que não consegue carregar o modelo</p><div class="callout__body"><p>A notificação <strong>Não foi possível carregar o modelo. Verifique nos Ajustes.</strong> (no Windows, <strong>nas Configurações</strong>) quer dizer que o arquivo do modelo escolhido sumiu ou está danificado. Em <strong>Ajustes</strong> → <strong>Avançado</strong> → <strong>Modelo</strong>, escolha <strong>Padrão</strong>: ele fica dentro do app e está sempre lá. Mais em <a class="link" href="../troubleshooting/">Solução de problemas</a>.</p></div></aside>
+</div></section>
+  </article>
+  <nav class="block__foot" aria-label="Bloco anterior e próximo"><a class="key key--step key--prev" href="../settings/" rel="prev"><span class="key__text"><span class="key__sub engrave">Anterior · 06</span><span class="key__main">Ajustes</span></span></a><a class="key key--step key--next" href="../video/" rel="next"><span class="key__text"><span class="key__sub engrave">Próximo · 08</span><span class="key__main">Vídeo e arquivos</span></span></a></nav>
+</main>
+</div>
+<footer class="footplate">
+  <div class="footplate__inner">
+    <p class="footplate__free">O Open Whisper é gratuito. <span class="footplate__privacy">Este site não usa cookies e não mede nada.</span></p>
+    <ul class="footplate__links">
+      <li><a class="link" href="../../">Página do Open Whisper</a></li>
+      <li><a class="link" href="../../../terms.txt">Termos de uso</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/releases">Todos os releases</a></li>
+      <li><a class="link" href="https://github.com/fabricio-entringer/open-whisper-public/issues">Relatar um problema</a></li>
+    </ul>
+    <p class="signature"><span class="signature__intro">feito por</span> <a class="signature__mark" href="https://entringer.dev">entringer.dev</a></p>
+  </div>
+</footer>
+<script type="application/json" id="docs-data">{"result":"1 resultado","results":"{n} resultados","noResults":"Nada encontrado para “{q}”."}</script>
+<script type="module" src="../../../assets/docs.js?v=fc6854744e"></script>
+</body>
+</html>
